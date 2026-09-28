@@ -1,0 +1,33 @@
+{
+  "Meta": {
+    "title": "Gym Master | Connected management, operations and member experience",
+    "description": "Discover a more integrated way to run your gym."
+  },
+  "Home": {
+    "eyebrow": "DRAGON PYRAMID PRESENTS",
+    "identityLabel": "IDENTITY",
+    "heroTitle": "Your gym can work differently.",
+    "heroBody": "Management, operations and member experience connected in one platform.",
+    "heroMicrocopy": "An integrated vision for gyms that want to operate with greater clarity.",
+    "discover": "Discover Gym Master",
+    "problemKicker": "THE PROBLEM",
+    "problemTitle": "Running a gym shouldn't mean chasing information.",
+    "problemBody": "Members, payments, attendance, sales and training generate information every day. When each process lives somewhere else, understanding the business becomes harder.",
+    "fragmentedLabel": "FRAGMENTED INFORMATION",
+    "gymLabel": "YOUR GYM",
+    "transformKicker": "THE TRANSFORMATION",
+    "transformTitle": "When everything starts connecting, the way you manage changes.",
+    "transformBody": "Information stops competing for your attention and starts working as one system.",
+    "connected": "GYM MASTER",
+    "pocKicker": "ONE VIEW",
+    "pocTitle": "Less fragmentation. More control.",
+    "pocBody": "A connected operation makes it easier to understand what is happening, act earlier and support every member better.",
+    "chips": {
+      "members": "MEMBERS",
+      "payments": "PAYMENTS",
+      "attendance": "ATTENDANCE",
+      "sales": "SALES",
+      "training": "TRAINING"
+    }
+  }
+}

@@ -1,0 +1,157 @@
+import Image from "next/image";
+import {getTranslations, setRequestLocale} from "next-intl/server";
+
+import {Scene02Poc} from "@/components/story/Scene02Poc";
+import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
+
+export default async function HomePage({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("Home");
+
+  const scene02Labels = {
+    kicker: t("transformKicker"),
+    title: t("transformTitle"),
+    body: t("transformBody"),
+    connected: t("connected"),
+    chips: {
+      members: t("chips.members"),
+      payments: t("chips.payments"),
+      attendance: t("chips.attendance"),
+      sales: t("chips.sales"),
+      training: t("chips.training")
+    }
+  };
+
+  const problemSystems = [
+    {label: "Excel", tone: "blue"},
+    {label: "WhatsApp", tone: "green"},
+    {label: "QR", tone: "cyan"},
+    {label: t("chips.payments"), tone: "violet"},
+    {label: t("chips.sales"), tone: "amber"},
+    {label: t("chips.training"), tone: "rose"}
+  ];
+
+  return (
+    <main className="gm-page">
+      <section className="gm-hero" aria-labelledby="hero-title">
+        <div className="gm-hero__noise" aria-hidden="true" />
+        <div className="gm-hero__grid" aria-hidden="true" />
+        <div className="gm-hero__orb gm-hero__orb--one" aria-hidden="true" />
+        <div className="gm-hero__orb gm-hero__orb--two" aria-hidden="true" />
+
+        <div className="gm-shell gm-hero__layout">
+          <div className="gm-hero__brand">
+            <div className="gm-hero__presented">
+              <span aria-hidden="true" />
+              <p className="gm-kicker">{t("eyebrow")}</p>
+              <span aria-hidden="true" />
+            </div>
+
+            <div className="gm-hero__logo-stage">
+              <div className="gm-hero__logo-halo" aria-hidden="true" />
+              <Image
+                className="gm-hero__logo"
+                src={GM_BRAND_ASSETS.logoWhite.local}
+                width={2048}
+                height={2048}
+                sizes="(max-width: 760px) 172px, 390px"
+                priority
+                alt="Gym Master"
+              />
+            </div>
+          </div>
+
+          <div className="gm-hero__content">
+            <p className="gm-section-index" aria-hidden="true">
+              00 / {t("identityLabel")}
+            </p>
+            <h1 id="hero-title">{t("heroTitle")}</h1>
+            <p className="gm-copy gm-copy--hero">{t("heroBody")}</p>
+
+            <div className="gm-hero__actions">
+              <a className="gm-discover" href="#problem">
+                <span>{t("discover")}</span>
+                <span className="gm-discover__arrow" aria-hidden="true">
+                  ↓
+                </span>
+              </a>
+
+              <p className="gm-hero__microcopy">{t("heroMicrocopy")}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="gm-scroll-rail" aria-hidden="true">
+          <span />
+          <small>SCROLL</small>
+        </div>
+      </section>
+
+      <section
+        id="problem"
+        className="gm-problem"
+        aria-labelledby="problem-title"
+      >
+        <div className="gm-problem__glow" aria-hidden="true" />
+
+        <div className="gm-shell gm-problem__layout">
+          <div className="gm-problem__copy">
+            <p className="gm-section-index">01 / {t("problemKicker")}</p>
+            <h2 id="problem-title">{t("problemTitle")}</h2>
+            <p className="gm-copy">{t("problemBody")}</p>
+
+            <div className="gm-problem__signal" aria-hidden="true">
+              <span />
+              <p>{t("fragmentedLabel")}</p>
+            </div>
+          </div>
+
+          <div className="gm-fragment-map" aria-hidden="true">
+            <div className="gm-fragment-map__center">
+              <span>{t("gymLabel")}</span>
+            </div>
+
+            {problemSystems.map((system, index) => (
+              <div
+                className={`gm-system-card gm-system-card--${index + 1}`}
+                data-tone={system.tone}
+                key={`${system.label}-${index}`}
+              >
+                <span className="gm-system-card__dot" />
+                <strong>{system.label}</strong>
+                <small>ISLA {String(index + 1).padStart(2, "0")}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Scene02Poc labels={scene02Labels} />
+
+      <section className="gm-after" aria-labelledby="after-title">
+        <div className="gm-shell gm-after__layout">
+          <p className="gm-section-index">03 / {t("pocKicker")}</p>
+          <div>
+            <h2 id="after-title">{t("pocTitle")}</h2>
+            <p className="gm-copy">{t("pocBody")}</p>
+          </div>
+          <div className="gm-after__mark" aria-hidden="true">
+            <Image
+              src={GM_BRAND_ASSETS.logoWhite.local}
+              width={2048}
+              height={2048}
+              sizes="150px"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
