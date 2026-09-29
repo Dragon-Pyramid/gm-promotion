@@ -3,6 +3,7 @@ import {getTranslations, setRequestLocale} from "next-intl/server";
 
 import {Scene02Poc} from "@/components/story/Scene02Poc";
 import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
+import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -57,6 +58,29 @@ export default async function HomePage({
     insightEyebrow: t("adminInsightEyebrow"),
     insightTitle: t("adminInsightTitle"),
     insightBody: t("adminInsightBody")
+  };
+
+  const scene04Labels = {
+    kicker: t("businessKicker"),
+    title: t("businessTitle"),
+    body: t("businessBody"),
+    demo: t("businessDemo"),
+    pulseLabel: t("businessPulseLabel"),
+    resultLabel: t("businessResultLabel"),
+    resultMeta: t("businessResultMeta"),
+    trendMeta: t("businessTrendMeta"),
+    flowTitle: t("businessFlowTitle"),
+    flowIncome: t("businessFlowIncome"),
+    flowExpenses: t("businessFlowExpenses"),
+    sources: {
+      fees: t("businessSources.fees"),
+      sales: t("businessSources.sales"),
+      services: t("businessSources.services"),
+      expenses: t("businessSources.expenses")
+    },
+    decisionEyebrow: t("businessDecisionEyebrow"),
+    decisionTitle: t("businessDecisionTitle"),
+    decisionBody: t("businessDecisionBody")
   };
 
   const problemSystems = [
@@ -166,6 +190,8 @@ export default async function HomePage({
       <Scene02Poc labels={scene02Labels} />
 
       <Scene03AdminOverview labels={scene03Labels} />
+
+      <Scene04AdminBusiness labels={scene04Labels} />
     </main>
   );
 }

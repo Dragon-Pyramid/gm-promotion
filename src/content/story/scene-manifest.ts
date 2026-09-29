@@ -39,5 +39,13 @@ export const sceneManifest: StoryScene[] = [
     motionMode: "kino",
     fallbackMode: "natural",
     analyticsId: "story_admin_overview"
+  },
+  {
+    id: "scene-04",
+    chapter: "control",
+    duration: "180vh",
+    motionMode: "kino",
+    fallbackMode: "natural",
+    analyticsId: "story_admin_business"
   }
 ];
