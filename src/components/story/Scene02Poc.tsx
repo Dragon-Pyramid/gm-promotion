@@ -144,7 +144,7 @@ export function Scene02Poc({labels}: {labels: Labels}) {
 
                   <div className="gm-scene02__logo-frame">
                     <Image
-                      src={GM_BRAND_ASSETS.logoWhite.local}
+                      src={`${GM_BRAND_ASSETS.logoWhite.local}?context=scene02`}
                       width={2048}
                       height={2048}
                       sizes="270px"

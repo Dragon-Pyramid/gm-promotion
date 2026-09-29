@@ -116,7 +116,7 @@ export default async function HomePage({
                 width={2048}
                 height={2048}
                 sizes="(max-width: 760px) 172px, 390px"
-                priority
+                loading="eager"
                 alt="Gym Master"
               />
             </div>
