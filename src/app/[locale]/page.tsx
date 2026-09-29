@@ -9,6 +9,7 @@ import {Scene06MemberEntry} from "@/components/story/Scene06MemberEntry";
 import {Scene07TrainingProgress} from "@/components/story/Scene07TrainingProgress";
 import {Scene08Relationship} from "@/components/story/Scene08Relationship";
 import {Scene09IntelligenceData} from "@/components/story/Scene09IntelligenceData";
+import {Scene10Infrastructure} from "@/components/story/Scene10Infrastructure";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -262,6 +263,40 @@ export default async function HomePage({
     insightBody: t("intelligenceInsightBody")
   };
 
+  const scene10Labels = {
+    kicker: t("infrastructureKicker"),
+    title: t("infrastructureTitle"),
+    body: t("infrastructureBody"),
+    demo: t("infrastructureDemo"),
+    systemLabel: t("infrastructureSystemLabel"),
+    connected: t("infrastructureConnected"),
+    surfaceEyebrow: t("infrastructureSurfaceEyebrow"),
+    surfaceTitle: t("infrastructureSurfaceTitle"),
+    surfaceMeta: t("infrastructureSurfaceMeta"),
+    layers: {
+      app: t("infrastructureLayers.app"),
+      sync: t("infrastructureLayers.sync"),
+      data: t("infrastructureLayers.data"),
+      security: t("infrastructureLayers.security"),
+      cloud: t("infrastructureLayers.cloud"),
+      continuity: t("infrastructureLayers.continuity")
+    },
+    layerMeta: {
+      app: t("infrastructureLayerMeta.app"),
+      sync: t("infrastructureLayerMeta.sync"),
+      data: t("infrastructureLayerMeta.data"),
+      security: t("infrastructureLayerMeta.security"),
+      cloud: t("infrastructureLayerMeta.cloud"),
+      continuity: t("infrastructureLayerMeta.continuity")
+    },
+    foundationEyebrow: t("infrastructureFoundationEyebrow"),
+    foundationTitle: t("infrastructureFoundationTitle"),
+    foundationBody: t("infrastructureFoundationBody"),
+    insightEyebrow: t("infrastructureInsightEyebrow"),
+    insightTitle: t("infrastructureInsightTitle"),
+    insightBody: t("infrastructureInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -381,6 +416,8 @@ export default async function HomePage({
       <Scene08Relationship labels={scene08Labels} />
 
       <Scene09IntelligenceData labels={scene09Labels} />
+
+      <Scene10Infrastructure labels={scene10Labels} />
     </main>
   );
 }
