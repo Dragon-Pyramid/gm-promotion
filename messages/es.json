@@ -170,6 +170,45 @@
     "relationshipInsightEyebrow": "MÁS ALLÁ DEL GIMNASIO",
     "relationshipInsightTitle": "Estar presente también es saber cuándo acompañar.",
     "relationshipInsightBody": "Gym Master mantiene la continuidad sin convertir la relación en ruido.",
+    "intelligenceKicker": "INTELIGENCIA",
+    "intelligenceTitle": "Cuando los datos se conectan, aparecen señales.",
+    "intelligenceBody": "Asistencia, pagos, ventas, entrenamiento y relación dejan de ser eventos aislados. Gym Master los conecta para mostrar qué está cambiando y dónde conviene mirar.",
+    "intelligenceDemo": "DATOS ILUSTRATIVOS · LECTURA CONECTADA",
+    "intelligenceFieldLabel": "SEÑALES DEL GIMNASIO",
+    "intelligenceConnected": "5 FUENTES CONECTADAS",
+    "intelligenceSources": {
+      "attendance": "ASISTENCIA",
+      "payments": "PAGOS",
+      "sales": "VENTAS",
+      "training": "ENTRENAMIENTO",
+      "relationship": "RELACIÓN"
+    },
+    "intelligenceSourceMeta": {
+      "attendance": "ritmo de visitas",
+      "payments": "estado y recurrencia",
+      "sales": "movimiento comercial",
+      "training": "actividad y progreso",
+      "relationship": "seguimiento y respuesta"
+    },
+    "intelligenceCoreEyebrow": "LECTURA CONECTADA",
+    "intelligenceCoreTitle": "Patrón",
+    "intelligenceCoreMeta": "contexto compartido",
+    "intelligenceSignalEyebrow": "LA ACTIVIDAD HABLA",
+    "intelligenceSignalTitle": "Una señal no vive en un solo dato.",
+    "intelligenceSignalBody": "El valor aparece cuando distintas partes del gimnasio cuentan la misma historia.",
+    "intelligenceSignals": {
+      "rhythm": "RITMO",
+      "change": "CAMBIO",
+      "attention": "ATENCIÓN"
+    },
+    "intelligenceSignalMeta": {
+      "rhythm": "la actividad encuentra su patrón",
+      "change": "una tendencia empieza a moverse",
+      "attention": "algo merece contexto"
+    },
+    "intelligenceInsightEyebrow": "INTELIGENCIA APLICADA",
+    "intelligenceInsightTitle": "No se trata de mirar más datos. Se trata de entender qué dicen juntos.",
+    "intelligenceInsightBody": "Gym Master convierte actividad dispersa en una lectura más clara para decidir con contexto.",
     "chips": {
       "members": "SOCIOS",
       "payments": "PAGOS",
