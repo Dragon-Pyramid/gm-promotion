@@ -1,6 +1,6 @@
 export type StoryScene = {
   id: string;
-  chapter: "identity" | "transformation" | "control";
+  chapter: "identity" | "transformation" | "control" | "operation";
   duration: string;
   motionMode: "static" | "kino";
   fallbackMode: "natural" | "poster";
@@ -47,5 +47,13 @@ export const sceneManifest: StoryScene[] = [
     motionMode: "kino",
     fallbackMode: "natural",
     analyticsId: "story_admin_business"
+  },
+  {
+    id: "scene-05",
+    chapter: "operation",
+    duration: "180vh",
+    motionMode: "kino",
+    fallbackMode: "natural",
+    analyticsId: "story_team_operation"
   }
 ];
