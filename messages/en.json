@@ -19,9 +19,33 @@
     "transformTitle": "When everything starts connecting, the way you manage changes.",
     "transformBody": "Information stops competing for your attention and starts working as one system.",
     "connected": "GYM MASTER",
-    "pocKicker": "ONE VIEW",
-    "pocTitle": "Less fragmentation. More control.",
-    "pocBody": "A connected operation makes it easier to understand what is happening, act earlier and support every member better.",
+    "adminOverviewKicker": "CONTROL",
+    "adminOverviewTitle": "From searching for information to seeing your whole gym.",
+    "adminOverviewBody": "Members, collections, attendance, activity and alerts stop living apart. The administrator gains an operational view of what is happening right now.",
+    "adminOverviewDemo": "ILLUSTRATIVE DATA · PRODUCT COMPOSITION",
+    "adminControlCenter": "CONTROL CENTER",
+    "adminLive": "LIVE",
+    "adminMetrics": {
+      "members": "ACTIVE MEMBERS",
+      "collection": "COLLECTION",
+      "attendance": "CHECK-INS TODAY",
+      "alerts": "ATTENTION"
+    },
+    "adminMetricsMeta": {
+      "members": "active base in motion",
+      "collection": "of the monthly target",
+      "attendance": "activity recorded today",
+      "alerts": "situations to review"
+    },
+    "adminActivityTitle": "GYM ACTIVITY",
+    "adminActivity": {
+      "checkIn": "Member check-in recorded",
+      "payment": "Membership payment received",
+      "sale": "Front-desk sale confirmed"
+    },
+    "adminInsightEyebrow": "ONE OPERATIONAL VIEW",
+    "adminInsightTitle": "Your gym generates signals all the time.",
+    "adminInsightBody": "Gym Master organizes them so you can see context, priorities and movement without jumping between tools.",
     "chips": {
       "members": "MEMBERS",
       "payments": "PAYMENTS",

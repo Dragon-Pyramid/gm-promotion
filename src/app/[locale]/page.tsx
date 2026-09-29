@@ -2,6 +2,7 @@ import Image from "next/image";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 
 import {Scene02Poc} from "@/components/story/Scene02Poc";
+import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -26,6 +27,36 @@ export default async function HomePage({
       sales: t("chips.sales"),
       training: t("chips.training")
     }
+  };
+
+  const scene03Labels = {
+    kicker: t("adminOverviewKicker"),
+    title: t("adminOverviewTitle"),
+    body: t("adminOverviewBody"),
+    demo: t("adminOverviewDemo"),
+    controlCenter: t("adminControlCenter"),
+    live: t("adminLive"),
+    metrics: {
+      members: t("adminMetrics.members"),
+      collection: t("adminMetrics.collection"),
+      attendance: t("adminMetrics.attendance"),
+      alerts: t("adminMetrics.alerts")
+    },
+    metricsMeta: {
+      members: t("adminMetricsMeta.members"),
+      collection: t("adminMetricsMeta.collection"),
+      attendance: t("adminMetricsMeta.attendance"),
+      alerts: t("adminMetricsMeta.alerts")
+    },
+    activityTitle: t("adminActivityTitle"),
+    activityItems: {
+      checkIn: t("adminActivity.checkIn"),
+      payment: t("adminActivity.payment"),
+      sale: t("adminActivity.sale")
+    },
+    insightEyebrow: t("adminInsightEyebrow"),
+    insightTitle: t("adminInsightTitle"),
+    insightBody: t("adminInsightBody")
   };
 
   const problemSystems = [
@@ -134,24 +165,7 @@ export default async function HomePage({
 
       <Scene02Poc labels={scene02Labels} />
 
-      <section className="gm-after" aria-labelledby="after-title">
-        <div className="gm-shell gm-after__layout">
-          <p className="gm-section-index">03 / {t("pocKicker")}</p>
-          <div>
-            <h2 id="after-title">{t("pocTitle")}</h2>
-            <p className="gm-copy">{t("pocBody")}</p>
-          </div>
-          <div className="gm-after__mark" aria-hidden="true">
-            <Image
-              src={GM_BRAND_ASSETS.logoWhite.local}
-              width={2048}
-              height={2048}
-              sizes="150px"
-              alt=""
-            />
-          </div>
-        </div>
-      </section>
+      <Scene03AdminOverview labels={scene03Labels} />
     </main>
   );
 }

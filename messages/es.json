@@ -19,9 +19,33 @@
     "transformTitle": "Cuando todo empieza a conectarse, cambia la manera de gestionar.",
     "transformBody": "La información deja de competir por tu atención y empieza a trabajar como un solo sistema.",
     "connected": "GYM MASTER",
-    "pocKicker": "UNA SOLA VISIÓN",
-    "pocTitle": "Menos fragmentación. Más control.",
-    "pocBody": "Una operación conectada permite entender qué sucede, actuar antes y acompañar mejor a cada socio.",
+    "adminOverviewKicker": "CONTROL",
+    "adminOverviewTitle": "De buscar información a ver tu gimnasio completo.",
+    "adminOverviewBody": "Socios, cobros, asistencia, actividad y alertas dejan de estar dispersos. El administrador obtiene una visión operativa que permite entender qué está pasando ahora.",
+    "adminOverviewDemo": "DATOS ILUSTRATIVOS · COMPOSICIÓN DE PRODUCTO",
+    "adminControlCenter": "CENTRO DE CONTROL",
+    "adminLive": "EN VIVO",
+    "adminMetrics": {
+      "members": "SOCIOS ACTIVOS",
+      "collection": "COBRANZA",
+      "attendance": "INGRESOS HOY",
+      "alerts": "ATENCIÓN"
+    },
+    "adminMetricsMeta": {
+      "members": "base activa en crecimiento",
+      "collection": "del objetivo mensual",
+      "attendance": "movimiento registrado hoy",
+      "alerts": "situaciones para revisar"
+    },
+    "adminActivityTitle": "ACTIVIDAD DEL GIMNASIO",
+    "adminActivity": {
+      "checkIn": "Ingreso de socio registrado",
+      "payment": "Cuota acreditada",
+      "sale": "Venta de mostrador confirmada"
+    },
+    "adminInsightEyebrow": "UNA SOLA LECTURA",
+    "adminInsightTitle": "Tu gimnasio genera señales todo el tiempo.",
+    "adminInsightBody": "Gym Master las organiza para que puedas ver contexto, prioridades y movimiento sin saltar entre herramientas.",
     "chips": {
       "members": "SOCIOS",
       "payments": "PAGOS",
