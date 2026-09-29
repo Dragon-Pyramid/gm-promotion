@@ -167,13 +167,13 @@ export function Scene02Poc({labels}: {labels: Labels}) {
             className="gm-scene02__copy"
           >
             <div>
-              <Reveal at={0.66} animation="fade-up">
+              <Reveal at={0.62} animation="fade-up">
                 <p className="gm-kicker">{labels.kicker}</p>
               </Reveal>
-              <Reveal at={0.72} animation="fade-up">
+              <Reveal at={0.68} animation="fade-up">
                 <h2 id="scene02-title">{labels.title}</h2>
               </Reveal>
-              <Reveal at={0.79} animation="fade-up">
+              <Reveal at={0.75} animation="fade-up">
                 <p className="gm-copy">{labels.body}</p>
               </Reveal>
             </div>
