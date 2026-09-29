@@ -4,6 +4,7 @@ import {getTranslations, setRequestLocale} from "next-intl/server";
 import {Scene02Poc} from "@/components/story/Scene02Poc";
 import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
 import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
+import {Scene05TeamOperation} from "@/components/story/Scene05TeamOperation";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -81,6 +82,38 @@ export default async function HomePage({
     decisionEyebrow: t("businessDecisionEyebrow"),
     decisionTitle: t("businessDecisionTitle"),
     decisionBody: t("businessDecisionBody")
+  };
+
+  const scene05Labels = {
+    kicker: t("teamKicker"),
+    title: t("teamTitle"),
+    body: t("teamBody"),
+    demo: t("teamDemo"),
+    stationLabel: t("teamStationLabel"),
+    live: t("teamLive"),
+    flowTitle: t("teamFlowTitle"),
+    flowMeta: t("teamFlowMeta"),
+    steps: {
+      arrival: t("teamSteps.arrival"),
+      checkIn: t("teamSteps.checkIn"),
+      payment: t("teamSteps.payment"),
+      sale: t("teamSteps.sale"),
+      stock: t("teamSteps.stock"),
+      record: t("teamSteps.record")
+    },
+    stepMeta: {
+      arrival: t("teamStepMeta.arrival"),
+      checkIn: t("teamStepMeta.checkIn"),
+      payment: t("teamStepMeta.payment"),
+      sale: t("teamStepMeta.sale"),
+      stock: t("teamStepMeta.stock"),
+      record: t("teamStepMeta.record")
+    },
+    syncLabel: t("teamSyncLabel"),
+    syncMeta: t("teamSyncMeta"),
+    insightEyebrow: t("teamInsightEyebrow"),
+    insightTitle: t("teamInsightTitle"),
+    insightBody: t("teamInsightBody")
   };
 
   const problemSystems = [
@@ -192,6 +225,8 @@ export default async function HomePage({
       <Scene03AdminOverview labels={scene03Labels} />
 
       <Scene04AdminBusiness labels={scene04Labels} />
+
+      <Scene05TeamOperation labels={scene05Labels} />
     </main>
   );
 }
