@@ -7,6 +7,7 @@ import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
 import {Scene05TeamOperation} from "@/components/story/Scene05TeamOperation";
 import {Scene06MemberEntry} from "@/components/story/Scene06MemberEntry";
 import {Scene07TrainingProgress} from "@/components/story/Scene07TrainingProgress";
+import {Scene08Relationship} from "@/components/story/Scene08Relationship";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -186,6 +187,38 @@ export default async function HomePage({
     insightBody: t("trainingProgressInsightBody")
   };
 
+  const scene08Labels = {
+    kicker: t("relationshipKicker"),
+    title: t("relationshipTitle"),
+    body: t("relationshipBody"),
+    demo: t("relationshipDemo"),
+    loopLabel: t("relationshipLoopLabel"),
+    connected: t("relationshipConnected"),
+    timeline: {
+      today: t("relationshipTimeline.today"),
+      followUp: t("relationshipTimeline.followUp"),
+      nextVisit: t("relationshipTimeline.nextVisit")
+    },
+    memberEyebrow: t("relationshipMemberEyebrow"),
+    memberName: t("relationshipMemberName"),
+    memberMeta: t("relationshipMemberMeta"),
+    workoutEyebrow: t("relationshipWorkoutEyebrow"),
+    workoutTitle: t("relationshipWorkoutTitle"),
+    workoutMeta: t("relationshipWorkoutMeta"),
+    messageEyebrow: t("relationshipMessageEyebrow"),
+    messageTitle: t("relationshipMessageTitle"),
+    messageBody: t("relationshipMessageBody"),
+    reminderEyebrow: t("relationshipReminderEyebrow"),
+    reminderTitle: t("relationshipReminderTitle"),
+    reminderMeta: t("relationshipReminderMeta"),
+    continuityEyebrow: t("relationshipContinuityEyebrow"),
+    continuityTitle: t("relationshipContinuityTitle"),
+    continuityBody: t("relationshipContinuityBody"),
+    insightEyebrow: t("relationshipInsightEyebrow"),
+    insightTitle: t("relationshipInsightTitle"),
+    insightBody: t("relationshipInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -301,6 +334,8 @@ export default async function HomePage({
       <Scene06MemberEntry labels={scene06Labels} />
 
       <Scene07TrainingProgress labels={scene07Labels} />
+
+      <Scene08Relationship labels={scene08Labels} />
     </main>
   );
 }

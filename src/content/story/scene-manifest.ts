@@ -71,5 +71,13 @@ export const sceneManifest: StoryScene[] = [
     motionMode: "kino",
     fallbackMode: "natural",
     analyticsId: "story_training_progress"
+  },
+  {
+    id: "scene-08",
+    chapter: "experience",
+    duration: "180vh",
+    motionMode: "kino",
+    fallbackMode: "natural",
+    analyticsId: "story_relationship"
   }
 ];
