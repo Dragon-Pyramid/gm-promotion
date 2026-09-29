@@ -6,6 +6,7 @@ import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
 import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
 import {Scene05TeamOperation} from "@/components/story/Scene05TeamOperation";
 import {Scene06MemberEntry} from "@/components/story/Scene06MemberEntry";
+import {Scene07TrainingProgress} from "@/components/story/Scene07TrainingProgress";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -145,6 +146,46 @@ export default async function HomePage({
     welcomeBody: t("memberEntryWelcomeBody")
   };
 
+  const scene07Labels = {
+    kicker: t("trainingProgressKicker"),
+    title: t("trainingProgressTitle"),
+    body: t("trainingProgressBody"),
+    demo: t("trainingProgressDemo"),
+    sessionLabel: t("trainingProgressSessionLabel"),
+    sessionMeta: t("trainingProgressSessionMeta"),
+    sessionLive: t("trainingProgressSessionLive"),
+    exercises: {
+      squat: t("trainingProgressExercises.squat"),
+      press: t("trainingProgressExercises.press"),
+      row: t("trainingProgressExercises.row")
+    },
+    exerciseMeta: {
+      squat: t("trainingProgressExerciseMeta.squat"),
+      press: t("trainingProgressExerciseMeta.press"),
+      row: t("trainingProgressExerciseMeta.row")
+    },
+    completionLabel: t("trainingProgressCompletionLabel"),
+    completionMeta: t("trainingProgressCompletionMeta"),
+    progressLabel: t("trainingProgressLabel"),
+    progressMeta: t("trainingProgressMeta"),
+    metrics: {
+      consistency: t("trainingProgressMetrics.consistency"),
+      volume: t("trainingProgressMetrics.volume"),
+      sessions: t("trainingProgressMetrics.sessions")
+    },
+    metricMeta: {
+      consistency: t("trainingProgressMetricMeta.consistency"),
+      volume: t("trainingProgressMetricMeta.volume"),
+      sessions: t("trainingProgressMetricMeta.sessions")
+    },
+    focusEyebrow: t("trainingProgressFocusEyebrow"),
+    focusTitle: t("trainingProgressFocusTitle"),
+    focusBody: t("trainingProgressFocusBody"),
+    insightEyebrow: t("trainingProgressInsightEyebrow"),
+    insightTitle: t("trainingProgressInsightTitle"),
+    insightBody: t("trainingProgressInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -258,6 +299,8 @@ export default async function HomePage({
       <Scene05TeamOperation labels={scene05Labels} />
 
       <Scene06MemberEntry labels={scene06Labels} />
+
+      <Scene07TrainingProgress labels={scene07Labels} />
     </main>
   );
 }

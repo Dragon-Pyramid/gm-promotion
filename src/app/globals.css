@@ -5036,3 +5036,325 @@ body {
    ========================================================================== */
 
 /* END GM SCENE 06 MOBILE CLOSING BALANCE 008-B ========================== */
+/* ==========================================================================
+   GM SCENE 07 TRAINING PROGRESS
+   PATCH 009-A
+   ========================================================================== */
+
+.gm-scene07 {
+  position: relative;
+  min-height: 100svh;
+  overflow: visible;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 72% 28%, rgba(59,130,246,.11), transparent 25%),
+    radial-gradient(circle at 82% 70%, rgba(168,85,247,.09), transparent 28%),
+    linear-gradient(180deg,#050812 0%,#07101a 50%,#050812 100%);
+}
+.gm-scene07__ambient {
+  position:absolute; inset:0; z-index:-2; pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);
+}
+.gm-scene07__layout {
+  position:relative; z-index:2; min-height:100svh;
+  display:grid; grid-template-columns:minmax(260px,.72fr) minmax(0,1.72fr);
+  align-items:center; gap:clamp(36px,5vw,90px);
+  padding-block:clamp(58px,8vh,104px);
+}
+.gm-scene07__copy { max-width:430px; }
+.gm-scene07__copy h2 {
+  max-width:11.2ch; margin:18px 0 20px;
+  font-size:clamp(2.35rem,3.85vw,4.4rem); font-weight:800;
+  line-height:.94; letter-spacing:-.055em;
+}
+.gm-scene07__copy .gm-copy { max-width:38rem; color:rgba(232,239,250,.7); font-weight:500; }
+.gm-scene07__demo {
+  display:inline-flex; margin-top:28px; padding:8px 11px;
+  border:1px solid rgba(255,255,255,.09); border-radius:999px;
+  background:rgba(255,255,255,.025); color:rgba(232,240,255,.46);
+  font-size:.62rem; font-weight:700; letter-spacing:.13em;
+}
+.gm-scene07__motion { min-width:0; }
+.gm-scene07__stage {
+  position:relative; min-width:0; overflow:hidden;
+  padding:clamp(18px,2vw,25px);
+  border:1px solid rgba(139,214,255,.13); border-radius:clamp(24px,2.8vw,36px);
+  background:
+    radial-gradient(circle at 50% 42%,rgba(96,165,250,.045),transparent 28%),
+    linear-gradient(145deg,rgba(12,22,36,.96),rgba(7,12,24,.94));
+  box-shadow:0 42px 104px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.045);
+}
+.gm-scene07__stage-grid {
+  position:absolute; inset:0; opacity:.22; pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+.gm-scene07__topline {
+  position:relative; z-index:2; display:flex; align-items:center;
+  justify-content:space-between; gap:18px; padding-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,.065);
+}
+.gm-scene07__topline > div { display:flex; align-items:center; gap:9px; }
+.gm-scene07__status-dot {
+  width:8px; aspect-ratio:1; border-radius:50%; background:#75f3ff;
+  box-shadow:0 0 0 6px rgba(117,243,255,.055),0 0 20px rgba(117,243,255,.36);
+}
+.gm-scene07__topline strong { color:rgba(245,249,255,.84); font-size:.72rem; letter-spacing:.09em; }
+.gm-scene07__live {
+  display:inline-flex; align-items:center; gap:7px; padding:7px 10px;
+  border:1px solid rgba(74,222,128,.12); border-radius:999px;
+  background:rgba(74,222,128,.035); color:rgba(187,255,210,.72);
+  font-size:.58rem; font-weight:700; letter-spacing:.1em;
+}
+.gm-scene07__live i { width:6px; aspect-ratio:1; border-radius:50%; background:#4ade80; box-shadow:0 0 12px rgba(74,222,128,.5); }
+
+.gm-scene07__training-grid {
+  position:relative; z-index:2; display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(138px,.58fr) minmax(0,1.18fr);
+  gap:12px; margin-top:14px;
+}
+.gm-scene07__session,.gm-scene07__progress {
+  min-height:286px; border:1px solid rgba(255,255,255,.07);
+  border-radius:18px; background:rgba(255,255,255,.018);
+}
+.gm-scene07__session { padding:16px; }
+.gm-scene07__session-head,.gm-scene07__progress-head {
+  display:flex; justify-content:space-between; gap:12px;
+}
+.gm-scene07__session-head p,.gm-scene07__progress-head p {
+  color:rgba(222,231,246,.35); font-size:.54rem; font-weight:700; letter-spacing:.1em;
+}
+.gm-scene07__session-head strong,.gm-scene07__progress-head strong {
+  display:block; margin-top:5px; color:rgba(248,251,255,.88); font-size:.8rem; letter-spacing:.04em;
+}
+.gm-scene07__session-head > span,.gm-scene07__progress-head > span {
+  padding:6px 8px; border:1px solid rgba(117,243,255,.09); border-radius:9px;
+  background:rgba(117,243,255,.03); color:rgba(196,248,255,.62); font-size:.56rem; font-weight:700;
+}
+.gm-scene07__exercise-list { display:grid; gap:7px; margin-top:14px; }
+.gm-scene07__exercise {
+  position:relative; display:grid; grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center; gap:10px; min-height:61px; padding:9px 10px;
+  border:1px solid rgba(255,255,255,.055); border-radius:12px;
+  background:rgba(255,255,255,.017);
+}
+.gm-scene07__exercise::after {
+  content:""; position:absolute; inset:auto 10px 0; height:1px;
+  background:linear-gradient(90deg,transparent,#75f3ff,transparent); opacity:.5;
+}
+.gm-scene07__exercise[data-tone="violet"]::after { background:linear-gradient(90deg,transparent,#a78bfa,transparent); }
+.gm-scene07__exercise[data-tone="green"]::after { background:linear-gradient(90deg,transparent,#4ade80,transparent); }
+.gm-scene07__exercise-index {
+  width:24px; aspect-ratio:1; display:grid; place-items:center;
+  border:1px solid rgba(255,255,255,.055); border-radius:50%;
+  color:rgba(228,237,250,.35); font-size:.48rem; font-weight:700;
+}
+.gm-scene07__exercise > div { min-width:0; }
+.gm-scene07__exercise > div strong {
+  display:block; overflow:hidden; color:rgba(246,250,255,.84);
+  font-size:.67rem; letter-spacing:.055em; text-overflow:ellipsis; white-space:nowrap;
+}
+.gm-scene07__exercise > div small {
+  display:block; margin-top:3px; color:rgba(222,231,246,.36); font-size:.56rem;
+}
+.gm-scene07__exercise b { color:rgba(240,247,255,.7); font-size:.64rem; }
+
+.gm-scene07__core {
+  position:relative; min-height:286px; display:grid; place-items:center; overflow:hidden;
+  border:1px solid rgba(117,243,255,.075); border-radius:18px;
+  background:radial-gradient(circle at 50% 50%,rgba(117,243,255,.07),transparent 38%),rgba(255,255,255,.012);
+}
+.gm-scene07__orbit { position:absolute; border:1px solid rgba(117,243,255,.16); border-radius:50%; }
+.gm-scene07__orbit--one { width:148px; aspect-ratio:1; animation:gmScene07Orbit 8s linear infinite; }
+.gm-scene07__orbit--two { width:108px; aspect-ratio:1; border-color:rgba(167,139,250,.18); animation:gmScene07OrbitReverse 6.5s linear infinite; }
+.gm-scene07__completion {
+  position:relative; z-index:2; width:88px; aspect-ratio:1;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  border:1px solid rgba(117,243,255,.18); border-radius:50%;
+  background:rgba(8,17,28,.86); text-align:center;
+}
+.gm-scene07__completion > span { color:rgba(241,250,255,.92); font-size:1.55rem; font-weight:800; letter-spacing:-.055em; }
+.gm-scene07__completion strong { max-width:10ch; color:rgba(191,245,255,.58); font-size:.45rem; line-height:1.15; }
+.gm-scene07__completion small { margin-top:4px; color:rgba(222,231,246,.28); font-size:.44rem; }
+.gm-scene07__pulse { position:absolute; right:12px; bottom:14px; left:12px; height:24px; display:flex; align-items:flex-end; justify-content:center; gap:4px; }
+.gm-scene07__pulse i { width:4px; border-radius:999px; background:linear-gradient(to top,rgba(117,243,255,.14),rgba(117,243,255,.72)); animation:gmScene07Pulse 1.8s ease-in-out infinite alternate; }
+.gm-scene07__pulse i:nth-child(1){height:40%}.gm-scene07__pulse i:nth-child(2){height:90%;animation-delay:.2s}.gm-scene07__pulse i:nth-child(3){height:58%;animation-delay:.4s}
+
+.gm-scene07__progress { padding:16px; }
+.gm-scene07__chart { margin-top:12px; color:#75f3ff; }
+.gm-scene07__chart svg { display:block; width:100%; height:92px; overflow:visible; }
+.gm-scene07__weeks { display:flex; justify-content:space-between; color:rgba(222,231,246,.28); font-size:.47rem; font-weight:700; }
+.gm-scene07__metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; margin-top:10px; }
+.gm-scene07__metrics article { min-width:0; padding:8px; border:1px solid rgba(255,255,255,.05); border-radius:10px; background:rgba(255,255,255,.014); }
+.gm-scene07__metrics article > span { display:block; overflow:hidden; color:rgba(222,231,246,.32); font-size:.44rem; font-weight:700; text-overflow:ellipsis; white-space:nowrap; }
+.gm-scene07__metrics article > strong { display:block; margin-top:5px; color:rgba(245,250,255,.9); font-size:.92rem; }
+.gm-scene07__metrics article > small { display:block; margin-top:2px; overflow:hidden; color:rgba(222,231,246,.28); font-size:.43rem; text-overflow:ellipsis; white-space:nowrap; }
+
+.gm-scene07__bottom {
+  position:relative; z-index:2; display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  gap:12px; margin-top:12px;
+}
+.gm-scene07__focus,.gm-scene07__insight {
+  min-height:126px; border:1px solid rgba(255,255,255,.065); border-radius:18px;
+}
+.gm-scene07__focus { position:relative; overflow:hidden; padding:17px; background:rgba(255,255,255,.018); }
+.gm-scene07__focus > strong,.gm-scene07__insight > strong {
+  display:block; margin-top:7px; color:rgba(248,251,255,.92);
+  font-size:clamp(1rem,1.55vw,1.42rem); line-height:1.05; letter-spacing:-.025em;
+}
+.gm-scene07__focus > span { display:block; max-width:34ch; margin-top:8px; color:rgba(226,234,246,.5); font-size:.68rem; }
+.gm-scene07__focus > div { position:absolute; right:16px; bottom:16px; display:flex; align-items:flex-end; gap:4px; }
+.gm-scene07__focus > div i { width:5px; border-radius:999px; background:rgba(117,243,255,.22); }
+.gm-scene07__focus > div i:nth-child(1){height:10px}.gm-scene07__focus > div i:nth-child(2){height:17px}.gm-scene07__focus > div i:nth-child(3){height:25px}.gm-scene07__focus > div i:nth-child(4){height:34px;background:rgba(117,243,255,.7)}
+.gm-scene07__insight { display:flex; flex-direction:column; justify-content:flex-end; padding:17px; background:radial-gradient(circle at 92% 12%,rgba(168,85,247,.11),transparent 38%),rgba(255,255,255,.018); }
+.gm-scene07__insight > strong { max-width:24ch; font-size:clamp(1.12rem,1.75vw,1.62rem); }
+.gm-scene07__insight > p:last-of-type { max-width:44ch; margin-top:8px; color:rgba(226,234,246,.54); font-size:.7rem; line-height:1.42; }
+
+@keyframes gmScene07Orbit { from{rotate:0deg} to{rotate:360deg} }
+@keyframes gmScene07OrbitReverse { from{rotate:360deg} to{rotate:0deg} }
+@keyframes gmScene07Pulse { from{scale:1 .72;opacity:.5} to{scale:1 1;opacity:1} }
+
+@media (max-width:980px) {
+  .gm-scene07__layout { grid-template-columns:minmax(230px,.62fr) minmax(0,1.38fr); gap:28px; }
+  .gm-scene07__training-grid { grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr); }
+  .gm-scene07__orbit--one { width:118px; }
+  .gm-scene07__orbit--two { width:84px; }
+}
+
+@media (max-width:760px) {
+  .gm-scene07 { overflow:visible; }
+  .gm-scene07__layout {
+    height:100svh; min-height:100svh; grid-template-columns:1fr;
+    grid-template-rows:auto minmax(0,1fr); align-items:stretch; gap:9px;
+    padding:max(18px,env(safe-area-inset-top)) var(--gm-safe-inline) max(14px,env(safe-area-inset-bottom));
+  }
+  .gm-scene07__copy { max-width:none; }
+  .gm-scene07__copy .gm-section-index { margin-bottom:4px; font-size:.57rem; }
+  .gm-scene07__copy h2 { max-width:15ch; margin:4px 0 7px; font-size:clamp(1.55rem,6.8vw,2.06rem); line-height:.95; }
+  .gm-scene07__copy .gm-copy { max-width:46ch; font-size:clamp(.75rem,2.95vw,.84rem); line-height:1.3; }
+  .gm-scene07__demo { display:none; }
+  .gm-scene07__motion { min-height:0; align-self:stretch; }
+  .gm-scene07__stage { height:100%; min-height:0; display:flex; flex-direction:column; padding:8px; border-radius:15px; }
+  .gm-scene07__topline { min-height:27px; padding-bottom:5px; }
+  .gm-scene07__topline strong { font-size:.56rem; }
+  .gm-scene07__live { padding:5px 7px; font-size:.49rem; }
+
+  .gm-scene07__training-grid {
+    flex:1 1 auto; min-height:0;
+    grid-template-columns:minmax(0,1fr) .72fr;
+    grid-template-areas:"session core" "progress progress";
+    grid-template-rows:auto minmax(0,1fr);
+    gap:5px; margin-top:5px;
+  }
+  .gm-scene07__session { grid-area:session; min-height:160px; padding:8px; border-radius:10px; }
+  .gm-scene07__core { grid-area:core; min-height:160px; border-radius:10px; }
+  .gm-scene07__progress {
+    grid-area: progress;
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .gm-scene07__progress-head {
+    flex: 0 0 auto;
+  }
+
+  .gm-scene07__session-head p,.gm-scene07__progress-head p { font-size:.43rem; }
+  .gm-scene07__session-head strong,.gm-scene07__progress-head strong { margin-top:2px; font-size:.56rem; }
+  .gm-scene07__session-head > span,.gm-scene07__progress-head > span { padding:4px 5px; font-size:.43rem; }
+  .gm-scene07__exercise-list { gap:4px; margin-top:6px; }
+  .gm-scene07__exercise { min-height:39px; gap:5px; padding:5px 6px; border-radius:8px; }
+  .gm-scene07__exercise-index { width:18px; font-size:.4rem; }
+  .gm-scene07__exercise > div strong { font-size:.5rem; }
+  .gm-scene07__exercise > div small { margin-top:1px; font-size:.43rem; }
+  .gm-scene07__exercise b { font-size:.48rem; }
+
+  .gm-scene07__orbit--one { width:86px; }
+  .gm-scene07__orbit--two { width:62px; }
+  .gm-scene07__completion { width:58px; }
+  .gm-scene07__completion > span { font-size:1rem; }
+  .gm-scene07__completion strong,.gm-scene07__completion small { font-size:.34rem; }
+
+  .gm-scene07__chart {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .gm-scene07__chart svg {
+    height: clamp(54px, 8.5svh, 72px);
+  }
+
+  .gm-scene07__weeks {
+    flex: 0 0 auto;
+    margin-top: 1px;
+    font-size: .4rem;
+  }
+
+  .gm-scene07__metrics {
+    flex: 0 0 auto;
+    gap: 4px;
+    margin-top: 3px;
+  }
+  .gm-scene07__metrics article { padding:5px; border-radius:7px; }
+  .gm-scene07__metrics article > span { font-size:.36rem; }
+  .gm-scene07__metrics article > strong { margin-top:2px; font-size:.66rem; }
+  .gm-scene07__metrics article > small { display:none; }
+
+  .gm-scene07__bottom { flex:0 0 auto; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; margin-top:4px; }
+  .gm-scene07__focus,.gm-scene07__insight { min-height:58px; padding:7px 8px; border-radius:10px; }
+  .gm-scene07__focus .gm-kicker,.gm-scene07__insight .gm-kicker { font-size:.45rem; }
+  .gm-scene07__focus > strong,.gm-scene07__insight > strong { margin-top:3px; font-size:.76rem; }
+  .gm-scene07__focus > span,.gm-scene07__insight > p:last-of-type { display:none; }
+}
+
+@media (max-width:760px) and (max-height:680px) {
+  .gm-scene07__layout { gap:6px; padding-top:max(10px,env(safe-area-inset-top)); padding-bottom:max(9px,env(safe-area-inset-bottom)); }
+  .gm-scene07__copy h2 { max-width:18ch; margin-bottom:4px; font-size:clamp(1.3rem,5.8vw,1.72rem); }
+  .gm-scene07__copy .gm-copy { display:none; }
+  .gm-scene07__session,.gm-scene07__core { min-height:142px; }
+  .gm-scene07__progress { min-height:92px; }
+
+  .gm-scene07__chart svg {
+    height: 42px;
+  }
+  .gm-scene07__focus,.gm-scene07__insight { min-height:46px; }
+  .gm-scene07__focus .gm-kicker,.gm-scene07__insight .gm-kicker { display:none; }
+  .gm-scene07__focus > strong,.gm-scene07__insight > strong { font-size:.67rem; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .gm-scene07__motion { transform:none !important; opacity:1 !important; }
+  .gm-scene07__orbit,.gm-scene07__pulse i { animation:none !important; }
+}
+
+/* END GM SCENE 07 TRAINING PROGRESS ===================================== */
+/* ==========================================================================
+   GM SCENE 07 MOBILE PROGRESS BALANCE 009-B
+
+   QA mobile showed the progress panel correctly filling the available row,
+   but its chart and metrics remained visually clustered toward the top.
+
+   Mobile-only adjustment:
+   - progress panel becomes a flex column;
+   - chart owns the flexible middle area;
+   - chart content is vertically centered;
+   - metrics remain anchored at the bottom;
+   - short-height viewports keep a compact chart height.
+
+   Desktop, copy, React Kino and scene duration remain unchanged.
+   ========================================================================== */
+
+/* END GM SCENE 07 MOBILE PROGRESS BALANCE 009-B ========================= */
