@@ -5,6 +5,7 @@ import {Scene02Poc} from "@/components/story/Scene02Poc";
 import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
 import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
 import {Scene05TeamOperation} from "@/components/story/Scene05TeamOperation";
+import {Scene06MemberEntry} from "@/components/story/Scene06MemberEntry";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -114,6 +115,34 @@ export default async function HomePage({
     insightEyebrow: t("teamInsightEyebrow"),
     insightTitle: t("teamInsightTitle"),
     insightBody: t("teamInsightBody")
+  };
+
+  const scene06Labels = {
+    kicker: t("memberEntryKicker"),
+    title: t("memberEntryTitle"),
+    body: t("memberEntryBody"),
+    demo: t("memberEntryDemo"),
+    portalLabel: t("memberEntryPortalLabel"),
+    ready: t("memberEntryReady"),
+    journey: {
+      arrival: t("memberEntryJourney.arrival"),
+      identify: t("memberEntryJourney.identify"),
+      access: t("memberEntryJourney.access"),
+      welcome: t("memberEntryJourney.welcome"),
+      train: t("memberEntryJourney.train")
+    },
+    passEyebrow: t("memberEntryPassEyebrow"),
+    passName: t("memberEntryPassName"),
+    passMeta: t("memberEntryPassMeta"),
+    accessLabel: t("memberEntryAccessLabel"),
+    accessStatus: t("memberEntryAccessStatus"),
+    accessTime: t("memberEntryAccessTime"),
+    systemEyebrow: t("memberEntrySystemEyebrow"),
+    systemTitle: t("memberEntrySystemTitle"),
+    systemBody: t("memberEntrySystemBody"),
+    welcomeEyebrow: t("memberEntryWelcomeEyebrow"),
+    welcomeTitle: t("memberEntryWelcomeTitle"),
+    welcomeBody: t("memberEntryWelcomeBody")
   };
 
   const problemSystems = [
@@ -227,6 +256,8 @@ export default async function HomePage({
       <Scene04AdminBusiness labels={scene04Labels} />
 
       <Scene05TeamOperation labels={scene05Labels} />
+
+      <Scene06MemberEntry labels={scene06Labels} />
     </main>
   );
 }
