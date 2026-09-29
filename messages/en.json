@@ -170,6 +170,45 @@
     "relationshipInsightEyebrow": "BEYOND THE GYM",
     "relationshipInsightTitle": "Being present also means knowing when to support.",
     "relationshipInsightBody": "Gym Master keeps continuity without turning the relationship into noise.",
+    "intelligenceKicker": "INTELLIGENCE",
+    "intelligenceTitle": "When data connects, signals emerge.",
+    "intelligenceBody": "Attendance, payments, sales, training and relationships stop living as isolated events. Gym Master connects them to show what is changing and where attention matters.",
+    "intelligenceDemo": "ILLUSTRATIVE DATA · CONNECTED READING",
+    "intelligenceFieldLabel": "GYM SIGNALS",
+    "intelligenceConnected": "5 SOURCES CONNECTED",
+    "intelligenceSources": {
+      "attendance": "ATTENDANCE",
+      "payments": "PAYMENTS",
+      "sales": "SALES",
+      "training": "TRAINING",
+      "relationship": "RELATIONSHIP"
+    },
+    "intelligenceSourceMeta": {
+      "attendance": "visit rhythm",
+      "payments": "status and recurrence",
+      "sales": "commercial movement",
+      "training": "activity and progress",
+      "relationship": "follow-up and response"
+    },
+    "intelligenceCoreEyebrow": "CONNECTED READING",
+    "intelligenceCoreTitle": "Pattern",
+    "intelligenceCoreMeta": "shared context",
+    "intelligenceSignalEyebrow": "ACTIVITY SPEAKS",
+    "intelligenceSignalTitle": "A signal does not live in a single data point.",
+    "intelligenceSignalBody": "Value appears when different parts of the gym start telling the same story.",
+    "intelligenceSignals": {
+      "rhythm": "RHYTHM",
+      "change": "CHANGE",
+      "attention": "ATTENTION"
+    },
+    "intelligenceSignalMeta": {
+      "rhythm": "activity finds its pattern",
+      "change": "a trend starts to move",
+      "attention": "something needs context"
+    },
+    "intelligenceInsightEyebrow": "APPLIED INTELLIGENCE",
+    "intelligenceInsightTitle": "It is not about seeing more data. It is about understanding what it says together.",
+    "intelligenceInsightBody": "Gym Master turns scattered activity into a clearer reading for decisions with context.",
     "chips": {
       "members": "MEMBERS",
       "payments": "PAYMENTS",

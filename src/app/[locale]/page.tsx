@@ -8,6 +8,7 @@ import {Scene05TeamOperation} from "@/components/story/Scene05TeamOperation";
 import {Scene06MemberEntry} from "@/components/story/Scene06MemberEntry";
 import {Scene07TrainingProgress} from "@/components/story/Scene07TrainingProgress";
 import {Scene08Relationship} from "@/components/story/Scene08Relationship";
+import {Scene09IntelligenceData} from "@/components/story/Scene09IntelligenceData";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -219,6 +220,48 @@ export default async function HomePage({
     insightBody: t("relationshipInsightBody")
   };
 
+  const scene09Labels = {
+    kicker: t("intelligenceKicker"),
+    title: t("intelligenceTitle"),
+    body: t("intelligenceBody"),
+    demo: t("intelligenceDemo"),
+    fieldLabel: t("intelligenceFieldLabel"),
+    connected: t("intelligenceConnected"),
+    sources: {
+      attendance: t("intelligenceSources.attendance"),
+      payments: t("intelligenceSources.payments"),
+      sales: t("intelligenceSources.sales"),
+      training: t("intelligenceSources.training"),
+      relationship: t("intelligenceSources.relationship")
+    },
+    sourceMeta: {
+      attendance: t("intelligenceSourceMeta.attendance"),
+      payments: t("intelligenceSourceMeta.payments"),
+      sales: t("intelligenceSourceMeta.sales"),
+      training: t("intelligenceSourceMeta.training"),
+      relationship: t("intelligenceSourceMeta.relationship")
+    },
+    coreEyebrow: t("intelligenceCoreEyebrow"),
+    coreTitle: t("intelligenceCoreTitle"),
+    coreMeta: t("intelligenceCoreMeta"),
+    signalEyebrow: t("intelligenceSignalEyebrow"),
+    signalTitle: t("intelligenceSignalTitle"),
+    signalBody: t("intelligenceSignalBody"),
+    signals: {
+      rhythm: t("intelligenceSignals.rhythm"),
+      change: t("intelligenceSignals.change"),
+      attention: t("intelligenceSignals.attention")
+    },
+    signalMeta: {
+      rhythm: t("intelligenceSignalMeta.rhythm"),
+      change: t("intelligenceSignalMeta.change"),
+      attention: t("intelligenceSignalMeta.attention")
+    },
+    insightEyebrow: t("intelligenceInsightEyebrow"),
+    insightTitle: t("intelligenceInsightTitle"),
+    insightBody: t("intelligenceInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -336,6 +379,8 @@ export default async function HomePage({
       <Scene07TrainingProgress labels={scene07Labels} />
 
       <Scene08Relationship labels={scene08Labels} />
+
+      <Scene09IntelligenceData labels={scene09Labels} />
     </main>
   );
 }
