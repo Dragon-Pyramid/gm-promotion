@@ -317,6 +317,39 @@
     "gymSystemInsightEyebrow": "ONE SYSTEM, NOT A SUM",
     "gymSystemInsightTitle": "It is not about adding modules. It is about making them work as one.",
     "gymSystemInsightBody": "Gym Master brings the parts together so the gym can move with coherence.",
+    "beforeAfterKicker": "BEFORE / AFTER",
+    "beforeAfterTitle": "The gym is the same. The way you run it changes everything.",
+    "beforeAfterBody": "The purpose of the gym does not change. What changes is what happens when every action stops living in isolation and starts keeping context.",
+    "beforeAfterDemo": "SAME OPERATION · TWO WAYS TO LIVE IT",
+    "beforeAfterSameGym": "SAME GYM",
+    "beforeAfterTwoStates": "TWO OPERATING REALITIES",
+    "beforeAfterBeforeLabel": "BEFORE",
+    "beforeAfterBeforeTitle": "Each part solves its own piece.",
+    "beforeAfterBeforeBody": "Information arrives late, gets repeated or disappears between tools and people.",
+    "beforeAfterAfterLabel": "AFTER",
+    "beforeAfterAfterTitle": "Each part continues what the previous one started.",
+    "beforeAfterAfterBody": "The operation keeps context and every decision starts from a shared reality.",
+    "beforeAfterNodes": {
+      "members": "MEMBERS",
+      "payments": "PAYMENTS",
+      "access": "ACCESS",
+      "training": "TRAINING"
+    },
+    "beforeAfterShifts": {
+      "fragmentation": "FRAGMENTATION",
+      "islands": "ISLANDS",
+      "lateReaction": "LATE REACTION",
+      "partialView": "PARTIAL VIEW"
+    },
+    "beforeAfterOutcomes": {
+      "continuity": "CONTINUITY",
+      "sharedContext": "SHARED CONTEXT",
+      "contextualDecision": "DECISION WITH CONTEXT",
+      "connectedView": "CONNECTED VIEW"
+    },
+    "beforeAfterInsightEyebrow": "THE DIFFERENCE IS NOT THE GYM",
+    "beforeAfterInsightTitle": "It is the way everything works together.",
+    "beforeAfterInsightBody": "When the operation connects, the day stops starting over.",
     "chips": {
       "members": "MEMBERS",
       "payments": "PAYMENTS",

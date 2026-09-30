@@ -12,6 +12,7 @@ import {Scene09IntelligenceData} from "@/components/story/Scene09IntelligenceDat
 import {Scene10Infrastructure} from "@/components/story/Scene10Infrastructure";
 import {Scene11ThreePeopleOneSystem} from "@/components/story/Scene11ThreePeopleOneSystem";
 import {Scene12GymAsSystem} from "@/components/story/Scene12GymAsSystem";
+import {Scene13BeforeAfter} from "@/components/story/Scene13BeforeAfter";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -382,6 +383,42 @@ export default async function HomePage({
     insightBody: t("gymSystemInsightBody")
   };
 
+  const scene13Labels = {
+    kicker: t("beforeAfterKicker"),
+    title: t("beforeAfterTitle"),
+    body: t("beforeAfterBody"),
+    demo: t("beforeAfterDemo"),
+    sameGym: t("beforeAfterSameGym"),
+    twoStates: t("beforeAfterTwoStates"),
+    beforeLabel: t("beforeAfterBeforeLabel"),
+    beforeTitle: t("beforeAfterBeforeTitle"),
+    beforeBody: t("beforeAfterBeforeBody"),
+    afterLabel: t("beforeAfterAfterLabel"),
+    afterTitle: t("beforeAfterAfterTitle"),
+    afterBody: t("beforeAfterAfterBody"),
+    nodes: {
+      members: t("beforeAfterNodes.members"),
+      payments: t("beforeAfterNodes.payments"),
+      access: t("beforeAfterNodes.access"),
+      training: t("beforeAfterNodes.training")
+    },
+    shifts: {
+      fragmentation: t("beforeAfterShifts.fragmentation"),
+      islands: t("beforeAfterShifts.islands"),
+      lateReaction: t("beforeAfterShifts.lateReaction"),
+      partialView: t("beforeAfterShifts.partialView")
+    },
+    outcomes: {
+      continuity: t("beforeAfterOutcomes.continuity"),
+      sharedContext: t("beforeAfterOutcomes.sharedContext"),
+      contextualDecision: t("beforeAfterOutcomes.contextualDecision"),
+      connectedView: t("beforeAfterOutcomes.connectedView")
+    },
+    insightEyebrow: t("beforeAfterInsightEyebrow"),
+    insightTitle: t("beforeAfterInsightTitle"),
+    insightBody: t("beforeAfterInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -507,6 +544,8 @@ export default async function HomePage({
       <Scene11ThreePeopleOneSystem labels={scene11Labels} />
 
       <Scene12GymAsSystem labels={scene12Labels} />
+
+      <Scene13BeforeAfter labels={scene13Labels} />
     </main>
   );
 }
