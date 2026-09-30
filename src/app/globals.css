@@ -11185,3 +11185,446 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 01 LABEL CLEANUP =============================== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 02 CONVERGENCE / SYSTEM IGNITION
+   CIN-003-A
+   --------------------------------------------------------------------------
+   React Kino remains the sole owner of scroll-linked progress.
+   New visual layers only enrich the existing 320vh choreography:
+   residual fragmentation -> signal travel -> core ignition -> order.
+   ========================================================================== */
+
+.gm-scene02 {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(34, 211, 225, 0.035), transparent 30rem),
+    linear-gradient(180deg, #050913 0%, #06101c 48%, #050913 100%);
+}
+
+.gm-scene02__residual-motion,
+.gm-scene02__signals-exit,
+.gm-scene02__ignition-motion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gm-scene02__residual-motion {
+  z-index: 1;
+}
+
+.gm-scene02__residual {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 28%, rgba(245, 180, 76, 0.075), transparent 20rem),
+    radial-gradient(circle at 78% 66%, rgba(255, 110, 140, 0.085), transparent 24rem),
+    linear-gradient(
+      112deg,
+      transparent 0 41%,
+      rgba(255, 110, 140, 0.025) 41.2%,
+      transparent 41.5% 100%
+    );
+  opacity: 0.95;
+}
+
+.gm-scene02__residual::before,
+.gm-scene02__residual::after {
+  content: "";
+  position: absolute;
+  width: min(26vw, 340px);
+  height: 1px;
+  opacity: 0.55;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 110, 140, 0.30) 0 18px,
+      transparent 18px 32px
+    );
+}
+
+.gm-scene02__residual::before {
+  left: 8%;
+  top: 36%;
+  rotate: -7deg;
+}
+
+.gm-scene02__residual::after {
+  right: 9%;
+  bottom: 29%;
+  rotate: 8deg;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(245, 180, 76, 0.24) 0 16px,
+      transparent 16px 31px
+    );
+}
+
+/* The foundation grid starts slightly nervous and visually settles as the
+   convergence becomes cyan/blue dominant. No scroll transform is assigned
+   here; Kino remains responsible for scroll-linked transforms. */
+.gm-scene02__grid {
+  opacity: 0.24;
+  background-size: 74px 74px;
+}
+
+.gm-scene02__signals-exit {
+  z-index: 5;
+}
+
+.gm-scene02__signals {
+  position: absolute;
+  inset: 0;
+}
+
+.gm-scene02__signal {
+  --signal-tone: var(--gm-cyan);
+  position: absolute;
+  width: 18px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.gm-scene02__signal--1 {
+  left: calc(50% - 92px);
+  top: calc(50% - 68px);
+}
+
+.gm-scene02__signal--2 {
+  left: calc(50% + 74px);
+  top: calc(50% - 72px);
+}
+
+.gm-scene02__signal--3 {
+  left: calc(50% - 112px);
+  top: calc(50% + 2px);
+}
+
+.gm-scene02__signal--4 {
+  left: calc(50% + 96px);
+  top: calc(50% + 12px);
+}
+
+.gm-scene02__signal--5 {
+  left: calc(50% - 8px);
+  top: calc(50% + 94px);
+}
+
+.gm-scene02__signal-dot {
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--signal-tone);
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--signal-tone) 82%, transparent),
+    0 0 26px color-mix(in srgb, var(--signal-tone) 40%, transparent);
+}
+
+.gm-scene02__signal-dot[data-tone="blue"] {
+  --signal-tone: var(--gm-blue);
+}
+
+.gm-scene02__signal-dot[data-tone="violet"] {
+  --signal-tone: var(--gm-violet);
+}
+
+.gm-scene02__signal-dot[data-tone="cyan"] {
+  --signal-tone: var(--gm-cyan);
+}
+
+.gm-scene02__signal-dot[data-tone="amber"] {
+  --signal-tone: var(--gm-amber);
+}
+
+.gm-scene02__signal-dot[data-tone="rose"] {
+  --signal-tone: var(--gm-rose);
+}
+
+.gm-scene02__signal-trail {
+  position: absolute;
+  right: 9px;
+  width: 32px;
+  height: 1px;
+  opacity: 0.34;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--signal-tone) 55%, transparent)
+    );
+}
+
+.gm-scene02__ignition-motion {
+  z-index: 3;
+  display: grid;
+  place-items: center;
+}
+
+.gm-scene02__ignition {
+  position: relative;
+  width: clamp(220px, 26vw, 390px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  opacity: 0.78;
+  background:
+    radial-gradient(circle, rgba(34, 211, 225, 0.10), transparent 58%);
+  box-shadow:
+    0 0 60px rgba(34, 211, 225, 0.055),
+    0 0 120px rgba(91, 140, 255, 0.045);
+}
+
+.gm-scene02__ignition::before,
+.gm-scene02__ignition::after,
+.gm-scene02__ignition > span {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  translate: -50% -50%;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.gm-scene02__ignition::before {
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(34, 211, 225, 0.14);
+}
+
+.gm-scene02__ignition::after {
+  width: 48%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(145, 187, 239, 0.16);
+}
+
+.gm-scene02__ignition > span:nth-child(1) {
+  width: 112%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(34, 211, 225, 0.12) 28%,
+      rgba(255, 255, 255, 0.20) 50%,
+      rgba(91, 140, 255, 0.12) 72%,
+      transparent
+    );
+}
+
+.gm-scene02__ignition > span:nth-child(2) {
+  width: 1px;
+  height: 112%;
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(34, 211, 225, 0.11) 28%,
+      rgba(255, 255, 255, 0.18) 50%,
+      rgba(124, 58, 237, 0.11) 72%,
+      transparent
+    );
+}
+
+.gm-scene02__ignition > span:nth-child(3) {
+  width: 64%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+/* The existing core becomes visually cleaner than the fragmented predecessor. */
+.gm-scene02__core {
+  background:
+    radial-gradient(circle at 50% 44%, rgba(18, 35, 54, 0.94), rgba(6, 15, 28, 0.96) 70%);
+}
+
+.gm-scene02__core-label {
+  letter-spacing: 0.21em;
+}
+
+/* Existing links remain geometry owners. Cinematic pass makes them feel
+   increasingly coherent instead of decorative. */
+.gm-scene02__links {
+  opacity: 0.82;
+  filter:
+    drop-shadow(0 0 8px rgba(34, 211, 225, 0.045));
+}
+
+/* Ambient synchronization happens only after Kino has organized the scene. */
+.gm-scene02__signal-dot {
+  animation:
+    gmScene02SignalBreathe 2.8s var(--gm-motion-ease-breathe) infinite alternate;
+}
+
+.gm-scene02__ignition {
+  animation:
+    gmScene02IgnitionBreathe 4.2s var(--gm-motion-ease-breathe) infinite alternate;
+}
+
+@keyframes gmScene02SignalBreathe {
+  from {
+    opacity: 0.72;
+    filter: brightness(0.92);
+  }
+
+  to {
+    opacity: 1;
+    filter: brightness(1.22);
+  }
+}
+
+@keyframes gmScene02IgnitionBreathe {
+  from {
+    opacity: 0.58;
+    filter: brightness(0.92);
+  }
+
+  to {
+    opacity: 0.82;
+    filter: brightness(1.10);
+  }
+}
+
+/* Tablet ----------------------------------------------------------------- */
+
+@media (max-width: 1020px) and (min-width: 761px) {
+  .gm-scene02__ignition {
+    width: clamp(210px, 30vw, 320px);
+  }
+
+  .gm-scene02__signal--1 {
+    left: calc(50% - 78px);
+    top: calc(50% - 60px);
+  }
+
+  .gm-scene02__signal--2 {
+    left: calc(50% + 62px);
+    top: calc(50% - 62px);
+  }
+
+  .gm-scene02__signal--3 {
+    left: calc(50% - 92px);
+  }
+
+  .gm-scene02__signal--4 {
+    left: calc(50% + 78px);
+  }
+
+  .gm-scene02__signal--5 {
+    top: calc(50% + 82px);
+  }
+}
+
+/* Mobile — preserve convergence without reproducing desktop scale -------- */
+
+@media (max-width: 760px) {
+  .gm-scene02__residual::before,
+  .gm-scene02__residual::after {
+    width: 42vw;
+    opacity: 0.38;
+  }
+
+  .gm-scene02__ignition {
+    width: clamp(164px, 52vw, 220px);
+  }
+
+  .gm-scene02__signal {
+    width: 14px;
+  }
+
+  .gm-scene02__signal-dot {
+    width: 5px;
+  }
+
+  .gm-scene02__signal-trail {
+    width: 20px;
+  }
+
+  .gm-scene02__signal--1 {
+    left: calc(50% - 54px);
+    top: calc(50% - 48px);
+  }
+
+  .gm-scene02__signal--2 {
+    left: calc(50% + 42px);
+    top: calc(50% - 50px);
+  }
+
+  .gm-scene02__signal--3 {
+    left: calc(50% - 66px);
+    top: calc(50% + 1px);
+  }
+
+  .gm-scene02__signal--4 {
+    left: calc(50% + 54px);
+    top: calc(50% + 7px);
+  }
+
+  .gm-scene02__signal--5 {
+    left: calc(50% - 6px);
+    top: calc(50% + 61px);
+  }
+
+  .gm-scene02__links {
+    filter: none;
+  }
+}
+
+/* Reduced motion --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene02__signal-dot,
+  .gm-scene02__ignition {
+    animation: none !important;
+  }
+
+  .gm-scene02__residual-motion {
+    opacity: 0 !important;
+  }
+
+  .gm-scene02__signals-exit,
+  .gm-scene02__ignition-motion {
+    opacity: 1 !important;
+  }
+
+  .gm-scene02__signal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* END GM CINEMATIC SCENE 02 CONVERGENCE ================================= */
+/* ==========================================================================
+   GM CINEMATIC SCENE 02 MOBILE FRAMING
+   CIN-003-B
+   --------------------------------------------------------------------------
+   Visual QA at 368x832 showed the right-side PAYMENTS/PAGOS and SALES/VENTAS
+   cards partially outside the viewport.
+
+   Static framing is corrected with margin/max-width only.
+   React Kino keeps exclusive ownership of scroll-linked transform.
+   Desktop/tablet choreography and timings remain unchanged.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  .gm-chip-pos--payments,
+  .gm-chip-pos--sales {
+    margin-inline-start: -64px;
+  }
+
+  .gm-chip-pos--payments .gm-chip,
+  .gm-chip-pos--sales .gm-chip {
+    max-width: 132px;
+  }
+}
+
+@media (max-width: 390px) {
+  .gm-chip-pos--payments,
+  .gm-chip-pos--sales {
+    margin-inline-start: -68px;
+  }
+}
+
+/* END GM CINEMATIC SCENE 02 MOBILE FRAMING ============================== */
