@@ -10451,3 +10451,737 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 00 MOBILE REVEAL SYNC ========================= */
+/* ==========================================================================
+   GM CINEMATIC SCENE 01 FRAGMENTED SIGNALS
+   CIN-002-A
+   --------------------------------------------------------------------------
+   Direction:
+   Scene 00 symmetry breaks.
+   Independent operational islands enter on incompatible rhythms.
+   Routes appear but deliberately stop before the gym core.
+   Scene 01 remains 100vh/static; IntersectionObserver is entry cue only.
+   ========================================================================== */
+
+.gm-problem--cinematic {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 76% 52%, rgba(255, 110, 140, 0.045), transparent 25rem),
+    radial-gradient(circle at 68% 44%, rgba(245, 180, 76, 0.025), transparent 22rem),
+    linear-gradient(180deg, #050913 0%, #07101c 48%, #050913 100%);
+}
+
+.gm-problem--cinematic .gm-problem__glow {
+  width: min(58vw, 820px);
+  right: -19%;
+  opacity: 0.82;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 110, 140, 0.085) 0%,
+      rgba(245, 180, 76, 0.025) 38%,
+      transparent 70%
+    );
+  filter: blur(3px);
+}
+
+.gm-problem--cinematic .gm-problem__layout {
+  min-height: 100svh;
+}
+
+.gm-problem--cinematic .gm-problem__copy {
+  position: relative;
+  z-index: 4;
+}
+
+.gm-problem--cinematic .gm-problem__copy h2 {
+  max-width: 650px;
+}
+
+.gm-problem--cinematic .gm-problem__signal {
+  color: rgba(224, 209, 214, 0.48);
+}
+
+.gm-problem--cinematic .gm-problem__signal span {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 110, 140, 0.78),
+      rgba(245, 180, 76, 0.30) 58%,
+      transparent
+    );
+  box-shadow: 0 0 16px rgba(255, 110, 140, 0.11);
+}
+
+.gm-problem--cinematic .gm-fragment-map {
+  min-height: 620px;
+  border-color: rgba(204, 177, 195, 0.105);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(91, 140, 255, 0.045), transparent 28%),
+    radial-gradient(circle at 68% 38%, rgba(255, 110, 140, 0.035), transparent 34%),
+    linear-gradient(180deg, rgba(10, 22, 38, 0.66), rgba(6, 13, 24, 0.58));
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.025),
+    inset 0 0 120px rgba(0, 0, 0, 0.12),
+    var(--gm-shadow-soft);
+}
+
+.gm-problem--cinematic .gm-fragment-map::before {
+  opacity: 0.18;
+  background-size: 48px 48px;
+  mask-image:
+    radial-gradient(
+      ellipse at 50% 50%,
+      black 0%,
+      rgba(0, 0, 0, 0.72) 42%,
+      transparent 80%
+    );
+}
+
+.gm-problem--cinematic .gm-fragment-map::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      102deg,
+      transparent 0 48.7%,
+      rgba(255, 255, 255, 0.018) 49%,
+      transparent 49.35% 100%
+    ),
+    linear-gradient(
+      7deg,
+      transparent 0 50.6%,
+      rgba(255, 255, 255, 0.012) 50.85%,
+      transparent 51.1% 100%
+    );
+}
+
+.gm-fragment-map__routes {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.gm-fragment-route {
+  --route-delay: 0ms;
+  fill: none;
+  stroke: rgba(174, 195, 218, 0.20);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 11 17;
+  stroke-dashoffset: 0;
+  opacity: 0.58;
+}
+
+.gm-fragment-route--1 {
+  --route-delay: 1040ms;
+  stroke: rgba(91, 140, 255, 0.28);
+}
+
+.gm-fragment-route--2 {
+  --route-delay: 1130ms;
+  stroke: rgba(78, 215, 174, 0.25);
+}
+
+.gm-fragment-route--3 {
+  --route-delay: 1210ms;
+  stroke: rgba(34, 211, 225, 0.26);
+}
+
+.gm-fragment-route--4 {
+  --route-delay: 1290ms;
+  stroke: rgba(166, 118, 255, 0.25);
+}
+
+.gm-fragment-route--5 {
+  --route-delay: 1370ms;
+  stroke: rgba(245, 180, 76, 0.26);
+}
+
+.gm-fragment-route--6 {
+  --route-delay: 1450ms;
+  stroke: rgba(255, 110, 140, 0.29);
+}
+
+.gm-problem--cinematic .gm-fragment-map__center {
+  z-index: 4;
+  width: 158px;
+  border-color: rgba(194, 207, 224, 0.16);
+  color: rgba(223, 230, 239, 0.43);
+  background:
+    radial-gradient(circle, rgba(17, 31, 49, 0.56), rgba(8, 17, 30, 0.36) 54%, transparent 72%);
+  box-shadow:
+    inset 0 0 38px rgba(91, 140, 255, 0.035),
+    0 0 38px rgba(0, 0, 0, 0.14);
+}
+
+.gm-problem--cinematic .gm-fragment-map__center::before {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  border: 1px dashed rgba(255, 126, 151, 0.09);
+  border-radius: inherit;
+  opacity: 0.42;
+}
+
+.gm-problem--cinematic .gm-fragment-map__center::after {
+  border-color: rgba(169, 197, 228, 0.075);
+}
+
+.gm-problem--cinematic .gm-fragment-map__center span {
+  max-width: 9ch;
+  color: rgba(224, 232, 241, 0.44);
+  line-height: 1.3;
+}
+
+.gm-system-card-shell {
+  --entry-x: 0px;
+  --entry-y: 0px;
+  --entry-delay: 0ms;
+  --fragment-rotate: 0deg;
+  position: absolute;
+  z-index: 3;
+  width: 178px;
+  will-change: opacity, translate, filter;
+}
+
+.gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+  --gm-card-motion-delay: 0s;
+  position: relative;
+  inset: auto;
+  width: 100%;
+  min-height: 94px;
+  transform: rotate(var(--fragment-rotate));
+  border-color: color-mix(in srgb, var(--tone) 18%, rgba(181, 207, 235, 0.12));
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--tone) 5%, rgba(255, 255, 255, 0.035)),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(6, 14, 26, 0.77);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.035),
+    0 20px 50px rgba(0, 0, 0, 0.27),
+    0 0 30px color-mix(in srgb, var(--tone) 4%, transparent);
+}
+
+.gm-problem--cinematic .gm-system-card-shell--1 {
+  --entry-x: -34px;
+  --entry-y: -20px;
+  --entry-delay: 480ms;
+  --fragment-rotate: -5deg;
+  left: 7%;
+  top: 10%;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--2 {
+  --entry-x: 36px;
+  --entry-y: -16px;
+  --entry-delay: 560ms;
+  --fragment-rotate: 4deg;
+  right: 6%;
+  top: 14%;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--3 {
+  --entry-x: -42px;
+  --entry-y: 4px;
+  --entry-delay: 690ms;
+  --fragment-rotate: 3deg;
+  left: 2.5%;
+  top: 45%;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--4 {
+  --entry-x: 44px;
+  --entry-y: 8px;
+  --entry-delay: 790ms;
+  --fragment-rotate: -4deg;
+  right: 3%;
+  top: 49%;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--5 {
+  --entry-x: -28px;
+  --entry-y: 28px;
+  --entry-delay: 870ms;
+  --fragment-rotate: -2deg;
+  left: 14%;
+  bottom: 7%;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--6 {
+  --entry-x: 32px;
+  --entry-y: 30px;
+  --entry-delay: 960ms;
+  --fragment-rotate: 5deg;
+  right: 12%;
+  bottom: 6%;
+}
+
+/* Incompatible ambient rhythms are intentionally assigned to the cards,
+   while reveal motion belongs to their shells. Static rotation remains
+   separate from translate ownership. */
+.gm-problem--cinematic .gm-system-card-shell--1 .gm-system-card {
+  --gm-card-motion-delay: -0.35s;
+  animation-duration: 5.1s;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--2 .gm-system-card {
+  --gm-card-motion-delay: -1.65s;
+  animation-duration: 6.4s;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--3 .gm-system-card {
+  --gm-card-motion-delay: -2.75s;
+  animation-duration: 5.8s;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--4 .gm-system-card {
+  --gm-card-motion-delay: -0.8s;
+  animation-duration: 7.2s;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--5 .gm-system-card {
+  --gm-card-motion-delay: -2.1s;
+  animation-duration: 6.0s;
+}
+
+.gm-problem--cinematic .gm-system-card-shell--6 .gm-system-card {
+  --gm-card-motion-delay: -3.8s;
+  animation-duration: 5.4s;
+}
+
+/* Progressive enhancement:
+   SSR/no-JS stays visible.
+   Once the client declares cinematic-ready, pre-entry elements wait hidden
+   until IntersectionObserver marks the scene as entered. */
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-problem__copy > *,
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-fragment-map__center,
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-system-card-shell,
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-fragment-route {
+  opacity: 0;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-problem__copy > * {
+  translate: -14px 10px;
+  filter: blur(5px);
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-fragment-map__center {
+  scale: 0.90;
+  filter: blur(7px);
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="false"]
+  .gm-system-card-shell {
+  translate: var(--entry-x) var(--entry-y);
+  filter: blur(8px);
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-problem__copy .gm-section-index {
+  animation:
+    gmFragmentCopyIn 660ms var(--gm-motion-ease-out) 120ms both;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-problem__copy h2 {
+  animation:
+    gmFragmentCopyIn 780ms var(--gm-motion-ease-out) 200ms both;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-problem__copy > .gm-copy {
+  animation:
+    gmFragmentCopyIn 760ms var(--gm-motion-ease-out) 320ms both;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-problem__signal {
+  animation:
+    gmFragmentCopyIn 720ms var(--gm-motion-ease-out) 430ms both;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-fragment-map__center {
+  animation:
+    gmFragmentCoreIn 820ms var(--gm-motion-ease-out) 300ms both,
+    gmFragmentCoreWait 5.8s var(--gm-motion-ease-breathe) 1.4s infinite alternate;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-fragment-map__center::before {
+  animation:
+    gmFragmentCoreRing 4.8s var(--gm-motion-ease-breathe) 1.5s infinite;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-system-card-shell {
+  animation:
+    gmFragmentCardIn 820ms var(--gm-motion-ease-out) var(--entry-delay) both;
+}
+
+.gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+  .gm-fragment-route {
+  animation:
+    gmFragmentRouteReveal 720ms var(--gm-motion-ease-out) var(--route-delay) both,
+    gmFragmentRouteTravel 4.4s linear calc(var(--route-delay) + 700ms) infinite;
+}
+
+@keyframes gmFragmentCopyIn {
+  from {
+    opacity: 0;
+    translate: -14px 10px;
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes gmFragmentCoreIn {
+  from {
+    opacity: 0;
+    scale: 0.90;
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes gmFragmentCoreWait {
+  from {
+    box-shadow:
+      inset 0 0 32px rgba(91, 140, 255, 0.025),
+      0 0 24px rgba(0, 0, 0, 0.12);
+  }
+
+  to {
+    box-shadow:
+      inset 0 0 46px rgba(91, 140, 255, 0.055),
+      0 0 40px rgba(255, 110, 140, 0.035);
+  }
+}
+
+@keyframes gmFragmentCoreRing {
+  0%,
+  100% {
+    opacity: 0.16;
+    scale: 0.96;
+  }
+
+  48% {
+    opacity: 0.40;
+    scale: 1.025;
+  }
+
+  70% {
+    opacity: 0.12;
+    scale: 1.055;
+  }
+}
+
+@keyframes gmFragmentCardIn {
+  from {
+    opacity: 0;
+    translate: var(--entry-x) var(--entry-y);
+    filter: blur(8px) brightness(0.86);
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes gmFragmentRouteReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.58;
+  }
+}
+
+@keyframes gmFragmentRouteTravel {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -56;
+  }
+}
+
+/* Tablet / compact desktop ------------------------------------------------ */
+
+@media (max-width: 1020px) and (min-width: 761px) {
+  .gm-problem--cinematic .gm-problem__layout {
+    grid-template-columns: minmax(0, 0.82fr) minmax(450px, 1.18fr);
+    gap: 40px;
+  }
+
+  .gm-system-card-shell {
+    width: 154px;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+    min-height: 84px;
+    padding: 15px 14px 13px;
+  }
+
+  .gm-problem--cinematic .gm-fragment-map__center {
+    width: 132px;
+  }
+}
+
+/* Mobile — adapted constellation, not a reduced desktop ------------------ */
+
+@media (max-width: 760px) {
+  .gm-problem--cinematic {
+    padding-inline: var(--gm-safe-inline);
+  }
+
+  .gm-problem--cinematic .gm-problem__layout {
+    width: 100%;
+    min-height: 100svh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+    gap: 14px;
+    padding-block:
+      max(58px, env(safe-area-inset-top))
+      max(28px, env(safe-area-inset-bottom));
+  }
+
+  .gm-problem--cinematic .gm-problem__copy {
+    text-align: center;
+  }
+
+  .gm-problem--cinematic .gm-problem__copy h2 {
+    max-width: 18ch;
+    margin: 8px auto 0;
+    font-size: clamp(1.9rem, 8.2vw, 2.72rem);
+    line-height: 0.98;
+  }
+
+  .gm-problem--cinematic .gm-problem__copy .gm-copy {
+    max-width: 43ch;
+    margin: 12px auto 0;
+    font-size: clamp(0.76rem, 3.1vw, 0.88rem);
+    line-height: 1.38;
+  }
+
+  .gm-problem--cinematic .gm-problem__signal {
+    justify-content: center;
+    margin-top: 13px;
+  }
+
+  .gm-problem--cinematic .gm-fragment-map {
+    align-self: stretch;
+    min-height: 0;
+    height: min(45svh, 390px);
+    border-radius: 18px;
+  }
+
+  .gm-problem--cinematic .gm-fragment-map__center {
+    width: clamp(82px, 24vw, 104px);
+  }
+
+  .gm-problem--cinematic .gm-fragment-map__center span {
+    font-size: 0.48rem;
+  }
+
+  .gm-system-card-shell {
+    width: clamp(92px, 27vw, 116px);
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+    min-height: 58px;
+    grid-template-columns: auto 1fr;
+    gap: 2px 5px;
+    padding: 8px 8px 7px;
+    border-radius: 9px;
+    backdrop-filter: blur(8px);
+  }
+
+  .gm-problem--cinematic .gm-system-card__dot {
+    width: 5px;
+  }
+
+  .gm-problem--cinematic .gm-system-card strong {
+    font-size: clamp(0.48rem, 1.95vw, 0.6rem);
+    line-height: 1.1;
+  }
+
+  .gm-problem--cinematic .gm-system-card small {
+    font-size: clamp(0.32rem, 1.35vw, 0.42rem);
+    letter-spacing: 0.10em;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--1 {
+    left: 4%;
+    top: 7%;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--2 {
+    right: 3%;
+    top: 10%;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--3 {
+    left: 1%;
+    top: 42%;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--4 {
+    right: 1%;
+    top: 45%;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--5 {
+    left: 10%;
+    bottom: 5%;
+  }
+
+  .gm-problem--cinematic .gm-system-card-shell--6 {
+    right: 8%;
+    bottom: 4%;
+  }
+
+  .gm-fragment-route {
+    stroke-width: 0.92;
+    stroke-dasharray: 8 16;
+  }
+
+  .gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+    .gm-system-card-shell {
+    animation-duration: 650ms;
+  }
+
+  .gm-problem--cinematic[data-cinematic-ready="true"][data-entered="true"]
+    .gm-fragment-route {
+    animation-duration: 580ms, 4.8s;
+  }
+}
+
+@media (max-width: 760px) and (max-height: 720px) {
+  .gm-problem--cinematic .gm-problem__layout {
+    gap: 8px;
+    padding-top: max(30px, env(safe-area-inset-top));
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  .gm-problem--cinematic .gm-problem__copy h2 {
+    margin-top: 5px;
+    font-size: clamp(1.58rem, 7vw, 2.1rem);
+  }
+
+  .gm-problem--cinematic .gm-problem__copy .gm-copy {
+    margin-top: 8px;
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .gm-problem--cinematic .gm-problem__signal {
+    margin-top: 8px;
+  }
+
+  .gm-problem--cinematic .gm-fragment-map {
+    height: min(41svh, 300px);
+  }
+
+  .gm-system-card-shell {
+    width: clamp(82px, 24vw, 102px);
+  }
+
+  .gm-problem--cinematic .gm-fragment-map__center {
+    width: 76px;
+  }
+}
+
+/* Reduced motion --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-problem--cinematic .gm-problem__copy > *,
+  .gm-problem--cinematic .gm-fragment-map__center,
+  .gm-problem--cinematic .gm-fragment-map__center::before,
+  .gm-problem--cinematic .gm-system-card-shell,
+  .gm-problem--cinematic .gm-system-card,
+  .gm-problem--cinematic .gm-fragment-route {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+    scale: 1 !important;
+    filter: none !important;
+  }
+
+  .gm-problem--cinematic .gm-fragment-route {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* END GM CINEMATIC SCENE 01 FRAGMENTED SIGNALS ========================== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 01 LABEL CLEANUP
+   CIN-002-B
+   --------------------------------------------------------------------------
+   "ISLA 01..06" belonged to the foundation/prototype language.
+   The cinematic composition now communicates fragmentation through space,
+   incompatible motion rhythms and interrupted signal routes, so the explicit
+   prototype labels are intentionally removed.
+   ========================================================================== */
+
+.gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+  min-height: 78px;
+  grid-template-rows: auto;
+  align-content: center;
+  gap: 0 10px;
+  padding-block: 15px;
+}
+
+.gm-problem--cinematic .gm-system-card strong {
+  align-self: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 1020px) and (min-width: 761px) {
+  .gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+    min-height: 72px;
+    padding-block: 13px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gm-problem--cinematic .gm-system-card-shell .gm-system-card {
+    min-height: 50px;
+    gap: 0 6px;
+    padding: 9px 8px;
+  }
+}
+
+/* END GM CINEMATIC SCENE 01 LABEL CLEANUP =============================== */

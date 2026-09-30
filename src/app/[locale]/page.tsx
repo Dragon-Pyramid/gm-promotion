@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 
+import {Scene01Fragmentation} from "@/components/story/Scene01Fragmentation";
 import {Scene02Poc} from "@/components/story/Scene02Poc";
 import {Scene03AdminOverview} from "@/components/story/Scene03AdminOverview";
 import {Scene04AdminBusiness} from "@/components/story/Scene04AdminBusiness";
@@ -498,44 +499,16 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section
-        id="problem"
-        className="gm-problem"
-        aria-labelledby="problem-title"
-      >
-        <div className="gm-problem__glow" aria-hidden="true" />
-
-        <div className="gm-shell gm-problem__layout">
-          <div className="gm-problem__copy">
-            <p className="gm-section-index">01 / {t("problemKicker")}</p>
-            <h2 id="problem-title">{t("problemTitle")}</h2>
-            <p className="gm-copy">{t("problemBody")}</p>
-
-            <div className="gm-problem__signal" aria-hidden="true">
-              <span />
-              <p>{t("fragmentedLabel")}</p>
-            </div>
-          </div>
-
-          <div className="gm-fragment-map" aria-hidden="true">
-            <div className="gm-fragment-map__center">
-              <span>{t("gymLabel")}</span>
-            </div>
-
-            {problemSystems.map((system, index) => (
-              <div
-                className={`gm-system-card gm-system-card--${index + 1}`}
-                data-tone={system.tone}
-                key={`${system.label}-${index}`}
-              >
-                <span className="gm-system-card__dot" />
-                <strong>{system.label}</strong>
-                <small>ISLA {String(index + 1).padStart(2, "0")}</small>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Scene01Fragmentation
+        labels={{
+          kicker: t("problemKicker"),
+          title: t("problemTitle"),
+          body: t("problemBody"),
+          fragmented: t("fragmentedLabel"),
+          gym: t("gymLabel")
+        }}
+        systems={problemSystems}
+      />
 
       <Scene02Poc labels={scene02Labels} />
 
