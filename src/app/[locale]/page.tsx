@@ -13,6 +13,7 @@ import {Scene10Infrastructure} from "@/components/story/Scene10Infrastructure";
 import {Scene11ThreePeopleOneSystem} from "@/components/story/Scene11ThreePeopleOneSystem";
 import {Scene12GymAsSystem} from "@/components/story/Scene12GymAsSystem";
 import {Scene13BeforeAfter} from "@/components/story/Scene13BeforeAfter";
+import {Scene14FinalCta} from "@/components/story/Scene14FinalCta";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -419,6 +420,19 @@ export default async function HomePage({
     insightBody: t("beforeAfterInsightBody")
   };
 
+  const scene14Labels = {
+    kicker: t("finalCtaKicker"),
+    title: t("finalCtaTitle"),
+    body: t("finalCtaBody"),
+    brandEyebrow: t("finalCtaBrandEyebrow"),
+    brandLine: t("finalCtaBrandLine"),
+    cta: t("finalCtaAction"),
+    ctaMeta: t("finalCtaActionMeta"),
+    closingEyebrow: t("finalCtaClosingEyebrow"),
+    closingTitle: t("finalCtaClosingTitle"),
+    closingBody: t("finalCtaClosingBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -546,6 +560,8 @@ export default async function HomePage({
       <Scene12GymAsSystem labels={scene12Labels} />
 
       <Scene13BeforeAfter labels={scene13Labels} />
+
+      <Scene14FinalCta labels={scene14Labels} />
     </main>
   );
 }
