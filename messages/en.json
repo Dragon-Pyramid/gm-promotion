@@ -278,6 +278,45 @@
     "oneSystemInsightEyebrow": "CONNECTED BY CONTEXT",
     "oneSystemInsightTitle": "Different roles. The same information when it matters.",
     "oneSystemInsightBody": "Every action keeps continuity so the next step still makes sense.",
+    "gymSystemKicker": "THE GYM AS A SYSTEM",
+    "gymSystemTitle": "A gym is not a collection of separate modules. It is a system in motion.",
+    "gymSystemBody": "People, operation, experience, data and infrastructure affect one another. Gym Master connects them so the gym can work as one reality instead of isolated pieces.",
+    "gymSystemDemo": "CONCEPTUAL VIEW · SYSTEM IN MOTION",
+    "gymSystemSystemLabel": "GYM MASTER · ACTIVE SYSTEM",
+    "gymSystemConnected": "5 AREAS CONNECTED",
+    "gymSystemDomains": {
+      "people": "PEOPLE",
+      "operation": "OPERATION",
+      "experience": "EXPERIENCE",
+      "data": "DATA",
+      "infrastructure": "INFRASTRUCTURE"
+    },
+    "gymSystemDomainMeta": {
+      "people": "roles that act and decide",
+      "operation": "processes that move the day forward",
+      "experience": "what each member lives",
+      "data": "context connecting what happened",
+      "infrastructure": "the foundation supporting the whole"
+    },
+    "gymSystemCoreEyebrow": "SHARED CORE",
+    "gymSystemCoreTitle": "GYM MASTER",
+    "gymSystemCoreMeta": "one operating reality",
+    "gymSystemMotionEyebrow": "EVERYTHING MOVES TOGETHER",
+    "gymSystemMotionTitle": "One part changes. The rest keeps context.",
+    "gymSystemMotionBody": "The operation does not restart when it moves between people, moments or modules.",
+    "gymSystemPrinciples": {
+      "connect": "CONNECTS",
+      "context": "KEEPS CONTEXT",
+      "continuity": "BUILDS CONTINUITY"
+    },
+    "gymSystemPrincipleMeta": {
+      "connect": "areas stop working like islands",
+      "context": "each step knows what came before",
+      "continuity": "the next move starts from the same reality"
+    },
+    "gymSystemInsightEyebrow": "ONE SYSTEM, NOT A SUM",
+    "gymSystemInsightTitle": "It is not about adding modules. It is about making them work as one.",
+    "gymSystemInsightBody": "Gym Master brings the parts together so the gym can move with coherence.",
     "chips": {
       "members": "MEMBERS",
       "payments": "PAYMENTS",

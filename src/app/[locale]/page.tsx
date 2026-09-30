@@ -11,6 +11,7 @@ import {Scene08Relationship} from "@/components/story/Scene08Relationship";
 import {Scene09IntelligenceData} from "@/components/story/Scene09IntelligenceData";
 import {Scene10Infrastructure} from "@/components/story/Scene10Infrastructure";
 import {Scene11ThreePeopleOneSystem} from "@/components/story/Scene11ThreePeopleOneSystem";
+import {Scene12GymAsSystem} from "@/components/story/Scene12GymAsSystem";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -339,6 +340,48 @@ export default async function HomePage({
     insightBody: t("oneSystemInsightBody")
   };
 
+  const scene12Labels = {
+    kicker: t("gymSystemKicker"),
+    title: t("gymSystemTitle"),
+    body: t("gymSystemBody"),
+    demo: t("gymSystemDemo"),
+    systemLabel: t("gymSystemSystemLabel"),
+    connected: t("gymSystemConnected"),
+    domains: {
+      people: t("gymSystemDomains.people"),
+      operation: t("gymSystemDomains.operation"),
+      experience: t("gymSystemDomains.experience"),
+      data: t("gymSystemDomains.data"),
+      infrastructure: t("gymSystemDomains.infrastructure")
+    },
+    domainMeta: {
+      people: t("gymSystemDomainMeta.people"),
+      operation: t("gymSystemDomainMeta.operation"),
+      experience: t("gymSystemDomainMeta.experience"),
+      data: t("gymSystemDomainMeta.data"),
+      infrastructure: t("gymSystemDomainMeta.infrastructure")
+    },
+    coreEyebrow: t("gymSystemCoreEyebrow"),
+    coreTitle: t("gymSystemCoreTitle"),
+    coreMeta: t("gymSystemCoreMeta"),
+    motionEyebrow: t("gymSystemMotionEyebrow"),
+    motionTitle: t("gymSystemMotionTitle"),
+    motionBody: t("gymSystemMotionBody"),
+    principles: {
+      connect: t("gymSystemPrinciples.connect"),
+      context: t("gymSystemPrinciples.context"),
+      continuity: t("gymSystemPrinciples.continuity")
+    },
+    principleMeta: {
+      connect: t("gymSystemPrincipleMeta.connect"),
+      context: t("gymSystemPrincipleMeta.context"),
+      continuity: t("gymSystemPrincipleMeta.continuity")
+    },
+    insightEyebrow: t("gymSystemInsightEyebrow"),
+    insightTitle: t("gymSystemInsightTitle"),
+    insightBody: t("gymSystemInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -462,6 +505,8 @@ export default async function HomePage({
       <Scene10Infrastructure labels={scene10Labels} />
 
       <Scene11ThreePeopleOneSystem labels={scene11Labels} />
+
+      <Scene12GymAsSystem labels={scene12Labels} />
     </main>
   );
 }
