@@ -12013,3 +12013,457 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 03 MOBILE ACTIVITY COMPLETENESS ================ */
+/* ==========================================================================
+   GM CINEMATIC SCENE 04 BUSINESS PULSE
+   CIN-005-A-R — Business Pulse / Decision Intelligence
+   --------------------------------------------------------------------------
+   Scene 03 answers what is happening.
+   Scene 04 answers what it means.
+
+   React Kino remains the sole owner of scroll-linked motion.
+   Existing 180vh duration, atomic visual, outer overflow and layout stay intact.
+   ========================================================================== */
+
+.gm-scene04__visual-shell {
+  box-shadow:
+    0 42px 112px rgba(0, 0, 0, 0.43),
+    0 0 0 1px rgba(129, 140, 248, 0.018),
+    0 0 76px rgba(99, 102, 241, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.gm-scene04__visual-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -34%;
+  width: 28%;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(129, 140, 248, 0.025) 24%,
+      rgba(117, 243, 255, 0.075) 52%,
+      rgba(255, 255, 255, 0.028) 62%,
+      transparent
+    );
+  filter: blur(8px);
+  animation: gmScene04BusinessLens 10.8s ease-in-out infinite;
+}
+
+.gm-scene04__status-dot {
+  animation: gmScene04BusinessPulse 4.2s ease-in-out infinite;
+}
+
+.gm-scene04__result-card {
+  animation: gmScene04ResultAwareness 8.6s ease-in-out infinite alternate;
+}
+
+.gm-scene04__trend {
+  animation: gmScene04TrendAwareness 6.8s ease-in-out infinite;
+}
+
+.gm-scene04__rings {
+  animation: gmScene04RingsBreath 11.2s ease-in-out infinite alternate;
+}
+
+.gm-scene04__rings span:nth-child(1) {
+  animation: gmScene04RingLayer 9.6s ease-in-out infinite alternate;
+}
+
+.gm-scene04__rings span:nth-child(2) {
+  animation: gmScene04RingLayer 10.8s ease-in-out infinite alternate-reverse;
+}
+
+.gm-scene04__rings span:nth-child(3) {
+  animation: gmScene04RingCore 7.8s ease-in-out infinite alternate;
+}
+
+.gm-scene04__source-head i {
+  animation: gmScene04SourceSample 6.4s ease-in-out infinite;
+}
+
+.gm-scene04__source:nth-child(1) .gm-scene04__source-head i { animation-delay: -0.1s; }
+.gm-scene04__source:nth-child(2) .gm-scene04__source-head i { animation-delay: -1.35s; }
+.gm-scene04__source:nth-child(3) .gm-scene04__source-head i { animation-delay: -2.6s; }
+.gm-scene04__source:nth-child(4) .gm-scene04__source-head i { animation-delay: -3.85s; }
+
+.gm-scene04__bars > div {
+  animation: gmScene04FlowRead 8.8s ease-in-out infinite;
+}
+
+.gm-scene04__axis span {
+  animation: gmScene04AxisRead 8.8s ease-in-out infinite;
+}
+
+.gm-scene04__bars > div:nth-child(1),
+.gm-scene04__axis span:nth-child(1) { animation-delay: -0.15s; }
+
+.gm-scene04__bars > div:nth-child(2),
+.gm-scene04__axis span:nth-child(2) { animation-delay: -0.85s; }
+
+.gm-scene04__bars > div:nth-child(3),
+.gm-scene04__axis span:nth-child(3) { animation-delay: -1.55s; }
+
+.gm-scene04__bars > div:nth-child(4),
+.gm-scene04__axis span:nth-child(4) { animation-delay: -2.25s; }
+
+.gm-scene04__bars > div:nth-child(5),
+.gm-scene04__axis span:nth-child(5) { animation-delay: -2.95s; }
+
+.gm-scene04__bars > div:nth-child(6),
+.gm-scene04__axis span:nth-child(6) { animation-delay: -3.65s; }
+
+.gm-scene04__bars > div:nth-child(7),
+.gm-scene04__axis span:nth-child(7) { animation-delay: -4.35s; }
+
+.gm-scene04__bars > div:nth-child(8),
+.gm-scene04__axis span:nth-child(8) { animation-delay: -5.05s; }
+
+.gm-scene04__decision-signal span {
+  animation: gmScene04DecisionRead 8.4s ease-in-out infinite;
+}
+
+.gm-scene04__decision-signal span:nth-child(1) { animation-delay: -0.2s; }
+.gm-scene04__decision-signal span:nth-child(2) { animation-delay: -1.2s; }
+.gm-scene04__decision-signal span:nth-child(3) { animation-delay: -2.2s; }
+.gm-scene04__decision-signal span:nth-child(4) { animation-delay: -3.2s; }
+
+.gm-scene04__decision {
+  animation: gmScene04DecisionAwareness 9.8s ease-in-out infinite alternate;
+}
+
+@keyframes gmScene04BusinessLens {
+  0%,
+  14% {
+    left: -34%;
+    opacity: 0;
+  }
+
+  24% {
+    opacity: 0.42;
+  }
+
+  58% {
+    opacity: 0.18;
+  }
+
+  72%,
+  100% {
+    left: 112%;
+    opacity: 0;
+  }
+}
+
+@keyframes gmScene04BusinessPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow:
+      0 0 0 5px rgba(118, 243, 255, 0.04),
+      0 0 15px rgba(118, 243, 255, 0.24);
+  }
+
+  42% {
+    opacity: 1;
+    box-shadow:
+      0 0 0 7px rgba(118, 243, 255, 0.07),
+      0 0 26px rgba(118, 243, 255, 0.44);
+  }
+
+  58% {
+    opacity: 0.82;
+  }
+}
+
+@keyframes gmScene04ResultAwareness {
+  from {
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(118, 243, 255, 0.095);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.028),
+      0 0 38px rgba(99, 102, 241, 0.022);
+    filter: brightness(1.025);
+  }
+}
+
+@keyframes gmScene04TrendAwareness {
+  0%,
+  100% {
+    border-color: rgba(118, 243, 255, 0.10);
+    filter: brightness(0.96);
+  }
+
+  42% {
+    border-color: rgba(118, 243, 255, 0.18);
+    filter: brightness(1.10);
+  }
+
+  62% {
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes gmScene04RingsBreath {
+  from {
+    opacity: 0.56;
+    filter: brightness(0.92);
+  }
+
+  to {
+    opacity: 0.86;
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes gmScene04RingLayer {
+  from { opacity: 0.40; }
+  to { opacity: 0.82; }
+}
+
+@keyframes gmScene04RingCore {
+  from {
+    opacity: 0.52;
+    box-shadow: 0 0 18px rgba(118, 243, 255, 0.20);
+  }
+
+  to {
+    opacity: 0.92;
+    box-shadow: 0 0 34px rgba(118, 243, 255, 0.34);
+  }
+}
+
+@keyframes gmScene04SourceSample {
+  0%,
+  64%,
+  100% {
+    opacity: 0.58;
+    filter: brightness(0.92);
+  }
+
+  72% {
+    opacity: 1;
+    filter: brightness(1.28);
+  }
+
+  82% {
+    opacity: 0.76;
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes gmScene04FlowRead {
+  0%,
+  58%,
+  100% {
+    opacity: 0.70;
+    filter: brightness(0.92);
+  }
+
+  68% {
+    opacity: 1;
+    filter: brightness(1.22);
+  }
+
+  78% {
+    opacity: 0.84;
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes gmScene04AxisRead {
+  0%,
+  58%,
+  100% {
+    color: rgba(220, 229, 244, 0.20);
+  }
+
+  68% {
+    color: rgba(190, 239, 255, 0.56);
+  }
+
+  78% {
+    color: rgba(220, 229, 244, 0.28);
+  }
+}
+
+@keyframes gmScene04DecisionRead {
+  0%,
+  58%,
+  100% {
+    opacity: 0.42;
+    filter: brightness(0.90);
+  }
+
+  70% {
+    opacity: 1;
+    filter: brightness(1.24);
+  }
+
+  82% {
+    opacity: 0.66;
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes gmScene04DecisionAwareness {
+  from {
+    border-color: rgba(255, 255, 255, 0.07);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(129, 140, 248, 0.11);
+    filter: brightness(1.025);
+  }
+}
+
+@media (max-width: 760px) {
+  .gm-scene04__visual-grid::after {
+    animation-duration: 13.2s;
+    width: 34%;
+    filter: blur(6px);
+  }
+
+  .gm-scene04__status-dot {
+    animation-duration: 5.2s;
+  }
+
+  .gm-scene04__result-card,
+  .gm-scene04__trend,
+  .gm-scene04__decision {
+    animation-duration: 11s;
+  }
+
+  .gm-scene04__source-head i {
+    animation-duration: 7.6s;
+  }
+
+  .gm-scene04__bars > div,
+  .gm-scene04__axis span {
+    animation-duration: 10.4s;
+  }
+
+  .gm-scene04__decision-signal span {
+    animation-duration: 10.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene04__visual-grid::after {
+    display: none !important;
+  }
+
+  .gm-scene04__status-dot,
+  .gm-scene04__result-card,
+  .gm-scene04__trend,
+  .gm-scene04__rings,
+  .gm-scene04__rings span,
+  .gm-scene04__source-head i,
+  .gm-scene04__bars > div,
+  .gm-scene04__axis span,
+  .gm-scene04__decision-signal span,
+  .gm-scene04__decision {
+    animation: none !important;
+    filter: none !important;
+  }
+}
+
+/* END GM CINEMATIC SCENE 04 BUSINESS PULSE ============================== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 04 MOBILE BUSINESS COMPLETENESS
+   CIN-005-B
+   --------------------------------------------------------------------------
+   Mobile QA revealed two historical information-loss behaviors:
+   - long source labels such as MEMBERSHIPS were truncated with ellipsis;
+   - the decision body was hidden entirely.
+
+   This patch restores information completeness without altering desktop,
+   React Kino ownership, Scene duration or cinematic choreography.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  /* Preserve full source labels. Allow a controlled second line instead of
+     ellipsis so English and Spanish remain complete. */
+  .gm-scene04__source-head span {
+    overflow: visible;
+    min-width: 0;
+    white-space: normal;
+    text-overflow: clip;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  /* Give the compact source cards enough vertical breathing room for a
+     two-line label while keeping the existing 4-card composition. */
+  .gm-scene04__source {
+    min-height: 46px;
+  }
+
+  /* Historical viewport-fit CSS hid this paragraph. Restore it and compact
+     it instead of sacrificing information. */
+  .gm-scene04__decision > p:last-of-type {
+    display: block;
+    max-width: 31ch;
+    margin-top: 4px;
+    padding-right: 34px;
+    font-size: 0.52rem;
+    line-height: 1.24;
+  }
+
+  .gm-scene04__decision {
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 390px) {
+  .gm-scene04__source-head span {
+    font-size: 0.46rem;
+    letter-spacing: 0.045em;
+  }
+
+  .gm-scene04__source {
+    min-height: 48px;
+    padding-inline: 7px;
+  }
+
+  .gm-scene04__decision > p:last-of-type {
+    max-width: 30ch;
+    font-size: 0.49rem;
+    line-height: 1.22;
+  }
+
+  .gm-scene04__decision {
+    min-height: 94px;
+  }
+}
+
+/* Short-height mobile keeps the restored information; it compacts rather
+   than hiding it. */
+@media (max-width: 760px) and (max-height: 680px) {
+  .gm-scene04__source {
+    min-height: 44px;
+  }
+
+  .gm-scene04__decision > p:last-of-type {
+    display: block;
+    max-width: 30ch;
+    margin-top: 3px;
+    font-size: 0.46rem;
+    line-height: 1.18;
+  }
+
+  .gm-scene04__decision {
+    min-height: 82px;
+  }
+}
+
+/* END GM CINEMATIC SCENE 04 MOBILE BUSINESS COMPLETENESS ================ */
