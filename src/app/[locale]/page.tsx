@@ -10,6 +10,7 @@ import {Scene07TrainingProgress} from "@/components/story/Scene07TrainingProgres
 import {Scene08Relationship} from "@/components/story/Scene08Relationship";
 import {Scene09IntelligenceData} from "@/components/story/Scene09IntelligenceData";
 import {Scene10Infrastructure} from "@/components/story/Scene10Infrastructure";
+import {Scene11ThreePeopleOneSystem} from "@/components/story/Scene11ThreePeopleOneSystem";
 import {GM_BRAND_ASSETS} from "@/lib/brand/assets";
 
 export default async function HomePage({
@@ -297,6 +298,47 @@ export default async function HomePage({
     insightBody: t("infrastructureInsightBody")
   };
 
+  const scene11Labels = {
+    kicker: t("oneSystemKicker"),
+    title: t("oneSystemTitle"),
+    body: t("oneSystemBody"),
+    demo: t("oneSystemDemo"),
+    systemLabel: t("oneSystemSystemLabel"),
+    connected: t("oneSystemConnected"),
+    roles: {
+      admin: t("oneSystemRoles.admin"),
+      team: t("oneSystemRoles.team"),
+      member: t("oneSystemRoles.member")
+    },
+    roleMeta: {
+      admin: t("oneSystemRoleMeta.admin"),
+      team: t("oneSystemRoleMeta.team"),
+      member: t("oneSystemRoleMeta.member")
+    },
+    roleAction: {
+      admin: t("oneSystemRoleAction.admin"),
+      team: t("oneSystemRoleAction.team"),
+      member: t("oneSystemRoleAction.member")
+    },
+    roleMoment: {
+      admin: t("oneSystemRoleMoment.admin"),
+      team: t("oneSystemRoleMoment.team"),
+      member: t("oneSystemRoleMoment.member")
+    },
+    sharedEyebrow: t("oneSystemSharedEyebrow"),
+    sharedTitle: t("oneSystemSharedTitle"),
+    sharedBody: t("oneSystemSharedBody"),
+    contextItems: {
+      members: t("oneSystemContextItems.members"),
+      payments: t("oneSystemContextItems.payments"),
+      access: t("oneSystemContextItems.access"),
+      training: t("oneSystemContextItems.training")
+    },
+    insightEyebrow: t("oneSystemInsightEyebrow"),
+    insightTitle: t("oneSystemInsightTitle"),
+    insightBody: t("oneSystemInsightBody")
+  };
+
   const problemSystems = [
     {label: "Excel", tone: "blue"},
     {label: "WhatsApp", tone: "green"},
@@ -418,6 +460,8 @@ export default async function HomePage({
       <Scene09IntelligenceData labels={scene09Labels} />
 
       <Scene10Infrastructure labels={scene10Labels} />
+
+      <Scene11ThreePeopleOneSystem labels={scene11Labels} />
     </main>
   );
 }

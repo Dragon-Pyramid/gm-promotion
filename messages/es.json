@@ -240,6 +240,44 @@
     "infrastructureInsightEyebrow": "INFRAESTRUCTURA QUE NO INTERRUMPE",
     "infrastructureInsightTitle": "Cuando la base funciona, la tecnología deja de sentirse.",
     "infrastructureInsightBody": "Lo importante permanece arriba: personas gestionando, trabajando y entrenando.",
+    "oneSystemKicker": "UN SOLO SISTEMA",
+    "oneSystemTitle": "Tres formas de vivir el gimnasio. Un solo sistema conectándolas.",
+    "oneSystemBody": "El administrador decide, el equipo opera y el socio vive la experiencia. Gym Master mantiene a los tres sobre la misma realidad, sin perder contexto entre un paso y el siguiente.",
+    "oneSystemDemo": "VISTA CONCEPTUAL · TRES ROLES, UN CONTEXTO",
+    "oneSystemSystemLabel": "CONTEXTO COMPARTIDO",
+    "oneSystemConnected": "3 ROLES CONECTADOS",
+    "oneSystemRoles": {
+      "admin": "ADMINISTRADOR",
+      "team": "EQUIPO",
+      "member": "SOCIO"
+    },
+    "oneSystemRoleMeta": {
+      "admin": "visión del negocio y control",
+      "team": "operación cotidiana",
+      "member": "experiencia y progreso"
+    },
+    "oneSystemRoleAction": {
+      "admin": "Decide con una visión completa.",
+      "team": "Resuelve el día a día.",
+      "member": "Entrena con continuidad."
+    },
+    "oneSystemRoleMoment": {
+      "admin": "ve lo que está pasando",
+      "team": "actúa sobre la operación",
+      "member": "recibe una experiencia conectada"
+    },
+    "oneSystemSharedEyebrow": "UNA MISMA REALIDAD",
+    "oneSystemSharedTitle": "Cada rol ve lo que necesita sin empezar de cero.",
+    "oneSystemSharedBody": "La información cambia de forma, no de historia.",
+    "oneSystemContextItems": {
+      "members": "SOCIOS",
+      "payments": "PAGOS",
+      "access": "ACCESO",
+      "training": "ENTRENAMIENTO"
+    },
+    "oneSystemInsightEyebrow": "CONECTADOS POR CONTEXTO",
+    "oneSystemInsightTitle": "Distintos roles. La misma información cuando importa.",
+    "oneSystemInsightBody": "Una acción conserva continuidad para que el siguiente paso tenga sentido.",
     "chips": {
       "members": "SOCIOS",
       "payments": "PAGOS",

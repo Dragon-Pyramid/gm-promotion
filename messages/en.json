@@ -240,6 +240,44 @@
     "infrastructureInsightEyebrow": "INFRASTRUCTURE THAT STAYS OUT OF THE WAY",
     "infrastructureInsightTitle": "When the foundation works, technology fades into the background.",
     "infrastructureInsightBody": "What matters stays on top: people managing, working and training.",
+    "oneSystemKicker": "ONE SYSTEM",
+    "oneSystemTitle": "Three ways to experience the gym. One system connecting them.",
+    "oneSystemBody": "The administrator decides, the team runs the day-to-day and the member lives the experience. Gym Master keeps all three on the same reality without losing context from one step to the next.",
+    "oneSystemDemo": "CONCEPTUAL VIEW · THREE ROLES, ONE CONTEXT",
+    "oneSystemSystemLabel": "SHARED CONTEXT",
+    "oneSystemConnected": "3 ROLES CONNECTED",
+    "oneSystemRoles": {
+      "admin": "ADMINISTRATOR",
+      "team": "TEAM",
+      "member": "MEMBER"
+    },
+    "oneSystemRoleMeta": {
+      "admin": "business visibility and control",
+      "team": "daily operation",
+      "member": "experience and progress"
+    },
+    "oneSystemRoleAction": {
+      "admin": "Decides with the full picture.",
+      "team": "Runs the day-to-day.",
+      "member": "Trains with continuity."
+    },
+    "oneSystemRoleMoment": {
+      "admin": "sees what is happening",
+      "team": "acts on the operation",
+      "member": "receives a connected experience"
+    },
+    "oneSystemSharedEyebrow": "ONE SHARED REALITY",
+    "oneSystemSharedTitle": "Each role sees what it needs without starting over.",
+    "oneSystemSharedBody": "Information changes shape, not story.",
+    "oneSystemContextItems": {
+      "members": "MEMBERS",
+      "payments": "PAYMENTS",
+      "access": "ACCESS",
+      "training": "TRAINING"
+    },
+    "oneSystemInsightEyebrow": "CONNECTED BY CONTEXT",
+    "oneSystemInsightTitle": "Different roles. The same information when it matters.",
+    "oneSystemInsightBody": "Every action keeps continuity so the next step still makes sense.",
     "chips": {
       "members": "MEMBERS",
       "payments": "PAYMENTS",
