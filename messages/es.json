@@ -278,6 +278,45 @@
     "oneSystemInsightEyebrow": "CONECTADOS POR CONTEXTO",
     "oneSystemInsightTitle": "Distintos roles. La misma información cuando importa.",
     "oneSystemInsightBody": "Una acción conserva continuidad para que el siguiente paso tenga sentido.",
+    "gymSystemKicker": "EL GIMNASIO COMO SISTEMA",
+    "gymSystemTitle": "Un gimnasio no son módulos separados. Es un sistema en movimiento.",
+    "gymSystemBody": "Personas, operación, experiencia, datos e infraestructura se afectan entre sí. Gym Master los conecta para que el gimnasio funcione como una sola realidad, no como piezas aisladas.",
+    "gymSystemDemo": "VISTA CONCEPTUAL · SISTEMA EN MOVIMIENTO",
+    "gymSystemSystemLabel": "GYM MASTER · SISTEMA ACTIVO",
+    "gymSystemConnected": "5 ÁREAS CONECTADAS",
+    "gymSystemDomains": {
+      "people": "PERSONAS",
+      "operation": "OPERACIÓN",
+      "experience": "EXPERIENCIA",
+      "data": "DATOS",
+      "infrastructure": "INFRAESTRUCTURA"
+    },
+    "gymSystemDomainMeta": {
+      "people": "roles que actúan y deciden",
+      "operation": "procesos que hacen avanzar el día",
+      "experience": "lo que vive cada socio",
+      "data": "contexto que conecta lo ocurrido",
+      "infrastructure": "la base que sostiene el conjunto"
+    },
+    "gymSystemCoreEyebrow": "NÚCLEO COMPARTIDO",
+    "gymSystemCoreTitle": "GYM MASTER",
+    "gymSystemCoreMeta": "una misma operación",
+    "gymSystemMotionEyebrow": "TODO SE MUEVE JUNTO",
+    "gymSystemMotionTitle": "Una parte cambia. El resto conserva contexto.",
+    "gymSystemMotionBody": "La operación no se reinicia cuando cambia de persona, momento o módulo.",
+    "gymSystemPrinciples": {
+      "connect": "CONECTA",
+      "context": "CONSERVA CONTEXTO",
+      "continuity": "DA CONTINUIDAD"
+    },
+    "gymSystemPrincipleMeta": {
+      "connect": "las áreas dejan de funcionar como islas",
+      "context": "cada paso sabe qué ocurrió antes",
+      "continuity": "el siguiente movimiento parte de la misma realidad"
+    },
+    "gymSystemInsightEyebrow": "UN SISTEMA, NO UNA SUMA",
+    "gymSystemInsightTitle": "No se trata de agregar módulos. Se trata de hacer que trabajen como uno.",
+    "gymSystemInsightBody": "Gym Master une las partes para que el gimnasio pueda moverse con coherencia.",
     "chips": {
       "members": "SOCIOS",
       "payments": "PAGOS",
