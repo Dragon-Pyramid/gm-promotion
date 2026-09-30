@@ -51,6 +51,34 @@ function Chip({
   );
 }
 
+type SignalTone = "blue" | "violet" | "cyan" | "amber" | "rose";
+
+function ConvergenceSignal({
+  className,
+  from,
+  at,
+  tone
+}: {
+  className: string;
+  from: {x: number; y: number};
+  at: number;
+  tone: SignalTone;
+}) {
+  return (
+    <ScrollTransform
+      from={{...from, opacity: 0, scale: 0.58}}
+      to={{x: 0, y: 0, opacity: 1, scale: 1}}
+      at={at}
+      span={0.24}
+      easing="ease-out"
+      className={className}
+    >
+      <span className="gm-scene02__signal-trail" aria-hidden="true" />
+      <span className="gm-scene02__signal-dot" data-tone={tone} aria-hidden="true" />
+    </ScrollTransform>
+  );
+}
+
 export function Scene02Poc({labels}: {labels: Labels}) {
   return (
     <Kino>
@@ -60,6 +88,17 @@ export function Scene02Poc({labels}: {labels: Labels}) {
           <div className="gm-scene02__ambient gm-scene02__ambient--one" aria-hidden="true" />
           <div className="gm-scene02__ambient gm-scene02__ambient--two" aria-hidden="true" />
 
+
+          <ScrollTransform
+            from={{opacity: 1}}
+            to={{opacity: 0}}
+            at={0.03}
+            span={0.28}
+            easing="ease-out"
+            className="gm-scene02__residual-motion"
+          >
+            <div className="gm-scene02__residual" aria-hidden="true" />
+          </ScrollTransform>
           <div className="gm-scene02__topline" aria-hidden="true">
             <span>02</span>
             <span>CONVERGENCE PROTOCOL</span>
@@ -74,6 +113,47 @@ export function Scene02Poc({labels}: {labels: Labels}) {
             <span className="gm-link gm-link--5" />
           </div>
 
+          <ScrollTransform
+            from={{opacity: 1}}
+            to={{opacity: 0}}
+            at={0.60}
+            span={0.12}
+            easing="ease-out"
+            className="gm-scene02__signals-exit"
+          >
+            <div className="gm-scene02__signals" aria-hidden="true">
+              <ConvergenceSignal
+                className="gm-scene02__signal gm-scene02__signal--1"
+                from={{x: -118, y: -78}}
+                at={0.24}
+                tone="blue"
+              />
+              <ConvergenceSignal
+                className="gm-scene02__signal gm-scene02__signal--2"
+                from={{x: 112, y: -86}}
+                at={0.29}
+                tone="violet"
+              />
+              <ConvergenceSignal
+                className="gm-scene02__signal gm-scene02__signal--3"
+                from={{x: -126, y: 16}}
+                at={0.34}
+                tone="cyan"
+              />
+              <ConvergenceSignal
+                className="gm-scene02__signal gm-scene02__signal--4"
+                from={{x: 122, y: 28}}
+                at={0.39}
+                tone="amber"
+              />
+              <ConvergenceSignal
+                className="gm-scene02__signal gm-scene02__signal--5"
+                from={{x: 0, y: 126}}
+                at={0.44}
+                tone="rose"
+              />
+            </div>
+          </ScrollTransform>
           <div className="gm-scene02__chips" aria-hidden="true">
             <Chip
               className="gm-chip-pos gm-chip-pos--members"
@@ -122,6 +202,20 @@ export function Scene02Poc({labels}: {labels: Labels}) {
           </div>
 
           <div className="gm-scene02__core-anchor">
+            <ScrollTransform
+              from={{scale: 0.62, opacity: 0}}
+              to={{scale: 1.22, opacity: 0.72}}
+              at={0.45}
+              span={0.18}
+              easing="ease-out"
+              className="gm-scene02__ignition-motion"
+            >
+              <div className="gm-scene02__ignition" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+            </ScrollTransform>
             <ScrollTransform
               from={{scale: 0.52, opacity: 0, rotate: -3}}
               to={{scale: 1, opacity: 1, rotate: 0}}
