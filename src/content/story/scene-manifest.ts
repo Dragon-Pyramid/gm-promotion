@@ -111,5 +111,13 @@ export const sceneManifest: StoryScene[] = [
     motionMode: "kino",
     fallbackMode: "natural",
     analyticsId: "story_gym_as_system"
+  },
+  {
+    id: "scene-13",
+    chapter: "connected",
+    duration: "180vh",
+    motionMode: "kino",
+    fallbackMode: "natural",
+    analyticsId: "story_before_after"
   }
 ];

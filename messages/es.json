@@ -317,6 +317,39 @@
     "gymSystemInsightEyebrow": "UN SISTEMA, NO UNA SUMA",
     "gymSystemInsightTitle": "No se trata de agregar módulos. Se trata de hacer que trabajen como uno.",
     "gymSystemInsightBody": "Gym Master une las partes para que el gimnasio pueda moverse con coherencia.",
+    "beforeAfterKicker": "ANTES / DESPUÉS",
+    "beforeAfterTitle": "El gimnasio es el mismo. La forma de gestionarlo cambia todo.",
+    "beforeAfterBody": "No cambia el propósito del gimnasio. Cambia lo que ocurre cuando cada acción deja de vivir aislada y empieza a conservar contexto.",
+    "beforeAfterDemo": "MISMA OPERACIÓN · DOS FORMAS DE VIVIRLA",
+    "beforeAfterSameGym": "MISMO GIMNASIO",
+    "beforeAfterTwoStates": "DOS REALIDADES OPERATIVAS",
+    "beforeAfterBeforeLabel": "ANTES",
+    "beforeAfterBeforeTitle": "Cada parte resuelve lo suyo.",
+    "beforeAfterBeforeBody": "La información llega tarde, se repite o se pierde entre herramientas y personas.",
+    "beforeAfterAfterLabel": "DESPUÉS",
+    "beforeAfterAfterTitle": "Cada parte continúa lo que la anterior empezó.",
+    "beforeAfterAfterBody": "La operación conserva contexto y cada decisión parte de una realidad compartida.",
+    "beforeAfterNodes": {
+      "members": "SOCIOS",
+      "payments": "PAGOS",
+      "access": "ACCESO",
+      "training": "ENTRENAMIENTO"
+    },
+    "beforeAfterShifts": {
+      "fragmentation": "FRAGMENTACIÓN",
+      "islands": "ISLAS",
+      "lateReaction": "REACCIÓN TARDÍA",
+      "partialView": "VISIÓN PARCIAL"
+    },
+    "beforeAfterOutcomes": {
+      "continuity": "CONTINUIDAD",
+      "sharedContext": "CONTEXTO COMPARTIDO",
+      "contextualDecision": "DECISIÓN CON CONTEXTO",
+      "connectedView": "VISIÓN CONECTADA"
+    },
+    "beforeAfterInsightEyebrow": "LA DIFERENCIA NO ES EL GIMNASIO",
+    "beforeAfterInsightTitle": "Es la forma en que todo trabaja junto.",
+    "beforeAfterInsightBody": "Cuando la operación se conecta, el día deja de empezar de cero.",
     "chips": {
       "members": "SOCIOS",
       "payments": "PAGOS",
