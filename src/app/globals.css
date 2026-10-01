@@ -12915,3 +12915,550 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 05 MOBILE OPERATION COMPLETENESS =============== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 06 RECOGNITION GATE
+   CIN-007-A — Recognition Gate / Frictionless Arrival
+   --------------------------------------------------------------------------
+   Scene 05: action propagates.
+   Scene 06: the member is recognized and keeps moving.
+
+   Architecture contract:
+   - React Kino remains the sole owner of scroll-linked motion.
+   - Existing 180vh Scene duration remains unchanged.
+   - Existing atomic portal ScrollTransform remains unchanged.
+   - Outer .gm-scene06 keeps overflow: visible.
+   - PATCH 008-A and MOBILE CLOSING BALANCE 008-B remain authoritative.
+   - No JSX, copy, manifest or layout-geometry changes.
+   ========================================================================== */
+
+/* Portal identity: softer than the operational scene, with contained light. */
+.gm-scene06__portal {
+  box-shadow:
+    0 42px 108px rgba(0, 0, 0, 0.44),
+    0 0 0 1px rgba(117, 243, 255, 0.016),
+    0 0 72px rgba(34, 211, 238, 0.024),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* The door light suggests arrival and recognition, never a security alarm. */
+.gm-scene06__door-light {
+  animation: gmScene06DoorBreath 9.4s ease-in-out infinite alternate;
+}
+
+.gm-scene06__status-dot,
+.gm-scene06__ready i {
+  animation: gmScene06ReadyPulse 4.4s ease-in-out infinite;
+}
+
+.gm-scene06__ready {
+  animation: gmScene06ReadyAwareness 7.2s ease-in-out infinite alternate;
+}
+
+/* Five-step recognition wave. Every label stays present; only attention moves. */
+.gm-scene06__journey-step > i {
+  animation: gmScene06JourneyDot 8s ease-in-out infinite;
+}
+
+.gm-scene06__journey-step > strong {
+  animation: gmScene06JourneyLabel 8s ease-in-out infinite;
+}
+
+.gm-scene06__journey-step:not(:last-child)::after {
+  animation: gmScene06JourneyLink 8s ease-in-out infinite;
+}
+
+.gm-scene06__journey-step:nth-child(1) > i,
+.gm-scene06__journey-step:nth-child(1) > strong,
+.gm-scene06__journey-step:nth-child(1)::after {
+  animation-delay: -5.7s;
+}
+
+.gm-scene06__journey-step:nth-child(2) > i,
+.gm-scene06__journey-step:nth-child(2) > strong,
+.gm-scene06__journey-step:nth-child(2)::after {
+  animation-delay: -4.3s;
+}
+
+.gm-scene06__journey-step:nth-child(3) > i,
+.gm-scene06__journey-step:nth-child(3) > strong,
+.gm-scene06__journey-step:nth-child(3)::after {
+  animation-delay: -2.9s;
+}
+
+.gm-scene06__journey-step:nth-child(4) > i,
+.gm-scene06__journey-step:nth-child(4) > strong,
+.gm-scene06__journey-step:nth-child(4)::after {
+  animation-delay: -1.5s;
+}
+
+.gm-scene06__journey-step:nth-child(5) > i,
+.gm-scene06__journey-step:nth-child(5) > strong {
+  animation-delay: -0.1s;
+}
+
+/* Identity acknowledgement: the member stays visually stable while the
+   system recognizes the context. */
+.gm-scene06__pass {
+  animation: gmScene06PassAwareness 9s ease-in-out infinite alternate;
+}
+
+.gm-scene06__avatar {
+  animation: gmScene06IdentityAck 8.4s ease-in-out infinite;
+}
+
+.gm-scene06__qr {
+  animation: gmScene06QrAck 8.4s ease-in-out infinite;
+  animation-delay: -1.1s;
+}
+
+/* Scanner remains a bridge, not the protagonist. Existing ring/beam motion is
+   preserved; the core receives only a contained recognition response. */
+.gm-scene06__scanner-core {
+  animation: gmScene06ScannerCore 6.6s ease-in-out infinite;
+}
+
+.gm-scene06__scanner {
+  animation: gmScene06ScannerAwareness 8.8s ease-in-out infinite alternate;
+}
+
+/* Functional climax: access is validated. Values remain unchanged. */
+.gm-scene06__access {
+  animation: gmScene06AccessPanel 9.2s ease-in-out infinite alternate;
+}
+
+.gm-scene06__check {
+  animation: gmScene06AccessConfirm 7.6s ease-in-out infinite;
+}
+
+.gm-scene06__access > strong {
+  animation: gmScene06AccessText 7.6s ease-in-out infinite;
+}
+
+/* Background context: identity -> status -> access. Widths remain fixed. */
+.gm-scene06__system-line i {
+  animation: gmScene06SystemRead 9s ease-in-out infinite;
+}
+
+.gm-scene06__system-line i:nth-child(1) { animation-delay: -0.2s; }
+.gm-scene06__system-line i:nth-child(2) { animation-delay: -1.5s; }
+.gm-scene06__system-line i:nth-child(3) { animation-delay: -2.8s; }
+
+.gm-scene06__system {
+  animation: gmScene06SystemAwareness 10s ease-in-out infinite alternate;
+}
+
+/* Human resolution: the system validates; the member keeps moving. */
+.gm-scene06__welcome {
+  animation: gmScene06WelcomeResolve 10.8s ease-in-out infinite alternate;
+}
+
+/* Keyframes -------------------------------------------------------------- */
+
+@keyframes gmScene06DoorBreath {
+  from {
+    opacity: 0.46;
+    filter: blur(2px) brightness(0.88);
+  }
+
+  to {
+    opacity: 0.88;
+    filter: blur(2px) brightness(1.18);
+  }
+}
+
+@keyframes gmScene06ReadyPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    filter: brightness(0.94);
+  }
+
+  42% {
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+
+  58% {
+    opacity: 0.86;
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes gmScene06ReadyAwareness {
+  from {
+    border-color: rgba(74, 222, 128, 0.10);
+    background: rgba(74, 222, 128, 0.03);
+    filter: brightness(0.98);
+  }
+
+  to {
+    border-color: rgba(74, 222, 128, 0.18);
+    background: rgba(74, 222, 128, 0.047);
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes gmScene06JourneyDot {
+  0%,
+  62%,
+  100% {
+    opacity: 0.56;
+    filter: brightness(0.9);
+  }
+
+  72% {
+    opacity: 1;
+    filter: brightness(1.34);
+  }
+
+  82% {
+    opacity: 0.78;
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes gmScene06JourneyLabel {
+  0%,
+  62%,
+  100% {
+    color: rgba(240, 246, 255, 0.52);
+    filter: brightness(0.96);
+  }
+
+  72% {
+    color: rgba(246, 252, 255, 0.9);
+    filter: brightness(1.14);
+  }
+
+  82% {
+    color: rgba(240, 246, 255, 0.66);
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes gmScene06JourneyLink {
+  0%,
+  62%,
+  100% {
+    opacity: 0.3;
+    filter: brightness(0.9);
+  }
+
+  72% {
+    opacity: 0.95;
+    filter: brightness(1.35);
+  }
+
+  82% {
+    opacity: 0.55;
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes gmScene06PassAwareness {
+  from {
+    border-color: rgba(255, 255, 255, 0.07);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(117, 243, 255, 0.115);
+    filter: brightness(1.025);
+  }
+}
+
+@keyframes gmScene06IdentityAck {
+  0%,
+  60%,
+  100% {
+    border-color: rgba(117, 243, 255, 0.18);
+    box-shadow: 0 0 0 rgba(117, 243, 255, 0);
+    filter: brightness(0.98);
+  }
+
+  72% {
+    border-color: rgba(117, 243, 255, 0.32);
+    box-shadow: 0 0 30px rgba(117, 243, 255, 0.10);
+    filter: brightness(1.12);
+  }
+
+  84% {
+    filter: brightness(1.03);
+  }
+}
+
+@keyframes gmScene06QrAck {
+  0%,
+  60%,
+  100% {
+    box-shadow: 0 0 26px rgba(117, 243, 255, 0.08);
+    filter: brightness(0.98);
+  }
+
+  72% {
+    box-shadow: 0 0 34px rgba(117, 243, 255, 0.16);
+    filter: brightness(1.08);
+  }
+
+  84% {
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes gmScene06ScannerCore {
+  0%,
+  100% {
+    border-color: rgba(117, 243, 255, 0.26);
+    box-shadow: 0 0 28px rgba(117, 243, 255, 0.08);
+    filter: brightness(0.96);
+  }
+
+  46% {
+    border-color: rgba(117, 243, 255, 0.42);
+    box-shadow:
+      0 0 30px rgba(117, 243, 255, 0.16),
+      0 0 52px rgba(117, 243, 255, 0.06);
+    filter: brightness(1.16);
+  }
+
+  64% {
+    filter: brightness(1.03);
+  }
+}
+
+@keyframes gmScene06ScannerAwareness {
+  from {
+    filter: brightness(0.96);
+  }
+
+  to {
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes gmScene06AccessPanel {
+  from {
+    border-color: rgba(255, 255, 255, 0.07);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(74, 222, 128, 0.13);
+    filter: brightness(1.035);
+  }
+}
+
+@keyframes gmScene06AccessConfirm {
+  0%,
+  58%,
+  100% {
+    border-color: rgba(74, 222, 128, 0.24);
+    box-shadow: 0 0 34px rgba(74, 222, 128, 0.08);
+    filter: brightness(0.98);
+  }
+
+  70% {
+    border-color: rgba(74, 222, 128, 0.42);
+    box-shadow:
+      0 0 38px rgba(74, 222, 128, 0.20),
+      0 0 62px rgba(74, 222, 128, 0.07);
+    filter: brightness(1.16);
+  }
+
+  82% {
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes gmScene06AccessText {
+  0%,
+  58%,
+  100% {
+    color: rgba(205, 255, 221, 0.76);
+    filter: brightness(0.98);
+  }
+
+  70% {
+    color: rgba(222, 255, 232, 0.98);
+    filter: brightness(1.14);
+  }
+
+  82% {
+    color: rgba(205, 255, 221, 0.88);
+    filter: brightness(1.03);
+  }
+}
+
+@keyframes gmScene06SystemRead {
+  0%,
+  58%,
+  100% {
+    opacity: 0.45;
+    filter: brightness(0.9);
+  }
+
+  70% {
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+
+  82% {
+    opacity: 0.72;
+    filter: brightness(1.06);
+  }
+}
+
+@keyframes gmScene06SystemAwareness {
+  from {
+    border-color: rgba(255, 255, 255, 0.065);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(117, 243, 255, 0.10);
+    filter: brightness(1.025);
+  }
+}
+
+@keyframes gmScene06WelcomeResolve {
+  from {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.012);
+    filter: brightness(0.99);
+  }
+
+  to {
+    border-color: rgba(191, 245, 255, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.024),
+      0 0 38px rgba(117, 243, 255, 0.028);
+    filter: brightness(1.035);
+  }
+}
+
+/* Mobile -----------------------------------------------------------------
+   Foundation 008-B remains authoritative. Only cadence is softened. */
+
+@media (max-width: 760px) {
+  .gm-scene06__door-light {
+    animation-duration: 11.6s;
+  }
+
+  .gm-scene06__status-dot,
+  .gm-scene06__ready i {
+    animation-duration: 5.2s;
+  }
+
+  .gm-scene06__journey-step > i,
+  .gm-scene06__journey-step > strong,
+  .gm-scene06__journey-step:not(:last-child)::after {
+    animation-duration: 9.6s;
+  }
+
+  .gm-scene06__pass,
+  .gm-scene06__avatar,
+  .gm-scene06__qr,
+  .gm-scene06__scanner,
+  .gm-scene06__scanner-core,
+  .gm-scene06__access,
+  .gm-scene06__check,
+  .gm-scene06__access > strong,
+  .gm-scene06__system,
+  .gm-scene06__system-line i,
+  .gm-scene06__welcome {
+    animation-duration: 11.2s;
+  }
+}
+
+/* Reduced motion --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene06__door-light,
+  .gm-scene06__status-dot,
+  .gm-scene06__ready,
+  .gm-scene06__ready i,
+  .gm-scene06__journey-step > i,
+  .gm-scene06__journey-step > strong,
+  .gm-scene06__journey-step:not(:last-child)::after,
+  .gm-scene06__pass,
+  .gm-scene06__avatar,
+  .gm-scene06__qr,
+  .gm-scene06__scanner,
+  .gm-scene06__scanner-core,
+  .gm-scene06__access,
+  .gm-scene06__check,
+  .gm-scene06__access > strong,
+  .gm-scene06__system,
+  .gm-scene06__system-line i,
+  .gm-scene06__welcome,
+  .gm-scene06__scanner-ring,
+  .gm-scene06__scanner-beam {
+    animation: none !important;
+    filter: none !important;
+  }
+}
+
+/* END GM CINEMATIC SCENE 06 RECOGNITION GATE =========================== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 06 MOBILE JOURNEY LABEL COMPLETENESS
+   CIN-007-C
+   --------------------------------------------------------------------------
+   Mobile QA detected final-character clipping in BIENVENIDA.
+   The foundation uses nowrap + ellipsis on journey labels.
+
+   Strategy:
+   - preserve every journey label;
+   - wrap/compact instead of clip;
+   - preserve the five-column journey and CIN-007-B direction;
+   - do not change desktop or scroll architecture.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  .gm-scene06__journey-step > strong {
+    overflow: visible;
+    min-width: 0;
+    white-space: normal;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+    text-align: center;
+    font-size: 0.47rem;
+    line-height: 1.04;
+    letter-spacing: 0.025em;
+  }
+}
+
+@media (max-width: 390px) {
+  .gm-scene06__journey-step > strong {
+    font-size: 0.44rem;
+    line-height: 1.02;
+    letter-spacing: 0.018em;
+  }
+}
+
+/* END GM CINEMATIC SCENE 06 MOBILE JOURNEY LABEL COMPLETENESS =========== */
+/* ==========================================================================
+   GM CINEMATIC SCENE 06 MOBILE JOURNEY LABEL FIT POLISH
+   CIN-007-D
+   --------------------------------------------------------------------------
+   CIN-007-C correctly removed clipping, but BIENVENIDA wrapped its final A
+   onto a second line at 368px.
+
+   Keep the general mobile wrapping policy. Only the Spanish fourth journey
+   label receives a micro-fit so BIENVENIDA remains one complete word.
+   ========================================================================== */
+
+@media (max-width: 390px) {
+  :lang(es) .gm-scene06__journey-step:nth-child(4) > strong {
+    overflow: visible;
+    max-width: none;
+    white-space: nowrap;
+    text-overflow: clip;
+    overflow-wrap: normal;
+    word-break: normal;
+    font-size: clamp(0.33rem, 1.5vw, 0.36rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* END GM CINEMATIC SCENE 06 MOBILE JOURNEY LABEL FIT POLISH ============= */
