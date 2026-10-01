@@ -13696,3 +13696,228 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 07 EFFORT TO PROGRESS ========================== */
+
+/* ==========================================================================
+   GM CINEMATIC SCENE 08
+   CIN-009-A — CONTINUITY BEYOND TRAINING
+
+   Narrative:
+   TODAY -> FOLLOW-UP -> NEXT VISIT -> CONTINUITY
+
+   Rules:
+   - React Kino keeps exclusive scroll ownership.
+   - Existing Scene duration="180vh" remains unchanged.
+   - Existing Scene 08 JSX remains unchanged.
+   - Existing 010-A / 010-B / 010-C foundation remains unchanged.
+   - Motion communicates continuity; it does not simulate a chat application.
+   - No values, member data or UI state are mutated.
+   ========================================================================== */
+
+.gm-scene08__status-dot {
+  animation: gmScene08CinematicStatus 4.8s ease-in-out infinite alternate;
+}
+
+.gm-scene08__connected {
+  animation: gmScene08CinematicConnected 12s ease-in-out infinite;
+}
+
+.gm-scene08__timeline-step {
+  animation: gmScene08CinematicTimeline 12s ease-in-out infinite;
+}
+
+.gm-scene08__timeline-step:nth-child(1) { animation-delay: 0s; }
+.gm-scene08__timeline-step:nth-child(2) { animation-delay: 3.2s; }
+.gm-scene08__timeline-step:nth-child(3) { animation-delay: 6.4s; }
+
+.gm-scene08__touch {
+  animation: gmScene08CinematicTouch 12s ease-in-out infinite;
+}
+
+.gm-scene08__touch--workout { animation-delay: 0s; }
+.gm-scene08__touch--message { animation-delay: 3.2s; }
+.gm-scene08__touch--reminder { animation-delay: 6.4s; }
+.gm-scene08__touch--continuity { animation-delay: 8.9s; }
+
+.gm-scene08__member-card {
+  animation: gmScene08CinematicMember 6s ease-in-out infinite alternate;
+}
+
+.gm-scene08__connector {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(117, 243, 255, 0.12) 24%,
+      rgba(117, 243, 255, 0.72) 50%,
+      rgba(167, 139, 250, 0.28) 68%,
+      transparent 100%
+    );
+  background-size: 220% 100%;
+  animation: gmScene08CinematicConnector 4.8s ease-in-out infinite;
+}
+
+.gm-scene08__continuity-line i {
+  transform-origin: center;
+  animation: gmScene08CinematicContinuity 4.8s ease-in-out infinite;
+}
+
+.gm-scene08__continuity-line i:nth-child(1) { animation-delay: 0s; }
+.gm-scene08__continuity-line i:nth-child(2) { animation-delay: 0.32s; }
+.gm-scene08__continuity-line i:nth-child(3) { animation-delay: 0.64s; }
+.gm-scene08__continuity-line i:nth-child(4) { animation-delay: 0.96s; }
+
+.gm-scene08__insight {
+  animation: gmScene08CinematicResolve 12s ease-in-out infinite;
+}
+
+@keyframes gmScene08CinematicStatus {
+  from {
+    opacity: 0.72;
+    box-shadow:
+      0 0 0 5px rgba(117, 243, 255, 0.04),
+      0 0 14px rgba(117, 243, 255, 0.22);
+  }
+
+  to {
+    opacity: 1;
+    box-shadow:
+      0 0 0 7px rgba(117, 243, 255, 0.07),
+      0 0 25px rgba(117, 243, 255, 0.52);
+  }
+}
+
+@keyframes gmScene08CinematicConnected {
+  0%, 100% {
+    border-color: rgba(74, 222, 128, 0.12);
+    background: rgba(74, 222, 128, 0.035);
+  }
+
+  42%, 58% {
+    border-color: rgba(74, 222, 128, 0.24);
+    background: rgba(74, 222, 128, 0.065);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.05);
+  }
+}
+
+@keyframes gmScene08CinematicTimeline {
+  0%, 5%, 25%, 100% {
+    border-color: rgba(255, 255, 255, 0.055);
+    background: rgba(255, 255, 255, 0.016);
+    box-shadow: none;
+  }
+
+  9%, 18% {
+    border-color: rgba(117, 243, 255, 0.2);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(117, 243, 255, 0.055),
+        rgba(255, 255, 255, 0.018)
+      );
+    box-shadow:
+      0 0 24px rgba(117, 243, 255, 0.045),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+}
+
+@keyframes gmScene08CinematicTouch {
+  0%, 4%, 25%, 100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    background: rgba(255, 255, 255, 0.018);
+    box-shadow: none;
+  }
+
+  8%, 18% {
+    border-color: rgba(117, 243, 255, 0.16);
+    background:
+      radial-gradient(
+        circle at 88% 18%,
+        rgba(117, 243, 255, 0.065),
+        transparent 36%
+      ),
+      rgba(255, 255, 255, 0.024);
+    box-shadow:
+      0 14px 38px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+}
+
+@keyframes gmScene08CinematicMember {
+  from {
+    border-color: rgba(117, 243, 255, 0.14);
+    box-shadow: 0 0 30px rgba(117, 243, 255, 0.045);
+  }
+
+  to {
+    border-color: rgba(117, 243, 255, 0.24);
+    box-shadow:
+      0 0 46px rgba(117, 243, 255, 0.1),
+      0 0 72px rgba(167, 139, 250, 0.035);
+  }
+}
+
+@keyframes gmScene08CinematicConnector {
+  0% {
+    background-position: 100% 50%;
+    opacity: 0.38;
+  }
+
+  45% { opacity: 0.92; }
+
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+}
+
+@keyframes gmScene08CinematicContinuity {
+  0%, 100% {
+    opacity: 0.32;
+    scale: 0.82 1;
+  }
+
+  45%, 60% {
+    opacity: 1;
+    scale: 1 1;
+    background: rgba(74, 222, 128, 0.72);
+  }
+}
+
+@keyframes gmScene08CinematicResolve {
+  0%, 68%, 100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  78%, 92% {
+    border-color: rgba(167, 139, 250, 0.14);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.12),
+      0 0 32px rgba(168, 85, 247, 0.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene08__status-dot,
+  .gm-scene08__connected,
+  .gm-scene08__timeline-step,
+  .gm-scene08__touch,
+  .gm-scene08__member-card,
+  .gm-scene08__connector,
+  .gm-scene08__continuity-line i,
+  .gm-scene08__insight {
+    animation: none !important;
+  }
+
+  .gm-scene08__connector {
+    background-position: 50% 50%;
+    opacity: 0.55;
+  }
+
+  .gm-scene08__continuity-line i {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* END CIN-009-A — CONTINUITY BEYOND TRAINING =========================== */
