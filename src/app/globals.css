@@ -13921,3 +13921,251 @@ body {
 }
 
 /* END CIN-009-A — CONTINUITY BEYOND TRAINING =========================== */
+
+/* ==========================================================================
+   GM CINEMATIC SCENE 09
+   CIN-010-A — CONNECTED DATA TO SIGNAL
+
+   Narrative:
+   SOURCES -> CONVERGENCE -> PATTERN -> SIGNALS -> CONTEXT
+
+   Rules:
+   - React Kino keeps exclusive scroll ownership.
+   - Existing Scene duration="180vh" remains unchanged.
+   - Existing Scene 09 JSX remains unchanged.
+   - Existing 011-A / 011-B Foundation remains unchanged.
+   - Motion communicates connected reading, not prediction or automatic decisions.
+   - No values, metrics, source data or UI state are mutated.
+   ========================================================================== */
+
+.gm-scene09__status-dot {
+  animation: gmScene09CinematicStatus 5.2s ease-in-out infinite alternate;
+}
+
+.gm-scene09__connected {
+  animation: gmScene09CinematicConnected 15s ease-in-out infinite;
+}
+
+.gm-scene09__source {
+  animation: gmScene09CinematicSource 15s ease-in-out infinite;
+}
+
+.gm-scene09__source > i {
+  animation: gmScene09CinematicSourceDot 15s ease-in-out infinite;
+}
+
+.gm-scene09__source:nth-child(1),
+.gm-scene09__source:nth-child(1) > i {
+  animation-delay: -13.2s;
+}
+
+.gm-scene09__source:nth-child(2),
+.gm-scene09__source:nth-child(2) > i {
+  animation-delay: -10.8s;
+}
+
+.gm-scene09__source:nth-child(3),
+.gm-scene09__source:nth-child(3) > i {
+  animation-delay: -8.4s;
+}
+
+.gm-scene09__source:nth-child(4),
+.gm-scene09__source:nth-child(4) > i {
+  animation-delay: -6s;
+}
+
+.gm-scene09__source:nth-child(5),
+.gm-scene09__source:nth-child(5) > i {
+  animation-delay: -3.6s;
+}
+
+.gm-scene09__core-card {
+  animation: gmScene09CinematicCore 7.2s ease-in-out infinite alternate;
+}
+
+.gm-scene09__signal {
+  animation: gmScene09CinematicSignalPanel 15s ease-in-out infinite;
+}
+
+.gm-scene09__signal-list article {
+  animation: gmScene09CinematicSignal 15s ease-in-out infinite;
+}
+
+.gm-scene09__signal-list article:nth-child(1) {
+  animation-delay: -7.4s;
+}
+
+.gm-scene09__signal-list article:nth-child(2) {
+  animation-delay: -4.9s;
+}
+
+.gm-scene09__signal-list article:nth-child(3) {
+  animation-delay: -2.4s;
+}
+
+.gm-scene09__insight {
+  animation: gmScene09CinematicResolve 15s ease-in-out infinite;
+}
+
+@keyframes gmScene09CinematicStatus {
+  from {
+    opacity: 0.68;
+    box-shadow:
+      0 0 0 5px rgba(117, 243, 255, 0.04),
+      0 0 14px rgba(117, 243, 255, 0.22);
+  }
+
+  to {
+    opacity: 1;
+    box-shadow:
+      0 0 0 7px rgba(117, 243, 255, 0.065),
+      0 0 26px rgba(117, 243, 255, 0.5);
+  }
+}
+
+@keyframes gmScene09CinematicConnected {
+  0%,
+  100% {
+    border-color: rgba(117, 243, 255, 0.1);
+    background: rgba(117, 243, 255, 0.025);
+    box-shadow: none;
+  }
+
+  34%,
+  56% {
+    border-color: rgba(117, 243, 255, 0.22);
+    background: rgba(117, 243, 255, 0.055);
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.045);
+  }
+}
+
+@keyframes gmScene09CinematicSource {
+  0%,
+  5%,
+  24%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.055);
+    background: rgba(255, 255, 255, 0.016);
+    box-shadow: none;
+  }
+
+  9%,
+  18% {
+    border-color: rgba(117, 243, 255, 0.17);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.055),
+        rgba(255, 255, 255, 0.018)
+      );
+    box-shadow:
+      0 10px 28px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+}
+
+@keyframes gmScene09CinematicSourceDot {
+  0%,
+  5%,
+  24%,
+  100% {
+    opacity: 0.68;
+    scale: 0.88;
+  }
+
+  9%,
+  18% {
+    opacity: 1;
+    scale: 1.12;
+  }
+}
+
+@keyframes gmScene09CinematicCore {
+  from {
+    border-color: rgba(117, 243, 255, 0.15);
+    box-shadow:
+      0 0 30px rgba(117, 243, 255, 0.04);
+  }
+
+  to {
+    border-color: rgba(117, 243, 255, 0.27);
+    box-shadow:
+      0 0 48px rgba(117, 243, 255, 0.11),
+      0 0 78px rgba(99, 102, 241, 0.035);
+  }
+}
+
+@keyframes gmScene09CinematicSignalPanel {
+  0%,
+  36%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  48%,
+  76% {
+    border-color: rgba(99, 102, 241, 0.15);
+    box-shadow:
+      0 16px 42px rgba(0, 0, 0, 0.11),
+      0 0 34px rgba(99, 102, 241, 0.035);
+  }
+}
+
+@keyframes gmScene09CinematicSignal {
+  0%,
+  5%,
+  25%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.014);
+  }
+
+  10%,
+  19% {
+    border-color: rgba(117, 243, 255, 0.15);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(117, 243, 255, 0.045),
+        rgba(255, 255, 255, 0.016)
+      );
+  }
+}
+
+@keyframes gmScene09CinematicResolve {
+  0%,
+  68%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  78%,
+  93% {
+    border-color: rgba(56, 189, 248, 0.15);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.12),
+      0 0 34px rgba(56, 189, 248, 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene09__status-dot,
+  .gm-scene09__connected,
+  .gm-scene09__source,
+  .gm-scene09__source > i,
+  .gm-scene09__core-card,
+  .gm-scene09__signal,
+  .gm-scene09__signal-list article,
+  .gm-scene09__insight {
+    animation: none !important;
+  }
+
+  .gm-scene09__source > i {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* END CIN-010-A — CONNECTED DATA TO SIGNAL ============================== */
