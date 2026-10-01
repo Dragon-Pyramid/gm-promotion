@@ -12528,42 +12528,42 @@ body {
 .gm-scene05__node:nth-child(2)::after,
 .gm-scene05__node:nth-child(2) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(2) .gm-scene05__node-value {
-  animation-delay: -1.0s;
+  animation-delay: -6.0s;
 }
 
 .gm-scene05__node:nth-child(3),
 .gm-scene05__node:nth-child(3)::after,
 .gm-scene05__node:nth-child(3) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(3) .gm-scene05__node-value {
-  animation-delay: -2.0s;
+  animation-delay: -5.0s;
 }
 
 .gm-scene05__node:nth-child(4),
 .gm-scene05__node:nth-child(4)::after,
 .gm-scene05__node:nth-child(4) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(4) .gm-scene05__node-value {
-  animation-delay: -3.0s;
+  animation-delay: -4.0s;
 }
 
 .gm-scene05__node:nth-child(5),
 .gm-scene05__node:nth-child(5)::after,
 .gm-scene05__node:nth-child(5) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(5) .gm-scene05__node-value {
-  animation-delay: -4.0s;
+  animation-delay: -3.0s;
 }
 
 .gm-scene05__node:nth-child(6),
 .gm-scene05__node:nth-child(6)::after,
 .gm-scene05__node:nth-child(6) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(6) .gm-scene05__node-value {
-  animation-delay: -5.0s;
+  animation-delay: -2.0s;
 }
 
 .gm-scene05__node:nth-child(7),
 .gm-scene05__node:nth-child(7)::after,
 .gm-scene05__node:nth-child(7) .gm-scene05__node-index i,
 .gm-scene05__node:nth-child(7) .gm-scene05__node-value {
-  animation-delay: -6.0s;
+  animation-delay: -1.0s;
 }
 
 /* The rail/runner already provide the physical idea of continuity.

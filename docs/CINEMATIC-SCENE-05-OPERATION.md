@@ -342,3 +342,51 @@ Mobile ES `368x832`:
 - `REGISTRO`;
 - insight body visible;
 - cero contenido sacrificado.
+## CIN-006-C — Row-Major Flow Direction
+
+QA posterior detectó que la onda operacional de Scene 05 se percibía en orden
+inverso: comenzaba visualmente en la fila inferior desde la derecha y luego
+saltaba a la fila superior, también en dirección inversa.
+
+La estructura DOM ya estaba en el orden correcto. Dentro de `.gm-scene05__track`
+el rail ocupa el primer child y los seis nodos ocupan `nth-child(2)` a
+`nth-child(7)`.
+
+La causa era exclusivamente temporal: los offsets negativos de la animación
+infinita estaban ordenados de `-1s` a `-6s`.
+
+CIN-006-C invierte esos offsets y conserva exactamente:
+
+- `gmScene05NodeAwareness`;
+- `gmScene05NodeThread`;
+- `gmScene05NodeDot`;
+- `gmScene05ValueAck`;
+- duración `7.2s`;
+- runner;
+- rail;
+- grid 3x2;
+- values;
+- sync;
+- insight;
+- React Kino;
+- `180vh`;
+- JSX;
+- copy;
+- manifest.
+
+La lectura cíclica esperada queda:
+
+`01 -> 02 -> 03`
+`          ↓`
+`04 -> 05 -> 06`
+`          ↓`
+`        loop`
+
+En términos visuales:
+
+- fila superior: izquierda -> derecha;
+- descenso;
+- fila inferior: izquierda -> derecha;
+- reinicio del loop.
+
+No se modifica la dirección del rail ni se agrega una nueva animación.
