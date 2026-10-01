@@ -68,17 +68,13 @@ Mobile `368x832`:
 La foundation usa truncado y ocultamiento de metadata/body en mobile. No se
 corrige preventivamente en CIN-008-A: sólo si QA confirma pérdida real.
 
-## Copy pendiente
+## Copy verificada — CIN-008-B
 
-El relevamiento detectó en ES:
-
-`la evoluciónpara que`
-
-Debe corregirse luego a:
+La validación final en navegador confirmó que la copy ES se renderiza correctamente como:
 
 `la evolución para que`
 
-No se mezcla esa corrección editorial con CIN-008-A.
+No fue necesario modificar `messages/es.json`. CIN-008-B queda cerrado como verificación sin cambio de fuente.
 
 ## Criterio
 
