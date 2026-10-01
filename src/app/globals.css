@@ -14169,3 +14169,455 @@ body {
 }
 
 /* END CIN-010-A — CONNECTED DATA TO SIGNAL ============================== */
+
+/* ==========================================================================
+   GM CINEMATIC SCENE 10
+   CIN-011-A — SIMPLE EXPERIENCE, SOLID FOUNDATION
+
+   Narrative:
+   SIMPLE EXPERIENCE -> INVISIBLE CONNECTION -> COORDINATED LAYERS
+   -> SOLID FOUNDATION -> TECHNOLOGY FADES
+
+   Rules:
+   - React Kino keeps exclusive scroll ownership.
+   - Existing Scene duration="180vh" remains unchanged.
+   - Existing Scene 10 JSX remains unchanged.
+   - Existing PATCH 012-A Foundation remains unchanged.
+   - Existing mobile and <=680px geometry remain unchanged.
+   - Motion communicates support and coordination, not infrastructure topology.
+   ========================================================================== */
+
+.gm-scene10__status-dot {
+  animation: gmScene10CinematicStatus 5.4s ease-in-out infinite alternate;
+}
+
+.gm-scene10__connected {
+  animation: gmScene10CinematicConnected 16s ease-in-out infinite;
+}
+
+.gm-scene10__surface {
+  animation: gmScene10CinematicSurface 16s ease-in-out infinite;
+}
+
+.gm-scene10__surface-screen > span {
+  animation: gmScene10CinematicSurfaceHeader 16s ease-in-out infinite;
+}
+
+.gm-scene10__surface-screen > i {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  animation: gmScene10CinematicSurfaceRowBase 16s ease-in-out infinite;
+}
+
+.gm-scene10__surface-screen > i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(103, 232, 249, 0.56),
+      rgba(103, 232, 249, 0.16)
+    );
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gm-scene10__surface-screen > i:nth-of-type(1)::after {
+  animation: gmScene10CinematicSurfaceProgressBar01 16s linear infinite;
+}
+
+.gm-scene10__surface-screen > i:nth-of-type(2)::after {
+  animation: gmScene10CinematicSurfaceProgressBar02 16s linear infinite;
+}
+
+.gm-scene10__surface-screen > i:nth-of-type(3)::after {
+  animation: gmScene10CinematicSurfaceProgressBar03 16s linear infinite;
+}
+
+.gm-scene10__bridge::before {
+  animation: gmScene10CinematicBridge 16s ease-in-out infinite;
+}
+
+.gm-scene10__bridge > span {
+  animation: gmScene10CinematicBridgeNode 16s ease-in-out infinite;
+}
+
+.gm-scene10__foundation {
+  animation: gmScene10CinematicFoundation 16s ease-in-out infinite;
+}
+
+.gm-scene10__layer {
+  animation: gmScene10CinematicLayer 16s ease-in-out infinite;
+}
+
+.gm-scene10__layer > i {
+  animation: gmScene10CinematicLayerDot 16s ease-in-out infinite;
+}
+
+.gm-scene10__layer:nth-child(1),
+.gm-scene10__layer:nth-child(1) > i {
+  animation-delay: -10.6s;
+}
+
+.gm-scene10__layer:nth-child(2),
+.gm-scene10__layer:nth-child(2) > i {
+  animation-delay: -9.2s;
+}
+
+.gm-scene10__layer:nth-child(3),
+.gm-scene10__layer:nth-child(3) > i {
+  animation-delay: -7.8s;
+}
+
+.gm-scene10__layer:nth-child(4),
+.gm-scene10__layer:nth-child(4) > i {
+  animation-delay: -6.4s;
+}
+
+.gm-scene10__layer:nth-child(5),
+.gm-scene10__layer:nth-child(5) > i {
+  animation-delay: -5s;
+}
+
+.gm-scene10__layer:nth-child(6),
+.gm-scene10__layer:nth-child(6) > i {
+  animation-delay: -3.6s;
+}
+
+.gm-scene10__insight {
+  animation: gmScene10CinematicResolve 16s ease-in-out infinite;
+}
+
+@keyframes gmScene10CinematicStatus {
+  from {
+    opacity: 0.68;
+    box-shadow:
+      0 0 0 5px rgba(103, 232, 249, 0.04),
+      0 0 14px rgba(103, 232, 249, 0.2);
+  }
+
+  to {
+    opacity: 1;
+    box-shadow:
+      0 0 0 7px rgba(103, 232, 249, 0.065),
+      0 0 26px rgba(103, 232, 249, 0.46);
+  }
+}
+
+@keyframes gmScene10CinematicConnected {
+  0%,
+  100% {
+    border-color: rgba(103, 232, 249, 0.1);
+    background: rgba(103, 232, 249, 0.025);
+    box-shadow: none;
+  }
+
+  30%,
+  58% {
+    border-color: rgba(103, 232, 249, 0.22);
+    background: rgba(103, 232, 249, 0.052);
+    box-shadow: 0 0 26px rgba(34, 211, 238, 0.045);
+  }
+}
+
+@keyframes gmScene10CinematicSurface {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  8%,
+  26% {
+    border-color: rgba(103, 232, 249, 0.17);
+    box-shadow:
+      0 16px 38px rgba(0, 0, 0, 0.11),
+      0 0 34px rgba(34, 211, 238, 0.035);
+  }
+}
+
+@keyframes gmScene10CinematicSurfaceHeader {
+  0%,
+  100% {
+    opacity: 0.58;
+    box-shadow: 0 0 16px rgba(103, 232, 249, 0.12);
+  }
+
+  10%,
+  24% {
+    opacity: 1;
+    box-shadow: 0 0 24px rgba(103, 232, 249, 0.24);
+  }
+}
+
+@keyframes gmScene10CinematicSurfaceRowBase {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.055);
+    background: rgba(255, 255, 255, 0.018);
+  }
+
+  8%,
+  42% {
+    border-color: rgba(103, 232, 249, 0.11);
+    background: rgba(103, 232, 249, 0.02);
+  }
+
+  46%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.055);
+    background: rgba(255, 255, 255, 0.018);
+  }
+}
+
+@keyframes gmScene10CinematicSurfaceProgressBar01 {
+  0%,
+  7%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  8% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  18% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes gmScene10CinematicSurfaceProgressBar02 {
+  0%,
+  18%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  19% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  29% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes gmScene10CinematicSurfaceProgressBar03 {
+  0%,
+  29%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes gmScene10CinematicBridge {
+  0%,
+  18%,
+  100% {
+    opacity: 0.6;
+  }
+
+  28%,
+  48% {
+    opacity: 1;
+  }
+}
+
+@keyframes gmScene10CinematicBridgeNode {
+  0%,
+  18%,
+  100% {
+    opacity: 0.62;
+    box-shadow: 0 0 12px rgba(103, 232, 249, 0.24);
+  }
+
+  28%,
+  48% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(103, 232, 249, 0.48);
+  }
+}
+
+@keyframes gmScene10CinematicFoundation {
+  0%,
+  32%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  42%,
+  76% {
+    border-color: rgba(59, 130, 246, 0.14);
+    box-shadow:
+      0 18px 44px rgba(0, 0, 0, 0.11),
+      0 0 38px rgba(59, 130, 246, 0.035);
+  }
+}
+
+@keyframes gmScene10CinematicLayer {
+  0%,
+  4%,
+  19%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.014);
+  }
+
+  8%,
+  15% {
+    border-color: rgba(103, 232, 249, 0.15);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(103, 232, 249, 0.042),
+        rgba(255, 255, 255, 0.016)
+      );
+  }
+}
+
+@keyframes gmScene10CinematicLayerDot {
+  0%,
+  4%,
+  19%,
+  100% {
+    opacity: 0.68;
+    scale: 0.9;
+  }
+
+  8%,
+  15% {
+    opacity: 1;
+    scale: 1.12;
+  }
+}
+
+@keyframes gmScene10CinematicResolve {
+  0%,
+  72%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.065);
+    box-shadow: none;
+  }
+
+  82%,
+  94% {
+    border-color: rgba(103, 232, 249, 0.15);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.12),
+      0 0 36px rgba(34, 211, 238, 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene10__status-dot,
+  .gm-scene10__connected,
+  .gm-scene10__surface,
+  .gm-scene10__surface-screen > span,
+  .gm-scene10__surface-screen > i,
+  .gm-scene10__surface-screen > i::after,
+  .gm-scene10__bridge::before,
+  .gm-scene10__bridge > span,
+  .gm-scene10__foundation,
+  .gm-scene10__layer,
+  .gm-scene10__layer > i,
+  .gm-scene10__insight {
+    animation: none !important;
+  }
+
+  .gm-scene10__surface-screen > i::after {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  .gm-scene10__layer > i,
+  .gm-scene10__bridge > span {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* END CIN-011-A — SIMPLE EXPERIENCE, SOLID FOUNDATION ================== */
+
+/* ==========================================================================
+   CIN-011-A R5 - MOBILE PROGRESS CONTAINMENT
+
+   Keep the three animated surface rows fully inside the compact mobile
+   surface-screen. Desktop geometry remains unchanged.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  .gm-scene10__surface-screen > i {
+    box-sizing: border-box;
+    height: 5px;
+  }
+
+  .gm-scene10__surface-screen > i:nth-of-type(1) {
+    top: 21px;
+  }
+
+  .gm-scene10__surface-screen > i:nth-of-type(2) {
+    top: 30px;
+  }
+
+  .gm-scene10__surface-screen > i:nth-of-type(3) {
+    top: 39px;
+  }
+}
+
+/* END CIN-011-A R5 - MOBILE PROGRESS CONTAINMENT ======================= */
