@@ -13462,3 +13462,237 @@ body {
 }
 
 /* END GM CINEMATIC SCENE 06 MOBILE JOURNEY LABEL FIT POLISH ============= */
+/* ==========================================================================
+   GM CINEMATIC SCENE 07 EFFORT TO PROGRESS
+   CIN-008-A — Effort to Progress / Visible Evolution
+   ========================================================================== */
+
+.gm-scene07__status-dot,
+.gm-scene07__live i {
+  animation: gmScene07SessionPulse 4.4s ease-in-out infinite;
+}
+
+.gm-scene07__live {
+  animation: gmScene07LiveAwareness 7s ease-in-out infinite alternate;
+}
+
+.gm-scene07__session {
+  animation: gmScene07SessionAwareness 9.2s ease-in-out infinite alternate;
+}
+
+.gm-scene07__exercise {
+  animation: gmScene07ExerciseAwareness 7.8s ease-in-out infinite;
+}
+
+.gm-scene07__exercise::after {
+  animation: gmScene07ExerciseThread 7.8s ease-in-out infinite;
+}
+
+.gm-scene07__exercise-index {
+  animation: gmScene07ExerciseIndex 7.8s ease-in-out infinite;
+}
+
+.gm-scene07__exercise b {
+  animation: gmScene07ExerciseValue 7.8s ease-in-out infinite;
+}
+
+.gm-scene07__exercise:nth-child(1),
+.gm-scene07__exercise:nth-child(1)::after,
+.gm-scene07__exercise:nth-child(1) .gm-scene07__exercise-index,
+.gm-scene07__exercise:nth-child(1) b { animation-delay: -5.2s; }
+
+.gm-scene07__exercise:nth-child(2),
+.gm-scene07__exercise:nth-child(2)::after,
+.gm-scene07__exercise:nth-child(2) .gm-scene07__exercise-index,
+.gm-scene07__exercise:nth-child(2) b { animation-delay: -3.4s; }
+
+.gm-scene07__exercise:nth-child(3),
+.gm-scene07__exercise:nth-child(3)::after,
+.gm-scene07__exercise:nth-child(3) .gm-scene07__exercise-index,
+.gm-scene07__exercise:nth-child(3) b { animation-delay: -1.6s; }
+
+.gm-scene07__completion,
+.gm-scene07__completion > span,
+.gm-scene07__core {
+  animation: gmScene07CompletionAck 8.6s ease-in-out infinite alternate;
+}
+
+.gm-scene07__chart svg path {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: gmScene07ProgressTrace 10.6s ease-in-out infinite;
+}
+
+.gm-scene07__weeks span {
+  animation: gmScene07WeekRead 10.6s ease-in-out infinite;
+}
+
+.gm-scene07__weeks span:nth-child(1) { animation-delay: -7.6s; }
+.gm-scene07__weeks span:nth-child(2) { animation-delay: -5.4s; }
+.gm-scene07__weeks span:nth-child(3) { animation-delay: -3.2s; }
+.gm-scene07__weeks span:nth-child(4) { animation-delay: -1s; }
+
+.gm-scene07__metrics article,
+.gm-scene07__metrics article > strong {
+  animation: gmScene07MetricRead 9.4s ease-in-out infinite;
+}
+
+.gm-scene07__metrics article:nth-child(1),
+.gm-scene07__metrics article:nth-child(1) > strong { animation-delay: -6.3s; }
+
+.gm-scene07__metrics article:nth-child(2),
+.gm-scene07__metrics article:nth-child(2) > strong { animation-delay: -3.9s; }
+
+.gm-scene07__metrics article:nth-child(3),
+.gm-scene07__metrics article:nth-child(3) > strong { animation-delay: -1.5s; }
+
+.gm-scene07__focus {
+  animation: gmScene07FocusBreath 10.4s ease-in-out infinite alternate;
+}
+
+.gm-scene07__focus > div i {
+  animation: gmScene07FocusBars 9.8s ease-in-out infinite;
+}
+
+.gm-scene07__focus > div i:nth-child(1) { animation-delay: -5.6s; }
+.gm-scene07__focus > div i:nth-child(2) { animation-delay: -4s; }
+.gm-scene07__focus > div i:nth-child(3) { animation-delay: -2.4s; }
+.gm-scene07__focus > div i:nth-child(4) { animation-delay: -.8s; }
+
+.gm-scene07__insight {
+  animation: gmScene07InsightResolve 11.6s ease-in-out infinite alternate;
+}
+
+@keyframes gmScene07SessionPulse {
+  0%,100% { opacity:.72; filter:brightness(.94); }
+  42% { opacity:1; filter:brightness(1.3); }
+  58% { opacity:.86; filter:brightness(1.06); }
+}
+
+@keyframes gmScene07LiveAwareness {
+  from { border-color:rgba(74,222,128,.10); background:rgba(74,222,128,.03); filter:brightness(.98); }
+  to { border-color:rgba(74,222,128,.17); background:rgba(74,222,128,.045); filter:brightness(1.05); }
+}
+
+@keyframes gmScene07SessionAwareness {
+  from { border-color:rgba(255,255,255,.07); filter:brightness(.99); }
+  to { border-color:rgba(117,243,255,.10); filter:brightness(1.025); }
+}
+
+@keyframes gmScene07ExerciseAwareness {
+  0%,60%,100% { border-color:rgba(255,255,255,.055); filter:brightness(.98); }
+  72% { border-color:rgba(117,243,255,.11); filter:brightness(1.055); }
+  84% { border-color:rgba(255,255,255,.07); filter:brightness(1.01); }
+}
+
+@keyframes gmScene07ExerciseThread {
+  0%,60%,100% { opacity:.34; filter:brightness(.9); }
+  72% { opacity:.96; filter:brightness(1.36); }
+  84% { opacity:.58; filter:brightness(1.06); }
+}
+
+@keyframes gmScene07ExerciseIndex {
+  0%,60%,100% { border-color:rgba(255,255,255,.055); color:rgba(228,237,250,.35); filter:brightness(.96); }
+  72% { border-color:rgba(117,243,255,.14); color:rgba(238,248,255,.68); filter:brightness(1.12); }
+  84% { filter:brightness(1.02); }
+}
+
+@keyframes gmScene07ExerciseValue {
+  0%,60%,100% { color:rgba(240,247,255,.70); filter:brightness(.98); }
+  72% { color:rgba(248,252,255,.96); filter:brightness(1.14); }
+  84% { filter:brightness(1.03); }
+}
+
+@keyframes gmScene07CompletionAck {
+  from { border-color:rgba(117,243,255,.10); filter:brightness(.98); }
+  to { border-color:rgba(117,243,255,.24); filter:brightness(1.09); }
+}
+
+@keyframes gmScene07ProgressTrace {
+  0%,12% { stroke-dashoffset:520; opacity:.44; filter:brightness(.92); }
+  58% { stroke-dashoffset:0; opacity:1; filter:brightness(1.24); }
+  78% { stroke-dashoffset:0; opacity:.92; filter:brightness(1.06); }
+  100% { stroke-dashoffset:520; opacity:.5; filter:brightness(.94); }
+}
+
+@keyframes gmScene07WeekRead {
+  0%,62%,100% { color:rgba(222,231,246,.28); filter:brightness(.96); }
+  72% { color:rgba(218,247,255,.68); filter:brightness(1.16); }
+  84% { color:rgba(222,231,246,.38); filter:brightness(1.02); }
+}
+
+@keyframes gmScene07MetricRead {
+  0%,60%,100% { border-color:rgba(255,255,255,.05); filter:brightness(.98); }
+  72% { border-color:rgba(117,243,255,.10); filter:brightness(1.09); }
+  84% { border-color:rgba(255,255,255,.065); filter:brightness(1.02); }
+}
+
+@keyframes gmScene07FocusBreath {
+  from { border-color:rgba(255,255,255,.065); filter:brightness(.99); }
+  to { border-color:rgba(117,243,255,.10); filter:brightness(1.03); }
+}
+
+@keyframes gmScene07FocusBars {
+  0%,60%,100% { opacity:.48; filter:brightness(.9); }
+  72% { opacity:1; filter:brightness(1.28); }
+  84% { opacity:.7; filter:brightness(1.06); }
+}
+
+@keyframes gmScene07InsightResolve {
+  from { border-color:rgba(255,255,255,.065); filter:brightness(.99); }
+  to { border-color:rgba(167,139,250,.12); box-shadow:0 0 38px rgba(168,85,247,.024); filter:brightness(1.035); }
+}
+
+@media (max-width:760px) {
+  .gm-scene07__exercise,
+  .gm-scene07__exercise::after,
+  .gm-scene07__exercise-index,
+  .gm-scene07__exercise b,
+  .gm-scene07__completion,
+  .gm-scene07__completion > span,
+  .gm-scene07__core,
+  .gm-scene07__chart svg path,
+  .gm-scene07__weeks span,
+  .gm-scene07__metrics article,
+  .gm-scene07__metrics article > strong,
+  .gm-scene07__focus,
+  .gm-scene07__focus > div i,
+  .gm-scene07__insight {
+    animation-duration:12s;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .gm-scene07__status-dot,
+  .gm-scene07__live,
+  .gm-scene07__live i,
+  .gm-scene07__session,
+  .gm-scene07__exercise,
+  .gm-scene07__exercise::after,
+  .gm-scene07__exercise-index,
+  .gm-scene07__exercise b,
+  .gm-scene07__completion,
+  .gm-scene07__completion > span,
+  .gm-scene07__core,
+  .gm-scene07__weeks span,
+  .gm-scene07__metrics article,
+  .gm-scene07__metrics article > strong,
+  .gm-scene07__focus,
+  .gm-scene07__focus > div i,
+  .gm-scene07__insight,
+  .gm-scene07__orbit,
+  .gm-scene07__pulse i {
+    animation:none !important;
+    filter:none !important;
+  }
+
+  .gm-scene07__chart svg path {
+    animation:none !important;
+    stroke-dasharray:none !important;
+    stroke-dashoffset:0 !important;
+    opacity:1 !important;
+    filter:none !important;
+  }
+}
+
+/* END GM CINEMATIC SCENE 07 EFFORT TO PROGRESS ========================== */
