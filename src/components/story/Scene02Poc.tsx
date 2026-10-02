@@ -101,8 +101,8 @@ export function Scene02Poc({labels}: {labels: Labels}) {
           </ScrollTransform>
           <div className="gm-scene02__topline" aria-hidden="true">
             <span>02</span>
-            <span>CONVERGENCE PROTOCOL</span>
-            <span>GM / SYSTEM</span>
+            <span>GYM MASTER</span>
+            <span>GM</span>
           </div>
 
           <div className="gm-scene02__links" aria-hidden="true">

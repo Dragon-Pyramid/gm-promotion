@@ -495,7 +495,7 @@ export default async function HomePage({
 
         <div className="gm-scroll-rail" aria-hidden="true">
           <span />
-          <small>SCROLL</small>
+          <small>{t("scroll")}</small>
         </div>
       </section>
 
