@@ -368,5 +368,39 @@
       "sales": "SALES",
       "training": "TRAINING"
     }
+  },
+  "Demo": {
+    "eyebrow": "PERSONALIZED DEMO",
+    "title": "Let's see how Gym Master fits your gym's operation.",
+    "body": "Tell us a little about your operation. These details will help us prepare a demo focused on your reality.",
+    "back": "Back to Gym Master",
+    "companyLink": "Visit Dragon Pyramid",
+    "panelEyebrow": "LET'S TALK ABOUT YOUR OPERATION",
+    "panelTitle": "A demo with context.",
+    "panelBody": "We want to understand how you work today, what you want to improve and which parts of Gym Master matter most for your gym.",
+    "points": {
+      "operation": "Your current operation",
+      "priorities": "Your priorities",
+      "experience": "The experience you want to build"
+    },
+    "form": {
+      "title": "Request a demo",
+      "body": "Share the essential details and a short note about what you need.",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "gym": "Gym / company",
+      "gymPlaceholder": "Your gym name",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+1 ...",
+      "city": "City",
+      "cityPlaceholder": "Your city",
+      "country": "Country",
+      "countryPlaceholder": "Your country",
+      "message": "What would you like to improve or solve?",
+      "messagePlaceholder": "Tell us briefly about your operation, priorities or needs.",
+      "submit": "Send request"
+    }
   }
 }

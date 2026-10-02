@@ -2,6 +2,8 @@
 
 import {Scene, ScrollTransform} from "react-kino";
 
+import {Link} from "@/i18n/navigation";
+
 type Scene14FinalCtaLabels = {
   kicker: string;
   title: string;
@@ -64,14 +66,14 @@ export function Scene14FinalCta({
               <p className="gm-scene14__body">{labels.body}</p>
 
               <div className="gm-scene14__action">
-                <button
-                  type="button"
+                <Link
+                  href="/demo"
                   className="gm-scene14__cta"
                   data-cta-intent="request-demo"
                 >
                   <span>{labels.cta}</span>
                   <i aria-hidden="true">↗</i>
-                </button>
+                </Link>
 
                 <p>{labels.ctaMeta}</p>
               </div>

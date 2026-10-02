@@ -368,5 +368,39 @@
       "sales": "VENTAS",
       "training": "ENTRENAMIENTO"
     }
+  },
+  "Demo": {
+    "eyebrow": "DEMOSTRACIÓN PERSONALIZADA",
+    "title": "Veamos cómo Gym Master encaja en la operación de tu gimnasio.",
+    "body": "Contanos un poco sobre tu operación. Estos datos nos ayudarán a preparar una demostración enfocada en tu realidad.",
+    "back": "Volver a Gym Master",
+    "companyLink": "Conocé Dragon Pyramid",
+    "panelEyebrow": "HABLEMOS DE TU OPERACIÓN",
+    "panelTitle": "Una demostración con contexto.",
+    "panelBody": "Queremos entender cómo trabajás hoy, qué querés mejorar y qué partes de Gym Master tienen más sentido para tu gimnasio.",
+    "points": {
+      "operation": "Tu operación actual",
+      "priorities": "Tus prioridades",
+      "experience": "La experiencia que querés construir"
+    },
+    "form": {
+      "title": "Solicitá una demostración",
+      "body": "Completá los datos principales y dejanos una breve referencia de lo que necesitás.",
+      "name": "Nombre y apellido",
+      "namePlaceholder": "Tu nombre",
+      "gym": "Gimnasio / empresa",
+      "gymPlaceholder": "Nombre de tu gimnasio",
+      "email": "Email",
+      "emailPlaceholder": "nombre@empresa.com",
+      "phone": "Teléfono / WhatsApp",
+      "phonePlaceholder": "+54 ...",
+      "city": "Ciudad",
+      "cityPlaceholder": "Tu ciudad",
+      "country": "País",
+      "countryPlaceholder": "Tu país",
+      "message": "¿Qué querés mejorar o resolver?",
+      "messagePlaceholder": "Contanos brevemente sobre tu operación, prioridades o necesidades.",
+      "submit": "Enviar solicitud"
+    }
   }
 }
