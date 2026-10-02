@@ -10778,6 +10778,407 @@ body {
 }
 
 /* END GM SCENE 14 DESKTOP VIEWPORT HEIGHT FIT =========================== */
+
+/* CIN-015-A - FINAL CTA CINEMATIC PASS ---------------------------------- */
+/*
+   Narrative:
+   atmosphere -> brand convergence -> message -> invitation -> closing resolve
+
+   Constraints:
+   - React Kino remains the only scroll-motion owner.
+   - No Scene 14 geometry or copy changes.
+   - PATCH 016-B brand-line clearance remains authoritative.
+   - PATCH 016-C desktop viewport-height fit remains authoritative.
+   - Mobile inherits ambient/light emphasis only.
+*/
+
+.gm-scene14__ambient {
+  animation: gmCin015AmbientBreath 18s ease-in-out infinite;
+}
+
+.gm-scene14__grid {
+  animation: gmCin015GridBreath 18s ease-in-out 0.35s infinite;
+}
+
+.gm-scene14__glow--one {
+  animation: gmCin015PrimaryGlow 18s ease-in-out 0.5s infinite;
+}
+
+.gm-scene14__glow--two {
+  animation: gmCin015SecondaryGlow 18s ease-in-out 1.15s infinite;
+}
+
+.gm-scene14__brand-rings > span:nth-child(1) {
+  animation: gmCin015BrandRing 18s ease-in-out 1.25s infinite;
+}
+
+.gm-scene14__brand-rings > span:nth-child(2) {
+  animation: gmCin015BrandRing 18s ease-in-out 1.85s infinite;
+}
+
+.gm-scene14__brand-rings > span:nth-child(3) {
+  animation: gmCin015BrandRing 18s ease-in-out 2.45s infinite;
+}
+
+.gm-scene14__content > .gm-kicker,
+.gm-scene14__brand-line {
+  animation: gmCin015BrandDescriptor 18s ease-in-out 3.7s infinite;
+}
+
+.gm-scene14__content h2 {
+  animation: gmCin015HeadlinePresence 18s ease-in-out 5.15s infinite;
+}
+
+.gm-scene14__body {
+  animation: gmCin015BodySettle 18s ease-in-out 6.55s infinite;
+}
+
+.gm-scene14__cta {
+  position: relative;
+  isolation: isolate;
+  animation: gmCin015CtaInvitation 18s ease-in-out 8.25s infinite;
+}
+
+.gm-scene14__cta::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(139,92,246,0.18),
+    rgba(34,211,238,0.11)
+  );
+  filter: blur(10px);
+  animation: gmCin015CtaHalo 18s ease-in-out 8.25s infinite;
+}
+
+.gm-scene14__cta > i {
+  animation: gmCin015CtaArrow 18s ease-in-out 9.15s infinite;
+}
+
+.gm-scene14__action > p {
+  animation: gmCin015ActionMeta 18s ease-in-out 10.15s infinite;
+}
+
+.gm-scene14__closing {
+  animation: gmCin015ClosingResolve 18s ease-in-out 12s infinite;
+}
+
+.gm-scene14__closing strong {
+  animation: gmCin015ClosingTitle 18s ease-in-out 12.7s infinite;
+}
+
+.gm-scene14__closing > p {
+  animation: gmCin015ClosingBody 18s ease-in-out 13.4s infinite;
+}
+
+@keyframes gmCin015AmbientBreath {
+  0%, 100% {
+    opacity: 0.72;
+    filter: brightness(0.94);
+  }
+  18% {
+    opacity: 0.94;
+    filter: brightness(1.02);
+  }
+  46% {
+    opacity: 0.8;
+    filter: brightness(0.98);
+  }
+  72% {
+    opacity: 1;
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes gmCin015GridBreath {
+  0%, 100% { opacity: 0.08; }
+  20% { opacity: 0.13; }
+  48% { opacity: 0.1; }
+  74% { opacity: 0.14; }
+}
+
+@keyframes gmCin015PrimaryGlow {
+  0%, 100% {
+    opacity: 0.72;
+    filter: blur(1px) brightness(0.96);
+  }
+  22% {
+    opacity: 1;
+    filter: blur(1px) brightness(1.09);
+  }
+  45% {
+    opacity: 0.83;
+    filter: blur(1px) brightness(1.02);
+  }
+  68% {
+    opacity: 0.96;
+    filter: blur(1px) brightness(1.07);
+  }
+}
+
+@keyframes gmCin015SecondaryGlow {
+  0%, 100% {
+    opacity: 0.58;
+    filter: blur(1px) brightness(0.94);
+  }
+  30% {
+    opacity: 0.84;
+    filter: blur(1px) brightness(1.04);
+  }
+  66% {
+    opacity: 1;
+    filter: blur(1px) brightness(1.1);
+  }
+}
+
+@keyframes gmCin015BrandRing {
+  0%, 100% {
+    opacity: 0.42;
+    border-color: rgba(167,139,250,0.1);
+    box-shadow: 0 0 0 rgba(139,92,246,0);
+  }
+  16% {
+    opacity: 0.86;
+    border-color: rgba(196,181,253,0.2);
+    box-shadow: 0 0 22px rgba(139,92,246,0.045);
+  }
+  31% {
+    opacity: 0.54;
+    border-color: rgba(103,232,249,0.12);
+    box-shadow: 0 0 10px rgba(34,211,238,0.025);
+  }
+  63% {
+    opacity: 0.74;
+    border-color: rgba(196,181,253,0.16);
+    box-shadow: 0 0 18px rgba(139,92,246,0.035);
+  }
+}
+
+@keyframes gmCin015BrandDescriptor {
+  0%, 100% {
+    opacity: 0.82;
+    filter: brightness(0.96);
+  }
+  16%, 28% {
+    opacity: 1;
+    filter: brightness(1.16);
+  }
+  42%, 78% {
+    opacity: 0.9;
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes gmCin015HeadlinePresence {
+  0%, 100% {
+    filter: brightness(0.96);
+    text-shadow: 0 0 0 rgba(196,181,253,0);
+  }
+  14%, 31% {
+    filter: brightness(1.08);
+    text-shadow: 0 0 26px rgba(139,92,246,0.055);
+  }
+  48%, 82% {
+    filter: brightness(1.01);
+    text-shadow: 0 0 10px rgba(139,92,246,0.02);
+  }
+}
+
+@keyframes gmCin015BodySettle {
+  0%, 100% {
+    opacity: 0.82;
+    filter: brightness(0.96);
+  }
+  14%, 31% {
+    opacity: 1;
+    filter: brightness(1.08);
+  }
+  52%, 84% {
+    opacity: 0.9;
+    filter: brightness(1);
+  }
+}
+
+@keyframes gmCin015CtaInvitation {
+  0%, 100% {
+    border-color: rgba(167,139,250,0.2);
+    box-shadow:
+      0 12px 34px rgba(0,0,0,0.24),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    filter: brightness(0.98);
+  }
+  12%, 30% {
+    border-color: rgba(196,181,253,0.42);
+    box-shadow:
+      0 16px 42px rgba(0,0,0,0.28),
+      0 0 30px rgba(139,92,246,0.09),
+      0 0 18px rgba(34,211,238,0.045),
+      inset 0 1px 0 rgba(255,255,255,0.12);
+    filter: brightness(1.12);
+  }
+  52%, 78% {
+    border-color: rgba(167,139,250,0.27);
+    box-shadow:
+      0 13px 36px rgba(0,0,0,0.25),
+      0 0 18px rgba(139,92,246,0.045),
+      inset 0 1px 0 rgba(255,255,255,0.09);
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes gmCin015CtaHalo {
+  0%, 100% { opacity: 0; }
+  12%, 30% { opacity: 0.7; }
+  48% { opacity: 0.2; }
+  76% { opacity: 0.34; }
+}
+
+@keyframes gmCin015CtaArrow {
+  0%, 100% {
+    filter: brightness(0.96);
+    box-shadow: 0 0 0 rgba(196,181,253,0);
+  }
+  12%, 28% {
+    filter: brightness(1.25);
+    box-shadow: 0 0 14px rgba(196,181,253,0.1);
+  }
+  48%, 80% {
+    filter: brightness(1.04);
+    box-shadow: 0 0 5px rgba(196,181,253,0.03);
+  }
+}
+
+@keyframes gmCin015ActionMeta {
+  0%, 100% {
+    opacity: 0.72;
+    filter: brightness(0.96);
+  }
+  16%, 34% {
+    opacity: 1;
+    filter: brightness(1.12);
+  }
+  55%, 82% {
+    opacity: 0.82;
+    filter: brightness(1);
+  }
+}
+
+@keyframes gmCin015ClosingResolve {
+  0%, 100% {
+    opacity: 0.78;
+    border-color: rgba(255,255,255,0.055);
+    filter: brightness(0.96);
+  }
+  15%, 40% {
+    opacity: 1;
+    border-color: rgba(196,181,253,0.1);
+    filter: brightness(1.06);
+  }
+  62%, 84% {
+    opacity: 0.9;
+    border-color: rgba(255,255,255,0.065);
+    filter: brightness(1);
+  }
+}
+
+@keyframes gmCin015ClosingTitle {
+  0%, 100% {
+    filter: brightness(0.96);
+    text-shadow: 0 0 0 rgba(196,181,253,0);
+  }
+  16%, 38% {
+    filter: brightness(1.16);
+    text-shadow: 0 0 18px rgba(139,92,246,0.05);
+  }
+  58%, 84% {
+    filter: brightness(1.02);
+    text-shadow: 0 0 6px rgba(139,92,246,0.02);
+  }
+}
+
+@keyframes gmCin015ClosingBody {
+  0%, 100% {
+    opacity: 0.7;
+    filter: brightness(0.96);
+  }
+  18%, 40% {
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  60%, 84% {
+    opacity: 0.82;
+    filter: brightness(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .gm-scene14__ambient,
+  .gm-scene14__grid,
+  .gm-scene14__glow,
+  .gm-scene14__brand-rings > span,
+  .gm-scene14__content > .gm-kicker,
+  .gm-scene14__brand-line,
+  .gm-scene14__content h2,
+  .gm-scene14__body,
+  .gm-scene14__cta,
+  .gm-scene14__cta::before,
+  .gm-scene14__cta > i,
+  .gm-scene14__action > p,
+  .gm-scene14__closing,
+  .gm-scene14__closing strong,
+  .gm-scene14__closing > p {
+    will-change: opacity, filter;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-scene14__ambient,
+  .gm-scene14__grid,
+  .gm-scene14__glow--one,
+  .gm-scene14__glow--two,
+  .gm-scene14__brand-rings > span,
+  .gm-scene14__content > .gm-kicker,
+  .gm-scene14__brand-line,
+  .gm-scene14__content h2,
+  .gm-scene14__body,
+  .gm-scene14__cta,
+  .gm-scene14__cta::before,
+  .gm-scene14__cta > i,
+  .gm-scene14__action > p,
+  .gm-scene14__closing,
+  .gm-scene14__closing strong,
+  .gm-scene14__closing > p {
+    animation: none !important;
+  }
+
+  .gm-scene14__ambient,
+  .gm-scene14__grid,
+  .gm-scene14__glow,
+  .gm-scene14__brand-rings > span,
+  .gm-scene14__content > .gm-kicker,
+  .gm-scene14__brand-line,
+  .gm-scene14__content h2,
+  .gm-scene14__body,
+  .gm-scene14__cta,
+  .gm-scene14__cta > i,
+  .gm-scene14__action > p,
+  .gm-scene14__closing,
+  .gm-scene14__closing strong,
+  .gm-scene14__closing > p {
+    filter: none !important;
+  }
+
+  .gm-scene14__cta::before {
+    opacity: 0 !important;
+  }
+}
+
+/* END CIN-015-A - FINAL CTA CINEMATIC PASS ------------------------------ */
 /* ==========================================================================
    GM CINEMATIC SCENE 00 IDENTITY
    CIN-001-A — OPENING TITLE PASS
