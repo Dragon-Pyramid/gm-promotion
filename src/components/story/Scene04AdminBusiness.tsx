@@ -69,7 +69,7 @@ export function Scene04AdminBusiness({
                 <span className="gm-scene04__status-dot" aria-hidden="true" />
                 <strong>{labels.pulseLabel}</strong>
               </div>
-              <small>GYM MASTER · BUSINESS SIGNAL</small>
+              <small>GYM MASTER</small>
             </div>
 
             <div className="gm-scene04__business-grid">

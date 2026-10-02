@@ -138,7 +138,7 @@ export function Scene03AdminOverview({
               <section className="gm-scene03__activity">
                 <div className="gm-scene03__panel-title">
                   <strong>{labels.activityTitle}</strong>
-                  <span aria-hidden="true">LIVE</span>
+                  <span aria-hidden="true">{labels.live}</span>
                 </div>
 
                 <div className="gm-scene03__activity-list">
