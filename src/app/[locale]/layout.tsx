@@ -1,9 +1,10 @@
-﻿import type {Metadata} from "next";
+import type {Metadata} from "next";
 import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {getMessages, getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 import type {ReactNode} from "react";
 
+import {LanguageSwitcher} from "@/components/navigation/LanguageSwitcher";
 import {routing} from "@/i18n/routing";
 
 import "../globals.css";
@@ -58,6 +59,7 @@ export default async function LocaleLayout({children, params}: Props) {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <LanguageSwitcher />
           {children}
         </NextIntlClientProvider>
       </body>
