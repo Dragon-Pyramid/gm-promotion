@@ -1,5 +1,3 @@
-"use client";
-
 import {Scene, ScrollTransform} from "react-kino";
 
 type Labels = {

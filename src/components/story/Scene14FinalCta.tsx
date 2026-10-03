@@ -1,5 +1,3 @@
-"use client";
-
 import {Scene, ScrollTransform} from "react-kino";
 
 import {Link} from "@/i18n/navigation";
