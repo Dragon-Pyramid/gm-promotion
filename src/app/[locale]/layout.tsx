@@ -9,9 +9,11 @@ import {routing} from "@/i18n/routing";
 import {
   getAlternateOpenGraphLocale,
   getOpenGraphLocale,
+  getSocialPreviewAlt,
   LOCALE_PATHS,
   SITE_NAME,
-  SITE_URL
+  SITE_URL,
+  SOCIAL_PREVIEW_IMAGE
 } from "@/lib/seo";
 
 import "../globals.css";
@@ -41,6 +43,7 @@ export async function generateMetadata({
   const title = t("title");
   const description = t("description");
   const canonical = LOCALE_PATHS[locale as keyof typeof LOCALE_PATHS];
+  const socialPreviewAlt = getSocialPreviewAlt(locale);
 
   return {
     title,
@@ -61,12 +64,21 @@ export async function generateMetadata({
       description,
       url: canonical,
       locale: getOpenGraphLocale(locale),
-      alternateLocale: getAlternateOpenGraphLocale(locale)
+      alternateLocale: getAlternateOpenGraphLocale(locale),
+      images: [
+        {
+          url: SOCIAL_PREVIEW_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: socialPreviewAlt
+        }
+      ]
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
-      description
+      description,
+      images: [SOCIAL_PREVIEW_IMAGE]
     }
   };
 }

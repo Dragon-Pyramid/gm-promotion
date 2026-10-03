@@ -9,8 +9,10 @@ import {
   DEMO_PATHS,
   getAlternateOpenGraphLocale,
   getOpenGraphLocale,
+  getSocialPreviewAlt,
   SITE_NAME,
-  SITE_URL
+  SITE_URL,
+  SOCIAL_PREVIEW_IMAGE
 } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -28,6 +30,7 @@ export async function generateMetadata({
   const title = t("demoTitle");
   const description = t("demoDescription");
   const canonical = DEMO_PATHS[locale as keyof typeof DEMO_PATHS];
+  const socialPreviewAlt = getSocialPreviewAlt(locale);
 
   return {
     title,
@@ -48,12 +51,21 @@ export async function generateMetadata({
       description,
       url: canonical,
       locale: getOpenGraphLocale(locale),
-      alternateLocale: getAlternateOpenGraphLocale(locale)
+      alternateLocale: getAlternateOpenGraphLocale(locale),
+      images: [
+        {
+          url: SOCIAL_PREVIEW_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: socialPreviewAlt
+        }
+      ]
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
-      description
+      description,
+      images: [SOCIAL_PREVIEW_IMAGE]
     }
   };
 }
