@@ -16210,3 +16210,103 @@ body {
 @media (max-width:900px){.gm-demo__grid{grid-template-columns:1fr}.gm-demo__context{order:2}}
 @media (max-width:640px){.gm-demo{padding-top:18px}.gm-demo__header{min-height:38px;padding-right:108px}.gm-demo__brand{display:none}.gm-demo__intro{margin-top:58px}.gm-demo__intro h1{max-width:10ch;font-size:clamp(2.35rem,13vw,4.2rem)}.gm-demo__grid{margin-top:38px}.gm-demo-form__fields{grid-template-columns:1fr}.gm-demo-form__message{grid-column:auto}.gm-demo-form__submit{width:100%}}
 @media (prefers-reduced-motion:reduce){.gm-demo__back,.gm-demo-form__submit{transition:none}.gm-demo__back:hover,.gm-demo-form__submit:hover{transform:none}}
+
+/* GPR-004 commercial actions */
+.gm-demo-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.gm-demo-form__actions .gm-demo-form__submit {
+  margin-top: 0;
+}
+
+.gm-demo-form__submit:disabled {
+  cursor: wait;
+  opacity: .62;
+  transform: none;
+}
+
+.gm-demo-form__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 52px;
+  padding: 0 18px 0 22px;
+  border: 1px solid rgba(74,222,128,.28);
+  border-radius: 999px;
+  color: rgba(240,253,244,.94);
+  background: rgba(34,197,94,.08);
+  cursor: pointer;
+  font-size: .78rem;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.gm-demo-form__whatsapp i {
+  width: 28px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  font-style: normal;
+}
+
+.gm-demo-form__whatsapp:hover {
+  transform: translateY(-2px);
+  border-color: rgba(74,222,128,.5);
+  background: rgba(34,197,94,.13);
+}
+
+.gm-demo-form__whatsapp:focus-visible {
+  outline: 2px solid rgba(74,222,128,.78);
+  outline-offset: 4px;
+}
+
+.gm-demo-form__status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+.gm-demo-form__status--success {
+  border: 1px solid rgba(74,222,128,.22);
+  color: rgba(187,247,208,.88);
+  background: rgba(34,197,94,.07);
+}
+
+.gm-demo-form__status--error {
+  border: 1px solid rgba(248,113,113,.22);
+  color: rgba(254,202,202,.9);
+  background: rgba(239,68,68,.07);
+}
+
+@media (max-width:640px) {
+  .gm-demo-form__actions {
+    display: grid;
+  }
+
+  .gm-demo-form__actions .gm-demo-form__submit,
+  .gm-demo-form__whatsapp {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .gm-demo-form__whatsapp {
+    transition: none;
+  }
+
+  .gm-demo-form__whatsapp:hover {
+    transform: none;
+  }
+}

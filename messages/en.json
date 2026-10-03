@@ -400,7 +400,11 @@
       "countryPlaceholder": "Your country",
       "message": "What would you like to improve or solve?",
       "messagePlaceholder": "Tell us briefly about your operation, priorities or needs.",
-      "submit": "Send request"
+      "submit": "Send request",
+      "sending": "Sending...",
+      "success": "Your request was sent successfully. We will get back to you shortly.",
+      "error": "We could not send your request. Please try again or contact us on WhatsApp.",
+      "whatsapp": "Send via WhatsApp"
     }
   }
 }

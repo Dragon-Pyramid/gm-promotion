@@ -34,7 +34,11 @@ export default async function DemoPage({
     countryPlaceholder: t("form.countryPlaceholder"),
     message: t("form.message"),
     messagePlaceholder: t("form.messagePlaceholder"),
-    submit: t("form.submit")
+    submit: t("form.submit"),
+    sending: t("form.sending"),
+    success: t("form.success"),
+    error: t("form.error"),
+    whatsapp: t("form.whatsapp")
   };
 
   return (
@@ -79,7 +83,7 @@ export default async function DemoPage({
               <i aria-hidden="true">↗</i>
             </a>
           </aside>
-          <DemoRequestForm labels={formLabels} />
+          <DemoRequestForm labels={formLabels} locale={locale} />
         </section>
       </div>
     </main>
