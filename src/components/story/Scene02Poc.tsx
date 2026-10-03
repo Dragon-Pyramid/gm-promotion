@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 import {Kino, Reveal, Scene, ScrollTransform} from "react-kino";
