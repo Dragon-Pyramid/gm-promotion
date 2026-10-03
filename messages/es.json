@@ -400,7 +400,11 @@
       "countryPlaceholder": "Tu país",
       "message": "¿Qué querés mejorar o resolver?",
       "messagePlaceholder": "Contanos brevemente sobre tu operación, prioridades o necesidades.",
-      "submit": "Enviar solicitud"
+      "submit": "Enviar solicitud",
+      "sending": "Enviando...",
+      "success": "Solicitud enviada correctamente. Te responderemos a la brevedad.",
+      "error": "No pudimos enviar la solicitud. Intentá nuevamente o escribinos por WhatsApp.",
+      "whatsapp": "Enviar por WhatsApp"
     }
   }
 }
