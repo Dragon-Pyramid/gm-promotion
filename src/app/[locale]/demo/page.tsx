@@ -1,8 +1,62 @@
+import type {Metadata} from "next";
+import {hasLocale} from "next-intl";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 
 import {DemoRequestForm} from "@/components/demo/DemoRequestForm";
 import {Link} from "@/i18n/navigation";
+import {routing} from "@/i18n/routing";
+import {
+  DEMO_PATHS,
+  getAlternateOpenGraphLocale,
+  getOpenGraphLocale,
+  SITE_NAME,
+  SITE_URL
+} from "@/lib/seo";
 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    return {};
+  }
+
+  const t = await getTranslations({locale, namespace: "Meta"});
+  const title = t("demoTitle");
+  const description = t("demoDescription");
+  const canonical = DEMO_PATHS[locale as keyof typeof DEMO_PATHS];
+
+  return {
+    title,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical,
+      languages: {
+        es: DEMO_PATHS.es,
+        en: DEMO_PATHS.en,
+        "x-default": DEMO_PATHS.es
+      }
+    },
+    openGraph: {
+      type: "website",
+      siteName: SITE_NAME,
+      title,
+      description,
+      url: canonical,
+      locale: getOpenGraphLocale(locale),
+      alternateLocale: getAlternateOpenGraphLocale(locale)
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description
+    }
+  };
+}
 export default async function DemoPage({
   params
 }: {
