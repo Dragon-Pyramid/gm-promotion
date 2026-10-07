@@ -92,5 +92,145 @@ export const ragDocuments: RagDocument[] = [
     visibility: "public",
     status: "current",
     version: 1
+  },
+  {
+    id: "gm-modules-es",
+    locale: "es",
+    profile: "general",
+    topic: "modules",
+    path: "src/content/rag/es/modules.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-modules-en",
+    locale: "en",
+    profile: "general",
+    topic: "modules",
+    path: "src/content/rag/en/modules.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-operations-es",
+    locale: "es",
+    profile: "team",
+    topic: "operations",
+    path: "src/content/rag/es/operations.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-operations-en",
+    locale: "en",
+    profile: "team",
+    topic: "operations",
+    path: "src/content/rag/en/operations.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-training-progress-es",
+    locale: "es",
+    profile: "member",
+    topic: "training-progress",
+    path: "src/content/rag/es/training-progress.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-training-progress-en",
+    locale: "en",
+    profile: "member",
+    topic: "training-progress",
+    path: "src/content/rag/en/training-progress.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-relationship-es",
+    locale: "es",
+    profile: "member",
+    topic: "relationship",
+    path: "src/content/rag/es/relationship.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-relationship-en",
+    locale: "en",
+    profile: "member",
+    topic: "relationship",
+    path: "src/content/rag/en/relationship.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-intelligence-es",
+    locale: "es",
+    profile: "admin",
+    topic: "intelligence",
+    path: "src/content/rag/es/intelligence.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-intelligence-en",
+    locale: "en",
+    profile: "admin",
+    topic: "intelligence",
+    path: "src/content/rag/en/intelligence.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-demo-sales-es",
+    locale: "es",
+    profile: "general",
+    topic: "demo-sales",
+    path: "src/content/rag/es/demo-sales.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-demo-sales-en",
+    locale: "en",
+    profile: "general",
+    topic: "demo-sales",
+    path: "src/content/rag/en/demo-sales.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-faq-es",
+    locale: "es",
+    profile: "general",
+    topic: "faq",
+    path: "src/content/rag/es/faq.md",
+    visibility: "public",
+    status: "current",
+    version: 1
+  },
+  {
+    id: "gm-faq-en",
+    locale: "en",
+    profile: "general",
+    topic: "faq",
+    path: "src/content/rag/en/faq.md",
+    visibility: "public",
+    status: "current",
+    version: 1
   }
 ];
