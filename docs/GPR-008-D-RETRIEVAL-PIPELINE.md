@@ -485,3 +485,94 @@ GPR-008-D is complete when:
 - controlled AI claims retrieve cautious public evidence;
 - provider choice remains justified by measured retrieval quality;
 - typecheck, lint, build, retrieval tests, and Git diff checks pass.
+## Implementation outcome and provider decision
+
+### Implemented baseline
+
+GPR-008-D implemented a provider-neutral deterministic lexical retrieval baseline over the validated public/current chunk contract produced by GPR-008-C.
+
+The implementation includes:
+
+- Unicode-aware query normalization;
+- deterministic tokenization;
+- small bilingual stop-word handling;
+- lexical IDF-weighted coverage;
+- phrase/bigram signals;
+- profile and topic ranking hints;
+- deterministic tie-breaking;
+- same-language-first retrieval;
+- explicit cross-language fallback;
+- explicit `groundedEnough` evaluation;
+- public/current fail-closed validation;
+- contextual treatment of the `Gym Master` brand phrase;
+- small deterministic lexical aliases for public commercial terminology.
+
+No embedding provider, vector store, external retrieval service, or new runtime secret was introduced.
+
+### Evaluation result
+
+The final curated bilingual evaluation produced:
+
+```text
+Cases: 14
+Top1 expected-topic hits: 9/14
+Top3 expected-topic hits: 14/14
+```
+
+Additional acceptance checks passed:
+
+- unsupported queries return `groundedEnough=false`;
+- ES and EN brand-overlap unsupported capability queries are rejected;
+- `queryLocale` overrides `pageLocale`;
+- explicit cross-language fallback works;
+- repeated retrieval is deterministic;
+- non-public chunks fail closed;
+- non-current chunks fail closed;
+- commercial unknowns retrieve grounded limitation/demo evidence;
+- controlled AI claims retrieve cautious FAQ evidence.
+
+The final corpus baseline remained:
+
+```text
+Documents: 22
+Chunks: 94
+ES chunks: 47
+EN chunks: 47
+Deterministic rerun: PASS
+```
+
+GPR-008-C ingestion fail-closed tests also remained green after the retrieval implementation.
+
+### Provider decision
+
+For the current public Gym Master corpus, the lexical baseline satisfies the initial GPR-008-D acceptance criteria.
+
+Therefore:
+
+- embeddings are not required at this stage;
+- a vector database is not required at this stage;
+- hybrid lexical/vector retrieval is deferred;
+- no external retrieval provider is selected in GPR-008-D.
+
+This is a deliberate measured decision, not a permanent architectural prohibition.
+
+Embeddings or hybrid retrieval should be reconsidered only if future evidence shows a material retrieval-quality gap, for example:
+
+- corpus growth substantially increases ambiguity;
+- semantic paraphrases regularly miss relevant evidence;
+- multilingual recall becomes insufficient;
+- evaluation metrics regress below the accepted baseline;
+- the knowledge corpus expands beyond what the deterministic local strategy handles comfortably.
+
+### Final decision gate
+
+Current decision:
+
+```text
+Deterministic local lexical retrieval: ACCEPTED
+Embeddings: DEFERRED
+Vector store: DEFERRED
+Hybrid retrieval: DEFERRED
+```
+
+The next RAG stage may consume this retrieval contract without introducing provider infrastructure solely for architectural fashion.
