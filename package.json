@@ -13,7 +13,9 @@
     "typecheck": "tsc --noEmit",
     "rag:ingest": "node scripts/rag-ingest.mjs",
     "rag:ingest:check": "node scripts/rag-ingest.mjs --check",
-    "rag:ingest:test": "node scripts/rag-ingestion/test-fail-closed.mjs"
+    "rag:ingest:test": "node scripts/rag-ingestion/test-fail-closed.mjs",
+    "rag:retrieve:probe": "node scripts/rag-retrieval-probe.mjs",
+    "rag:retrieve:evaluate": "node scripts/rag-retrieval-evaluate.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
