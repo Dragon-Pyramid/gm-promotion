@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "rag:ingest": "node scripts/rag-ingest.mjs",
+    "rag:ingest:check": "node scripts/rag-ingest.mjs --check"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
