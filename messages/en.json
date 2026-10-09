@@ -435,7 +435,7 @@
       "requestDemo": "Request a demo",
       "goToForm": "Go to the demo form"
     },
-    "previewNote": "Interface preview · local test responses",
-    "mockReply": "I received your question. In this visual stage I'm not connected to the Gym Master knowledge base yet; that integration comes in the next step."
+    "previewNote": "Answers are based on public Gym Master information.",
+    "errorReply": "I could not answer right now. Please try again in a moment."
   }
 }
