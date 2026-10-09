@@ -16682,3 +16682,328 @@ body {
     transition: none;
   }
 }
+/* ==========================================================================
+   GPR-008-E CHAT INTERACTION — PATCH 02
+   Local message list, suggestions, demo CTA and composer. No network/RAG.
+   ========================================================================== */
+
+.gm-chat-panel__content {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gm-chat-messages {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 18px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(94, 234, 212, 0.2) transparent;
+}
+
+.gm-chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.gm-chat-message--user {
+  justify-content: flex-end;
+}
+
+.gm-chat-message__bubble {
+  max-width: 82%;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px 16px 16px 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.gm-chat-message__bubble p {
+  margin: 0;
+  color: rgba(226, 235, 246, 0.79);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.gm-chat-message--user .gm-chat-message__bubble {
+  border-color: rgba(94, 234, 212, 0.17);
+  border-radius: 16px 8px 16px 16px;
+  background: rgba(45, 212, 191, 0.075);
+}
+
+.gm-chat-message--user .gm-chat-message__bubble p {
+  color: rgba(225, 252, 248, 0.86);
+}
+
+.gm-chat-message__bubble--typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 50px;
+  min-height: 36px;
+}
+
+.gm-chat-message__bubble--typing span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(153, 246, 228, 0.66);
+  animation: gm-chat-typing 900ms ease-in-out infinite;
+}
+
+.gm-chat-message__bubble--typing span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.gm-chat-message__bubble--typing span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.gm-chat-panel__footer {
+  flex: 0 0 auto;
+  padding: 11px 13px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  background:
+    linear-gradient(180deg, rgba(6, 16, 26, 0.76), rgba(4, 12, 20, 0.96));
+}
+
+.gm-chat-suggestions {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.gm-chat-suggestions::-webkit-scrollbar {
+  display: none;
+}
+
+.gm-chat-suggestions button {
+  flex: 0 0 auto;
+  padding: 7px 9px;
+  border: 1px solid rgba(94, 234, 212, 0.11);
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.025);
+  color: rgba(198, 238, 235, 0.66);
+  font: inherit;
+  font-size: 0.61rem;
+  font-weight: 680;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease;
+}
+
+.gm-chat-suggestions button:hover:not(:disabled),
+.gm-chat-suggestions button:focus-visible {
+  color: rgba(226, 255, 252, 0.92);
+  border-color: rgba(94, 234, 212, 0.28);
+  background: rgba(94, 234, 212, 0.065);
+}
+
+.gm-chat-suggestions button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+
+.gm-chat-panel__commercial {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.gm-chat-panel__demo-action {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid rgba(94, 234, 212, 0.12);
+  border-radius: 12px;
+  background: rgba(45, 212, 191, 0.035);
+  color: rgba(201, 249, 242, 0.74);
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.67rem;
+  font-weight: 730;
+  cursor: pointer;
+}
+
+.gm-chat-panel__demo-action:hover,
+.gm-chat-panel__demo-action:focus-visible {
+  border-color: rgba(94, 234, 212, 0.28);
+  background: rgba(45, 212, 191, 0.07);
+  color: rgba(233, 255, 252, 0.94);
+}
+
+.gm-chat-panel__demo-action i {
+  color: rgba(94, 234, 212, 0.7);
+  font-style: normal;
+}
+
+.gm-chat-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 7px 7px 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.gm-chat-composer:focus-within {
+  border-color: rgba(94, 234, 212, 0.3);
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.045);
+}
+
+.gm-chat-composer__input {
+  width: 100%;
+  min-height: 30px;
+  max-height: 96px;
+  resize: none;
+  overflow-y: auto;
+  padding: 6px 0 4px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: rgba(239, 248, 255, 0.9);
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.gm-chat-composer__input::placeholder {
+  color: rgba(189, 203, 218, 0.38);
+}
+
+.gm-chat-composer__send {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  border-radius: 11px;
+  background: rgba(45, 212, 191, 0.1);
+  color: rgba(178, 255, 244, 0.88);
+  cursor: pointer;
+}
+
+.gm-chat-composer__send:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.gm-chat-composer__send:focus-visible,
+.gm-chat-suggestions button:focus-visible,
+.gm-chat-panel__demo-action:focus-visible {
+  outline: 2px solid rgba(94, 234, 212, 0.82);
+  outline-offset: 2px;
+}
+
+.gm-chat-composer__send svg {
+  width: 17px;
+  height: 17px;
+}
+
+.gm-chat-panel__preview-note {
+  margin: 7px 2px 0;
+  color: rgba(173, 189, 205, 0.28);
+  font-size: 0.51rem;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: 0.025em;
+}
+
+.gm-chat-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes gm-chat-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .gm-chat-messages {
+    padding: 15px 14px 10px;
+  }
+
+  .gm-chat-panel__footer {
+    padding: 10px 11px max(10px, env(safe-area-inset-bottom));
+  }
+
+  .gm-chat-message__bubble {
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-chat-message__bubble--typing span {
+    animation: none;
+    opacity: 0.65;
+    transform: none;
+  }
+
+  .gm-chat-suggestions button,
+  .gm-chat-panel__demo-action {
+    transition: none;
+  }
+}
+/* ==========================================================================
+   GPR-008-E CHAT COMPOSER POLISH — PATCH 02A
+   Auto-growing multiline composer without native scrollbar chrome.
+   ========================================================================== */
+
+.gm-chat-composer__input {
+  height: 30px;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(94, 234, 212, 0.18) transparent;
+}
+
+.gm-chat-composer__input::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gm-chat-composer__input::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gm-chat-composer__input::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.18);
+}
+
+.gm-chat-composer__input::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}

@@ -1,24 +1,62 @@
 "use client";
 
+import {useTranslations} from "next-intl";
+
+import {Link} from "@/i18n/navigation";
+
+import {ChatComposer} from "./ChatComposer";
+import {
+  ChatMessageList,
+  type ChatMessage
+} from "./ChatMessageList";
+
 type Props = {
-  body: string;
   closeLabel: string;
   eyebrow: string;
   headingId: string;
+  isDemo: boolean;
+  isTyping: boolean;
+  messages: ChatMessage[];
   panelId: string;
   title: string;
+  welcomeText: string;
   onClose: () => void;
+  onDemoAction: () => void;
+  onSend: (message: string) => void;
+  onSuggestion: (message: string) => void;
 };
 
 export function ChatPanel({
-  body,
   closeLabel,
   eyebrow,
   headingId,
+  isDemo,
+  isTyping,
+  messages,
   panelId,
   title,
-  onClose
+  welcomeText,
+  onClose,
+  onDemoAction,
+  onSend,
+  onSuggestion
 }: Props) {
+  const t = useTranslations("Chat");
+  const visibleMessages: ChatMessage[] = [
+    {
+      id: "welcome",
+      role: "assistant",
+      text: welcomeText
+    },
+    ...messages
+  ];
+
+  const suggestions = [
+    t("suggestions.members"),
+    t("suggestions.operations"),
+    t("suggestions.training")
+  ];
+
   return (
     <section
       id={panelId}
@@ -58,25 +96,64 @@ export function ChatPanel({
       </header>
 
       <div className="gm-chat-panel__content">
-        <div className="gm-chat-panel__status">
-          <span aria-hidden="true" />
-          <strong>{eyebrow}</strong>
-        </div>
+        <ChatMessageList
+          assistantLabel={t("assistantLabel")}
+          userLabel={t("userLabel")}
+          typingLabel={t("typing")}
+          messages={visibleMessages}
+          isTyping={isTyping}
+        />
 
-        <div className="gm-chat-panel__welcome">
-          <span className="gm-chat-panel__avatar" aria-hidden="true">
-            GM
-          </span>
-          <div className="gm-chat-panel__bubble">
-            <p>{body}</p>
+        <footer className="gm-chat-panel__footer">
+          <div
+            className="gm-chat-suggestions"
+            aria-label={t("suggestionsLabel")}
+          >
+            {suggestions.map((suggestion) => (
+              <button
+                type="button"
+                key={suggestion}
+                onClick={() => onSuggestion(suggestion)}
+                disabled={isTyping}
+              >
+                {suggestion}
+              </button>
+            ))}
           </div>
-        </div>
 
-        <div className="gm-chat-panel__placeholder" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
+          <div className="gm-chat-panel__commercial">
+            {isDemo ? (
+              <button
+                type="button"
+                className="gm-chat-panel__demo-action"
+                onClick={onDemoAction}
+              >
+                <span>{t("cta.goToForm")}</span>
+                <i aria-hidden="true">↓</i>
+              </button>
+            ) : (
+              <Link
+                className="gm-chat-panel__demo-action"
+                href="/demo"
+                onClick={onClose}
+              >
+                <span>{t("cta.requestDemo")}</span>
+                <i aria-hidden="true">↗</i>
+              </Link>
+            )}
+          </div>
+
+          <ChatComposer
+            disabled={isTyping}
+            placeholder={t("composer.placeholder")}
+            sendLabel={t("composer.send")}
+            onSend={onSend}
+          />
+
+          <p className="gm-chat-panel__preview-note">
+            {t("previewNote")}
+          </p>
+        </footer>
       </div>
     </section>
   );
