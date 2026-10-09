@@ -5,6 +5,7 @@ import {getMessages, getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
 import type {ReactNode} from "react";
 
+import {ChatAssistant} from "@/components/chat/ChatAssistant";
 import {LanguageSwitcher} from "@/components/navigation/LanguageSwitcher";
 import {routing} from "@/i18n/routing";
 import {
@@ -99,6 +100,7 @@ export default async function LocaleLayout({children, params}: Props) {
       <body>
         <NextIntlClientProvider messages={messages}>
           <LanguageSwitcher />
+          <ChatAssistant />
           {children}
         </NextIntlClientProvider>
         <Analytics />

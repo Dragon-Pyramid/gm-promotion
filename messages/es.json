@@ -408,5 +408,34 @@
       "error": "No pudimos enviar la solicitud. Intentá nuevamente o escribinos por WhatsApp.",
       "whatsapp": "Enviar por WhatsApp"
     }
+  },
+  "Chat": {
+    "eyebrow": "ASISTENTE GYM MASTER",
+    "title": "Conversemos sobre tu gimnasio",
+    "open": "Abrir asistente de Gym Master",
+    "close": "Cerrar asistente de Gym Master",
+    "assistantLabel": "Gym Master",
+    "userLabel": "Vos",
+    "typing": "Gym Master está preparando una respuesta",
+    "suggestionsLabel": "Preguntas sugeridas",
+    "welcome": {
+      "landing": "¿Querés conocer cómo Gym Master puede ayudarte? Estoy acá para orientarte sobre la plataforma y su propuesta.",
+      "demo": "¿Tenés alguna duda antes de solicitar la demo? Puedo ayudarte a entender qué partes de Gym Master tienen más sentido para tu operación."
+    },
+    "suggestions": {
+      "members": "Socios y pagos",
+      "operations": "Acceso, ventas y stock",
+      "training": "Entrenamiento y progreso"
+    },
+    "composer": {
+      "placeholder": "Escribí tu pregunta...",
+      "send": "Enviar mensaje"
+    },
+    "cta": {
+      "requestDemo": "Solicitar una demo",
+      "goToForm": "Ir al formulario de demo"
+    },
+    "previewNote": "Vista de interfaz · respuestas locales de prueba",
+    "mockReply": "Recibí tu consulta. En esta etapa visual todavía no estoy conectado al conocimiento de Gym Master; esa integración llega en el próximo paso."
   }
 }
