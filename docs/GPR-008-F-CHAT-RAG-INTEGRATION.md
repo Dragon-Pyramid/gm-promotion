@@ -266,6 +266,14 @@ A commercial signal may influence the response CTA, but it must never override g
 
 Pricing remains unknown unless explicitly supported by the curated corpus.
 
+F-07 server-side implementation rule:
+
+- `commercialIntent` derives from the deterministic server-side `demo-sales` topic hint;
+- the browser cannot submit or override `commercialIntent`, `topicHint`, or `profileHint`;
+- commercial examples include pricing, demo/trial, implementation, purchase, contract, and sales contact;
+- product operational sales/stock and the commercial-team role are not sales-contact intent by themselves;
+- commercial routing may affect localized CTAs, but never grounding or product facts.
+
 ## 12. Answer generation boundary
 
 GPR-008-F must keep answer generation provider-neutral at the application boundary.

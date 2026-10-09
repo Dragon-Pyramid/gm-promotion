@@ -241,6 +241,23 @@ await expectValidationFailure(
   }
 );
 
+await expectValidationFailure(
+  "browser commercialIntent=true rejected",
+  {
+    message: "Quiero una demo",
+    pageLocale: "es",
+    commercialIntent: true
+  }
+);
+
+await expectValidationFailure(
+  "browser commercialIntent=false rejected",
+  {
+    message: "Quiero una demo",
+    pageLocale: "es",
+    commercialIntent: false
+  }
+);
 console.log("");
 console.log("Chat retrieval API contract PASS");
 console.log(
