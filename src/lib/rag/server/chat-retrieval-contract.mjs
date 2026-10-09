@@ -102,7 +102,7 @@ function commercialIntent(retrieval) {
   return retrieval.hints.topicHint === "demo-sales";
 }
 
-export async function handleChatRetrievalPayload(raw) {
+export async function handleChatRetrievalPayload(raw, {generateGroundedAnswer} = {}) {
   const payload = validatePayload(raw);
 
   if (!payload) {
@@ -116,8 +116,22 @@ export async function handleChatRetrievalPayload(raw) {
   });
 
   const locale = retrieval.queryLocale;
-  const answer =
+  let answer =
     RESPONSES[locale][retrieval.retrievalStatus];
+
+  if (retrieval.groundedEnough && generateGroundedAnswer !== undefined) {
+    if (typeof generateGroundedAnswer !== "function") {
+      throw new Error(
+        "generateGroundedAnswer must be a function when provided"
+      );
+    }
+
+    answer = await generateGroundedAnswer({
+      query: payload.message,
+      queryLocale: locale,
+      results: retrieval.results
+    });
+  }
 
   if (!answer) {
     throw new Error(

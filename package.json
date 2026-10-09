@@ -18,7 +18,8 @@
     "rag:retrieve:evaluate": "node scripts/rag-retrieval-evaluate.mjs",
     "rag:runtime:check": "node scripts/rag-runtime-corpus-check.mjs",
     "rag:service:check": "node scripts/rag-runtime-retrieval-service-check.mjs",
-    "rag:api:check": "node scripts/chat-retrieval-contract-check.mjs"
+    "rag:api:check": "node scripts/chat-retrieval-contract-check.mjs",
+    "rag:generation:check": "node scripts/rag-grounded-generation-check.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
