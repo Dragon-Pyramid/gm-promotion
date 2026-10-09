@@ -23,7 +23,8 @@
     "rag:openai:check": "node scripts/openai-responses-adapter-check.mjs",
     "rag:openai:smoke": "node scripts/openai-grounded-live-smoke.mjs",
     "chat:ui-api:check": "node scripts/chat-ui-api-wiring-check.mjs",
-    "rag:commercial:check": "node scripts/chat-commercial-routing-check.mjs"
+    "rag:commercial:check": "node scripts/chat-commercial-routing-check.mjs",
+    "chat:commercial-cta:check": "node scripts/chat-commercial-cta-ui-check.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

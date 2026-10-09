@@ -274,6 +274,14 @@ F-07 server-side implementation rule:
 - product operational sales/stock and the commercial-team role are not sales-contact intent by themselves;
 - commercial routing may affect localized CTAs, but never grounding or product facts.
 
+F-07B localized CTA contract:
+
+- The UI accepts `commercialIntent` only as a required boolean in a successful `/api/chat` response; browser requests still contain only `message` and `pageLocale`.
+- New requests, transport errors and malformed responses reset CTA routing to the existing generic demo action.
+- A server-confirmed commercial request changes only localized CTA wording; it does not change the grounded answer, page routing, retrieval, or prices.
+- On the landing, the action remains linked to `/demo`; on `/demo`, it remains the existing accessible scroll-to-form action.
+- ES/EN UI wording follows page locale. Unknown prices, commitments and integrations remain unsupported unless the public corpus confirms them.
+- This change does not introduce WhatsApp automation, new external destinations, storage or analytics.
 ## 12. Answer generation boundary
 
 GPR-008-F must keep answer generation provider-neutral at the application boundary.

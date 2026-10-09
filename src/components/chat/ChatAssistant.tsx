@@ -20,6 +20,7 @@ import {ChatPanel} from "./ChatPanel";
 type ChatApiSuccess = {
   ok: true;
   answer: string;
+  commercialIntent: boolean;
 };
 
 function isChatApiSuccess(
@@ -32,12 +33,14 @@ function isChatApiSuccess(
   const candidate = value as {
     ok?: unknown;
     answer?: unknown;
+    commercialIntent?: unknown;
   };
 
   return (
     candidate.ok === true &&
     typeof candidate.answer === "string" &&
-    candidate.answer.trim().length > 0
+    candidate.answer.trim().length > 0 &&
+    typeof candidate.commercialIntent === "boolean"
   );
 }
 
@@ -48,6 +51,7 @@ export function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [commercialIntent, setCommercialIntent] = useState(false);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const activeRequestRef = useRef<AbortController | null>(null);
   const messageSequenceRef = useRef(0);
@@ -84,6 +88,7 @@ export function ChatAssistant() {
         text: trimmed
       }
     ]);
+    setCommercialIntent(false);
     setIsTyping(true);
 
     const controller = new AbortController();
@@ -108,6 +113,7 @@ export function ChatAssistant() {
         throw new Error("Chat API returned an invalid response");
       }
 
+      setCommercialIntent(payload.commercialIntent);
       setMessages((current) => [
         ...current,
         {
@@ -121,6 +127,7 @@ export function ChatAssistant() {
         return;
       }
 
+      setCommercialIntent(false);
       console.error("[chat-ui] Request failed.", error);
 
       setMessages((current) => [
@@ -200,6 +207,7 @@ export function ChatAssistant() {
           closeLabel={t("close")}
           messages={messages}
           isTyping={isTyping}
+          commercialIntent={commercialIntent}
           isDemo={isDemo}
           onClose={() => closePanel()}
           onSend={handleSend}

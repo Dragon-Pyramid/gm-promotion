@@ -14,6 +14,7 @@ type Props = {
   closeLabel: string;
   eyebrow: string;
   headingId: string;
+  commercialIntent: boolean;
   isDemo: boolean;
   isTyping: boolean;
   messages: ChatMessage[];
@@ -30,6 +31,7 @@ export function ChatPanel({
   closeLabel,
   eyebrow,
   headingId,
+  commercialIntent,
   isDemo,
   isTyping,
   messages,
@@ -128,7 +130,7 @@ export function ChatPanel({
                 className="gm-chat-panel__demo-action"
                 onClick={onDemoAction}
               >
-                <span>{t("cta.goToForm")}</span>
+                <span>{commercialIntent ? t("cta.contactForm") : t("cta.goToForm")}</span>
                 <i aria-hidden="true">↓</i>
               </button>
             ) : (
@@ -137,7 +139,7 @@ export function ChatPanel({
                 href="/demo"
                 onClick={onClose}
               >
-                <span>{t("cta.requestDemo")}</span>
+                <span>{commercialIntent ? t("cta.salesRequest") : t("cta.requestDemo")}</span>
                 <i aria-hidden="true">↗</i>
               </Link>
             )}
