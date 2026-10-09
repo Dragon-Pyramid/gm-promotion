@@ -408,5 +408,15 @@
       "error": "No pudimos enviar la solicitud. Intentá nuevamente o escribinos por WhatsApp.",
       "whatsapp": "Enviar por WhatsApp"
     }
+  },
+  "Chat": {
+    "eyebrow": "ASISTENTE GYM MASTER",
+    "title": "Conversemos sobre tu gimnasio",
+    "open": "Abrir asistente de Gym Master",
+    "close": "Cerrar asistente de Gym Master",
+    "welcome": {
+      "landing": "¿Querés conocer cómo Gym Master puede ayudarte? Estoy acá para orientarte sobre la plataforma y su propuesta.",
+      "demo": "¿Tenés alguna duda antes de solicitar la demo? Puedo ayudarte a entender qué partes de Gym Master tienen más sentido para tu operación."
+    }
   }
 }
