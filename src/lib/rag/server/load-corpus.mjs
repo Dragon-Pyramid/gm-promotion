@@ -9,26 +9,55 @@ import {
 } from "../ingestion/validate-ingestion.mjs";
 
 const repoRoot = process.cwd();
-const manifestPath = path.join(
+const corpusRoot = path.join(
   repoRoot,
   "src",
   "content",
-  "rag",
+  "rag"
+);
+const manifestPath = path.join(
+  corpusRoot,
   "manifest.ts"
 );
-const curatedCorpusPrefix =
-  path.join("src", "content", "rag") + path.sep;
+const manifestDocumentPrefix = "src/content/rag/";
 
 let corpusPromise = null;
 
 function assertCuratedCorpusPath(documentPath) {
-  const absolutePath = path.resolve(repoRoot, documentPath);
-  const relativePath = path.relative(repoRoot, absolutePath);
+  if (
+    typeof documentPath !== "string" ||
+    !documentPath.startsWith(manifestDocumentPrefix)
+  ) {
+    throw new Error(
+      `Manifest path outside curated RAG corpus: ${documentPath}`
+    );
+  }
+
+  const relativeDocumentPath =
+    documentPath.slice(manifestDocumentPrefix.length);
 
   if (
-    relativePath.startsWith("..") ||
-    path.isAbsolute(relativePath) ||
-    !relativePath.startsWith(curatedCorpusPrefix)
+    !relativeDocumentPath ||
+    relativeDocumentPath.includes("\\") ||
+    path.isAbsolute(relativeDocumentPath)
+  ) {
+    throw new Error(
+      `Manifest path outside curated RAG corpus: ${documentPath}`
+    );
+  }
+
+  const absolutePath = path.join(
+    corpusRoot,
+    relativeDocumentPath
+  );
+  const relativeToCorpus = path.relative(
+    corpusRoot,
+    absolutePath
+  );
+
+  if (
+    relativeToCorpus.startsWith("..") ||
+    path.isAbsolute(relativeToCorpus)
   ) {
     throw new Error(
       `Manifest path outside curated RAG corpus: ${documentPath}`
