@@ -1,6 +1,7 @@
 import {NextResponse} from "next/server";
 
 import {handleChatRetrievalPayload} from "@/lib/rag/server/chat-retrieval-contract.mjs";
+import {generateGroundedChatAnswer} from "@/lib/rag/server/chat-generation-runtime.mjs";
 
 export const runtime = "nodejs";
 
@@ -24,7 +25,13 @@ export async function POST(request: Request) {
   }
 
   try {
-    const response = await handleChatRetrievalPayload(raw);
+    const response = await handleChatRetrievalPayload(
+      raw,
+      {
+        generateGroundedAnswer:
+          generateGroundedChatAnswer
+      }
+    );
 
     return NextResponse.json(
       response.body,

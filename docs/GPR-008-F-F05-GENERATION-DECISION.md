@@ -53,3 +53,18 @@ F-05A establishes the provider-neutral generation boundary and validates it with
 F-05B will add the OpenAI Responses API adapter, server-only environment configuration, and a controlled live smoke test.
 
 No API key is committed to source control.
+
+## F-05B runtime configuration
+
+Server-only environment variables:
+
+- `OPENAI_API_KEY` - required for grounded generation;
+- `OPENAI_MODEL` - optional, defaults to `gpt-6-luna`.
+
+Neither variable uses a `NEXT_PUBLIC_` prefix.
+
+The production route uses a lazy generation runtime. Unsupported and excluded-scope requests therefore remain deterministic and do not require provider configuration. A grounded request fails closed when `OPENAI_API_KEY` is unavailable.
+
+The OpenAI adapter calls `POST https://api.openai.com/v1/responses` with `store=false`, no built-in tools, and a bounded output token budget.
+
+The normal deterministic gate suite uses an injected fake `fetch` and performs zero external API calls. `rag:openai:smoke` is intentionally separate and performs one live grounded model request only when explicitly invoked.
