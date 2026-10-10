@@ -282,6 +282,14 @@ F-07B localized CTA contract:
 - On the landing, the action remains linked to `/demo`; on `/demo`, it remains the existing accessible scroll-to-form action.
 - ES/EN UI wording follows page locale. Unknown prices, commitments and integrations remain unsupported unless the public corpus confirms them.
 - This change does not introduce WhatsApp automation, new external destinations, storage or analytics.
+
+F-08C curated sales-corpus clarification (based on F-08B in-memory diagnosis):
+
+- Public ES/EN `demo-sales` text explains how a visitor can request sales contact through the existing public demo form for a purchase inquiry.
+- No pricing, contract terms, timelines, onboarding promises, or unconfirmed integrations are added.
+- `rag:commercial-copy:check` guards same-language purchase grounding, commercial routing, operational-sales separation, unsupported questions, and the Masteradmin boundary.
+- Retrieval ranking, thresholds, public API shape, UI CTAs and destinations remain unchanged.
+
 ## 12. Answer generation boundary
 
 GPR-008-F must keep answer generation provider-neutral at the application boundary.

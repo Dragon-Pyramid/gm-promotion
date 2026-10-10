@@ -12,6 +12,8 @@ const SPANISH_PHRASES = [
   "cuanto cuesta",
   "quiero una demo",
   "quiero una demostracion",
+  "quiero contratar",
+  "quiero comprar",
   "puedo",
   "hay "
 ];
