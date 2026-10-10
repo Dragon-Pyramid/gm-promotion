@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         search: "?context=scene02"
       }
     ]
+  },
+  outputFileTracingIncludes: {
+    "/api/chat": [
+      "./src/content/rag/manifest.ts",
+      "./src/content/rag/**/*.md"
+    ]
   }
 };
 

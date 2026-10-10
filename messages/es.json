@@ -433,9 +433,11 @@
     },
     "cta": {
       "requestDemo": "Solicitar una demo",
-      "goToForm": "Ir al formulario de demo"
+      "goToForm": "Ir al formulario de demo",
+      "salesRequest": "Solicitar contacto comercial",
+      "contactForm": "Ir al formulario de consulta"
     },
-    "previewNote": "Vista de interfaz · respuestas locales de prueba",
-    "mockReply": "Recibí tu consulta. En esta etapa visual todavía no estoy conectado al conocimiento de Gym Master; esa integración llega en el próximo paso."
+    "previewNote": "Respuestas basadas en información pública de Gym Master.",
+    "errorReply": "No pude responder en este momento. Probá nuevamente en unos instantes."
   }
 }

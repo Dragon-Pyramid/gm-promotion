@@ -14,6 +14,8 @@ Gym Master provides a public flow for requesting a demonstration.
 
 The purpose is to understand how the gym operates, its priorities, and the needs it wants to address so the demonstration can be more relevant.
 
+If you want to buy Gym Master, you can request sales contact through the public demo request form. The public information does not establish prices or contract terms.
+
 ## Before requesting it
 
 The assistant can clarify functional questions about Gym Master before the visitor completes the request.

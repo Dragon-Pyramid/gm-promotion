@@ -15,7 +15,17 @@
     "rag:ingest:check": "node scripts/rag-ingest.mjs --check",
     "rag:ingest:test": "node scripts/rag-ingestion/test-fail-closed.mjs",
     "rag:retrieve:probe": "node scripts/rag-retrieval-probe.mjs",
-    "rag:retrieve:evaluate": "node scripts/rag-retrieval-evaluate.mjs"
+    "rag:retrieve:evaluate": "node scripts/rag-retrieval-evaluate.mjs",
+    "rag:runtime:check": "node scripts/rag-runtime-corpus-check.mjs",
+    "rag:service:check": "node scripts/rag-runtime-retrieval-service-check.mjs",
+    "rag:api:check": "node scripts/chat-retrieval-contract-check.mjs",
+    "rag:generation:check": "node scripts/rag-grounded-generation-check.mjs",
+    "rag:openai:check": "node scripts/openai-responses-adapter-check.mjs",
+    "rag:openai:smoke": "node scripts/openai-grounded-live-smoke.mjs",
+    "chat:ui-api:check": "node scripts/chat-ui-api-wiring-check.mjs",
+    "rag:commercial:check": "node scripts/chat-commercial-routing-check.mjs",
+    "chat:commercial-cta:check": "node scripts/chat-commercial-cta-ui-check.mjs",
+    "rag:commercial-copy:check": "node scripts/rag-commercial-copy-regression-check.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

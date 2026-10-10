@@ -1,7 +1,15 @@
 "use client";
 
-import {useEffect, useId, useRef, useState} from "react";
-import {useTranslations} from "next-intl";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState
+} from "react";
+import {
+  useLocale,
+  useTranslations
+} from "next-intl";
 
 import {usePathname} from "@/i18n/navigation";
 
@@ -9,18 +17,48 @@ import {ChatLauncher} from "./ChatLauncher";
 import {type ChatMessage} from "./ChatMessageList";
 import {ChatPanel} from "./ChatPanel";
 
+type ChatApiSuccess = {
+  ok: true;
+  answer: string;
+  commercialIntent: boolean;
+};
+
+function isChatApiSuccess(
+  value: unknown
+): value is ChatApiSuccess {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const candidate = value as {
+    ok?: unknown;
+    answer?: unknown;
+    commercialIntent?: unknown;
+  };
+
+  return (
+    candidate.ok === true &&
+    typeof candidate.answer === "string" &&
+    candidate.answer.trim().length > 0 &&
+    typeof candidate.commercialIntent === "boolean"
+  );
+}
+
 export function ChatAssistant() {
   const t = useTranslations("Chat");
+  const locale = useLocale();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [commercialIntent, setCommercialIntent] = useState(false);
   const launcherRef = useRef<HTMLButtonElement>(null);
-  const replyTimerRef = useRef<number | null>(null);
+  const activeRequestRef = useRef<AbortController | null>(null);
   const messageSequenceRef = useRef(0);
   const panelId = useId();
   const headingId = `${panelId}-heading`;
   const isDemo = pathname === "/demo" || pathname.endsWith("/demo");
+  const pageLocale = locale === "en" ? "en" : "es";
 
   function nextMessageId(role: ChatMessage["role"]) {
     messageSequenceRef.current += 1;
@@ -35,14 +73,12 @@ export function ChatAssistant() {
     }
   }
 
-  function handleSend(message: string) {
+  async function handleSend(message: string) {
     const trimmed = message.trim();
 
     if (!trimmed || isTyping) {
       return;
     }
-
-    const mockReply = t("mockReply");
 
     setMessages((current) => [
       ...current,
@@ -52,24 +88,65 @@ export function ChatAssistant() {
         text: trimmed
       }
     ]);
+    setCommercialIntent(false);
     setIsTyping(true);
 
-    if (replyTimerRef.current !== null) {
-      window.clearTimeout(replyTimerRef.current);
-    }
+    const controller = new AbortController();
+    activeRequestRef.current = controller;
 
-    replyTimerRef.current = window.setTimeout(() => {
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: trimmed,
+          pageLocale
+        }),
+        signal: controller.signal
+      });
+
+      const payload: unknown = await response.json();
+
+      if (!response.ok || !isChatApiSuccess(payload)) {
+        throw new Error("Chat API returned an invalid response");
+      }
+
+      setCommercialIntent(payload.commercialIntent);
       setMessages((current) => [
         ...current,
         {
           id: nextMessageId("assistant"),
           role: "assistant",
-          text: mockReply
+          text: payload.answer.trim()
         }
       ]);
-      setIsTyping(false);
-      replyTimerRef.current = null;
-    }, 420);
+    } catch (error) {
+      if (controller.signal.aborted) {
+        return;
+      }
+
+      setCommercialIntent(false);
+      console.error("[chat-ui] Request failed.", error);
+
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextMessageId("assistant"),
+          role: "assistant",
+          text: t("errorReply")
+        }
+      ]);
+    } finally {
+      if (activeRequestRef.current === controller) {
+        activeRequestRef.current = null;
+      }
+
+      if (!controller.signal.aborted) {
+        setIsTyping(false);
+      }
+    }
   }
 
   function handleDemoAction() {
@@ -114,9 +191,7 @@ export function ChatAssistant() {
 
   useEffect(() => {
     return () => {
-      if (replyTimerRef.current !== null) {
-        window.clearTimeout(replyTimerRef.current);
-      }
+      activeRequestRef.current?.abort();
     };
   }, []);
 
@@ -132,6 +207,7 @@ export function ChatAssistant() {
           closeLabel={t("close")}
           messages={messages}
           isTyping={isTyping}
+          commercialIntent={commercialIntent}
           isDemo={isDemo}
           onClose={() => closePanel()}
           onSend={handleSend}
