@@ -25,8 +25,11 @@ assert(
   "The server signal must be passed to the chat panel"
 );
 assert(
-  (assistant.match(/setCommercialIntent\(false\)/g) || []).length === 2,
-  "The intent must reset for a new query and on request failure"
+  (assistant.match(/setCommercialIntent\(false\)/g) || []).length === 3 &&
+    /setCommercialIntent\(false\);\s*setIsTyping\(true\)/.test(assistant) &&
+    /if \(response\.status === 429 \|\| response\.status === 503\) \{[\s\S]*?setCommercialIntent\(false\);[\s\S]*?return;/.test(assistant) &&
+    /catch \(error\) \{\s*if \(controller\.signal\.aborted\) \{\s*return;\s*\}\s*setCommercialIntent\(false\);/.test(assistant),
+  "The intent must reset on a new query, 429/503, and request failure"
 );
 assert(
   /JSON\.stringify\(\{\s*message:\s*trimmed,\s*pageLocale\s*\}\)/s.test(assistant),
