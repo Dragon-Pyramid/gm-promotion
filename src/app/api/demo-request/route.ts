@@ -48,6 +48,11 @@ export async function POST(request: Request) {
 
   const input = raw as Record<string, unknown>;
 
+  // Low-friction bot trap. Never forward a filled website field to SMTP.
+  if (typeof input.website === "string" && input.website.trim().length > 0) {
+    return NextResponse.json({ok: true});
+  }
+
   const payload: DemoRequestPayload = {
     name: asText(input.name, 120),
     gym: asText(input.gym, 160),

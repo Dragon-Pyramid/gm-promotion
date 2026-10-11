@@ -27,6 +27,7 @@ type DemoRequestFormLabels = {
 };
 
 type DemoPayload = {
+  website: string;
   name: string;
   gym: string;
   email: string;
@@ -50,6 +51,7 @@ function buildPayload(form: HTMLFormElement, locale: string): DemoPayload {
   const formData = new FormData(form);
 
   return {
+    website: readField(formData, "website"),
     name: readField(formData, "name"),
     gym: readField(formData, "gym"),
     email: readField(formData, "email"),
@@ -101,11 +103,16 @@ export function DemoRequestForm({
   locale: string;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const sendingRef = useRef(false);
   const [submissionState, setSubmissionState] =
     useState<SubmissionState>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (sendingRef.current) {
+      return;
+    }
 
     const form = formRef.current;
 
@@ -113,6 +120,7 @@ export function DemoRequestForm({
       return;
     }
 
+    sendingRef.current = true;
     setSubmissionState("sending");
 
     try {
@@ -133,6 +141,8 @@ export function DemoRequestForm({
       form.reset();
     } catch {
       setSubmissionState("error");
+    } finally {
+      sendingRef.current = false;
     }
   }
 
@@ -163,6 +173,15 @@ export function DemoRequestForm({
         <h2 id="demo-form-title">{labels.title}</h2>
         <p>{labels.body}</p>
       </div>
+
+      <input
+        type="text"
+        name="website"
+        autoComplete="off"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="sr-only"
+      />
 
       <div className="gm-demo-form__fields">
         <label>
