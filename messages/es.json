@@ -438,6 +438,8 @@
       "contactForm": "Ir al formulario de consulta"
     },
     "previewNote": "Respuestas basadas en información pública de Gym Master.",
-    "errorReply": "No pude responder en este momento. Probá nuevamente en unos instantes."
+    "errorReply": "No pude responder en este momento. Probá nuevamente en unos instantes.",
+    "rateLimitReply": "Llegaste al límite temporal de consultas. Esperá un momento y volvé a intentar.",
+    "unavailableReply": "El asistente no está disponible temporalmente. Probá nuevamente más tarde o solicitá una demostración."
   }
 }

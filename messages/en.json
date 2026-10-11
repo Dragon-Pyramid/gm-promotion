@@ -438,6 +438,8 @@
       "contactForm": "Go to the inquiry form"
     },
     "previewNote": "Answers are based on public Gym Master information.",
-    "errorReply": "I could not answer right now. Please try again in a moment."
+    "errorReply": "I could not answer right now. Please try again in a moment.",
+    "rateLimitReply": "You have reached the temporary question limit. Please wait a moment and try again.",
+    "unavailableReply": "The assistant is temporarily unavailable. Please try again later or request a demo."
   }
 }
