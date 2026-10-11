@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import {NextResponse} from "next/server";
+import {readBoundedJsonRequest} from "@/lib/security/server/read-bounded-json-request.mjs";
 
 export const runtime = "nodejs";
 
@@ -29,16 +30,14 @@ function isValidEmail(value: string) {
 }
 
 export async function POST(request: Request) {
-  let raw: unknown;
-
-  try {
-    raw = await request.json();
-  } catch {
+  const parsed = await readBoundedJsonRequest(request, {maxBytes: 24576});
+  if (!parsed.ok) {
     return NextResponse.json(
-      {ok: false, error: "invalid_payload"},
-      {status: 400}
+      {ok: false, error: parsed.error},
+      {status: parsed.status}
     );
   }
+  const raw: unknown = parsed.value;
 
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
     return NextResponse.json(

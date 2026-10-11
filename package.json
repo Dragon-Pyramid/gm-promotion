@@ -25,7 +25,8 @@
     "chat:ui-api:check": "node scripts/chat-ui-api-wiring-check.mjs",
     "rag:commercial:check": "node scripts/chat-commercial-routing-check.mjs",
     "chat:commercial-cta:check": "node scripts/chat-commercial-cta-ui-check.mjs",
-    "rag:commercial-copy:check": "node scripts/rag-commercial-copy-regression-check.mjs"
+    "rag:commercial-copy:check": "node scripts/rag-commercial-copy-regression-check.mjs",
+    "security:http-boundary:check": "node scripts/security-http-boundary-check.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

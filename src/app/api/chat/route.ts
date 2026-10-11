@@ -2,6 +2,7 @@ import {NextResponse} from "next/server";
 
 import {handleChatRetrievalPayload} from "@/lib/rag/server/chat-retrieval-contract.mjs";
 import {generateGroundedChatAnswer} from "@/lib/rag/server/chat-generation-runtime.mjs";
+import {readBoundedJsonRequest} from "@/lib/security/server/read-bounded-json-request.mjs";
 
 export const runtime = "nodejs";
 
@@ -10,19 +11,14 @@ const NO_STORE_HEADERS = {
 };
 
 export async function POST(request: Request) {
-  let raw: unknown;
-
-  try {
-    raw = await request.json();
-  } catch {
+  const parsed = await readBoundedJsonRequest(request, {maxBytes: 8192});
+  if (!parsed.ok) {
     return NextResponse.json(
-      {ok: false, error: "invalid_payload"},
-      {
-        status: 400,
-        headers: NO_STORE_HEADERS
-      }
+      {ok: false, error: parsed.error},
+      {status: parsed.status, headers: NO_STORE_HEADERS}
     );
   }
+  const raw: unknown = parsed.value;
 
   try {
     const response = await handleChatRetrievalPayload(
