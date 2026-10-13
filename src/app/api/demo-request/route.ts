@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import {NextResponse} from "next/server";
 import {readBoundedJsonRequest} from "@/lib/security/server/read-bounded-json-request.mjs";
+import {verifyDemoTurnstile} from "@/lib/security/server/verify-demo-turnstile.mjs";
 
 export const runtime = "nodejs";
 
@@ -73,6 +74,15 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {ok: false, error: "validation_failed"},
       {status: 400}
+    );
+  }
+
+  // Verify every email attempt before accessing SMTP. WhatsApp is a separate client path.
+  const verification = await verifyDemoTurnstile(input.turnstileToken);
+  if (!verification.ok) {
+    return NextResponse.json(
+      {ok: false, error: verification.error},
+      {status: verification.status}
     );
   }
 

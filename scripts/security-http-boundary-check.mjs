@@ -10,6 +10,7 @@ const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const requireFromRepo = createRequire(path.join(repo, "package.json"));
 const ts = requireFromRepo("typescript");
 const counters = {chat: 0, demo: 0};
+const verifiedTokens = new Set();
 
 async function loadEndpoint(relative, name, expectedImports) {
   const filename = path.join(repo, ...relative.split("/"));
@@ -29,10 +30,16 @@ async function loadEndpoint(relative, name, expectedImports) {
 
   globalThis.__g02cReadRequest = readBoundedJsonRequest;
   globalThis.__g02cCounters = counters;
+  globalThis.__g02cVerifiedTokens = verifiedTokens;
   const common = `const NextResponse = {json: (body, options={}) => Response.json(body, {status: options.status ?? 200, headers: options.headers})};\nconst readBoundedJsonRequest = globalThis.__g02cReadRequest;\n`;
   const mocked = name === "CHAT"
     ? `const handleChatRetrievalPayload = async () => {globalThis.__g02cCounters.chat += 1; return {status:200, body:{ok:true,answer:'synthetic'}};};\nconst generateGroundedChatAnswer = async () => {throw Error('Network provider must not be called');};\n`
-    : `const process = {env:{YAHOO_SMTP_USER:'qa@example.invalid',YAHOO_SMTP_APP_PASSWORD:'synthetic-not-secret',DEMO_RECIPIENT_EMAIL:'qa@example.invalid'}};\nconst nodemailer = {createTransport: () => ({sendMail: async () => {globalThis.__g02cCounters.demo += 1; return {messageId:'offline'};}})};\n`;
+    : `const process = {env:{YAHOO_SMTP_USER:'qa@example.invalid',YAHOO_SMTP_APP_PASSWORD:'synthetic-not-secret',DEMO_RECIPIENT_EMAIL:'qa@example.invalid'}};\nconst nodemailer = {createTransport: () => ({sendMail: async () => {globalThis.__g02cCounters.demo += 1; return {messageId:'offline'};}})};\nconst verifyDemoTurnstile = async (token) => {
+      if (typeof token !== 'string' || !token) return {ok:false,status:400,error:'turnstile_token_required'};
+      if (globalThis.__g02cVerifiedTokens.has(token)) return {ok:false,status:403,error:'turnstile_rejected'};
+      globalThis.__g02cVerifiedTokens.add(token);
+      return {ok:true};
+    };\n`;
   const body = Buffer.from(common + mocked + withoutImports).toString("base64");
   const endpointModule = await import(`data:text/javascript;base64,${body}`);
   return endpointModule.POST;
@@ -45,14 +52,15 @@ const chat = await loadEndpoint("src/app/api/chat/route.ts", "CHAT", [
   "@/lib/security/server/read-bounded-json-request.mjs"
 ]);
 const demo = await loadEndpoint("src/app/api/demo-request/route.ts", "DEMO", [
-  "nodemailer", "next/server", "@/lib/security/server/read-bounded-json-request.mjs"
+  "nodemailer", "next/server", "@/lib/security/server/read-bounded-json-request.mjs",
+  "@/lib/security/server/verify-demo-turnstile.mjs"
 ]);
 
 const cases = [
   {name: "CHAT", fn: chat, key: "chat", url: "http://localhost:3000/api/chat", cap: 8192,
     body: JSON.stringify({message: "Hello Gym Master", pageLocale: "en"})},
   {name: "DEMO", fn: demo, key: "demo", url: "http://localhost:3000/api/demo-request", cap: 24576,
-    body: JSON.stringify({name: "Synthetic QA", gym: "Synthetic Gym", email: "qa@example.invalid", locale: "en"})}
+    body: JSON.stringify({name: "Synthetic QA", gym: "Synthetic Gym", email: "qa@example.invalid", locale: "en", turnstileToken: "qa-token-placeholder"})}
 ];
 
 let passed = 0;
@@ -61,6 +69,10 @@ for (const endpoint of cases) {
   const jsonHeader = {"Content-Type": "application/json"};
   async function probe(label, expected, payload, headers, sideEffect) {
     const before = counters[key];
+    // Each valid DEMO probe simulates an independent newly issued single-use token.
+    if (name === "DEMO" && label.startsWith("valid_")) {
+      payload = payload.replace("qa-token-placeholder", `qa-token-${label}`);
+    }
     const request = new Request(url, {method: "POST", body: payload, headers});
     const response = await fn(request);
     const result = await response.json();
