@@ -2,12 +2,12 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { buildDocumentChunks } from "./rag-ingestion/build-chunks.mjs";
-import { parseManifest } from "./rag-ingestion/parse-manifest.mjs";
+import { buildDocumentChunks } from "../src/lib/rag/ingestion/build-chunks.mjs";
+import { parseManifest } from "../src/lib/rag/ingestion/parse-manifest.mjs";
 import {
   validateChunks,
   validateDocuments
-} from "./rag-ingestion/validate-ingestion.mjs";
+} from "../src/lib/rag/ingestion/validate-ingestion.mjs";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "..");

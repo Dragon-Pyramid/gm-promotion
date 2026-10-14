@@ -104,7 +104,10 @@ export default async function DemoPage({
     sending: t("form.sending"),
     success: t("form.success"),
     error: t("form.error"),
-    whatsapp: t("form.whatsapp")
+    whatsapp: t("form.whatsapp"),
+    verificationRequired: t("form.verificationRequired"),
+    verificationFailed: t("form.verificationFailed"),
+    verificationUnavailable: t("form.verificationUnavailable")
   };
 
   return (

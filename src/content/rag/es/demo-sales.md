@@ -14,6 +14,8 @@ Gym Master ofrece una ruta pública para solicitar una demostración.
 
 El objetivo es conocer cómo funciona el gimnasio, cuáles son sus prioridades y qué necesidades quiere resolver para preparar una demostración más relevante.
 
+Si querés contratar Gym Master, podés solicitar contacto comercial a través del formulario público de demostración. La información pública no establece precios ni condiciones contractuales.
+
 ## Antes de solicitarla
 
 El asistente puede ayudar a aclarar dudas funcionales sobre Gym Master antes de completar la solicitud.

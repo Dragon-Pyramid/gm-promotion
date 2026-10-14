@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import {NextResponse} from "next/server";
+import {readBoundedJsonRequest} from "@/lib/security/server/read-bounded-json-request.mjs";
+import {verifyDemoTurnstile} from "@/lib/security/server/verify-demo-turnstile.mjs";
 
 export const runtime = "nodejs";
 
@@ -29,16 +31,14 @@ function isValidEmail(value: string) {
 }
 
 export async function POST(request: Request) {
-  let raw: unknown;
-
-  try {
-    raw = await request.json();
-  } catch {
+  const parsed = await readBoundedJsonRequest(request, {maxBytes: 24576});
+  if (!parsed.ok) {
     return NextResponse.json(
-      {ok: false, error: "invalid_payload"},
-      {status: 400}
+      {ok: false, error: parsed.error},
+      {status: parsed.status}
     );
   }
+  const raw: unknown = parsed.value;
 
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
     return NextResponse.json(
@@ -48,6 +48,11 @@ export async function POST(request: Request) {
   }
 
   const input = raw as Record<string, unknown>;
+
+  // Low-friction bot trap. Never forward a filled website field to SMTP.
+  if (typeof input.website === "string" && input.website.trim().length > 0) {
+    return NextResponse.json({ok: true});
+  }
 
   const payload: DemoRequestPayload = {
     name: asText(input.name, 120),
@@ -69,6 +74,15 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {ok: false, error: "validation_failed"},
       {status: 400}
+    );
+  }
+
+  // Verify every email attempt before accessing SMTP. WhatsApp is a separate client path.
+  const verification = await verifyDemoTurnstile(input.turnstileToken);
+  if (!verification.ok) {
+    return NextResponse.json(
+      {ok: false, error: verification.error},
+      {status: verification.status}
     );
   }
 

@@ -4,6 +4,10 @@ import { uniqueTokens } from "./tokenize.mjs";
 const BRAND_TOKENS = new Set(["gym", "master"]);
 
 const TOKEN_ALIASES = new Map([
+  ["modulo", ["modulo", "module", "modules"]],
+  ["modulos", ["modulos", "module", "modules"]],
+  ["funcionalidad", ["funcionalidad", "feature", "features", "capability", "capabilities"]],
+  ["funcionalidades", ["funcionalidades", "feature", "features", "capability", "capabilities"]],
   ["cost", ["cost", "price", "pricing"]],
   ["price", ["price", "pricing", "cost"]],
   ["pricing", ["pricing", "price", "cost"]],
