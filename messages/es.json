@@ -406,7 +406,10 @@
       "sending": "Enviando...",
       "success": "Solicitud enviada correctamente. Te responderemos a la brevedad.",
       "error": "No pudimos enviar la solicitud. Intentá nuevamente o escribinos por WhatsApp.",
-      "whatsapp": "Enviar por WhatsApp"
+      "whatsapp": "Enviar por WhatsApp",
+      "verificationRequired": "Completá la verificación de seguridad para enviar la solicitud.",
+      "verificationFailed": "No pudimos validar la verificación. Volvé a intentarlo.",
+      "verificationUnavailable": "La verificación de seguridad no está disponible. Escribinos por WhatsApp."
     }
   },
   "Chat": {
@@ -438,6 +441,8 @@
       "contactForm": "Ir al formulario de consulta"
     },
     "previewNote": "Respuestas basadas en información pública de Gym Master.",
-    "errorReply": "No pude responder en este momento. Probá nuevamente en unos instantes."
+    "errorReply": "No pude responder en este momento. Probá nuevamente en unos instantes.",
+    "rateLimitReply": "Llegaste al límite temporal de consultas. Esperá un momento y volvé a intentar.",
+    "unavailableReply": "El asistente no está disponible temporalmente. Probá nuevamente más tarde o solicitá una demostración."
   }
 }

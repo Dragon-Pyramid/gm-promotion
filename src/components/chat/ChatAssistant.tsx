@@ -107,6 +107,23 @@ export function ChatAssistant() {
         signal: controller.signal
       });
 
+      if (response.status === 429 || response.status === 503) {
+        const reply = response.status === 429
+          ? t("rateLimitReply")
+          : t("unavailableReply");
+
+        setCommercialIntent(false);
+        setMessages((current) => [
+          ...current,
+          {
+            id: nextMessageId("assistant"),
+            role: "assistant",
+            text: reply
+          }
+        ]);
+        return;
+      }
+
       const payload: unknown = await response.json();
 
       if (!response.ok || !isChatApiSuccess(payload)) {

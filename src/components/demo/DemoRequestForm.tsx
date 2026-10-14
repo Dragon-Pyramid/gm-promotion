@@ -1,6 +1,31 @@
 "use client";
 
-import {FormEvent, useRef, useState} from "react";
+import {FormEvent, useCallback, useEffect, useRef, useState} from "react";
+import Script from "next/script";
+
+type TurnstileClient = {
+  render: (
+    element: HTMLElement,
+    options: {
+      sitekey: string;
+      action: string;
+      language: "es" | "en";
+      callback: (token: string) => void;
+      "expired-callback": () => void;
+      "error-callback": () => void;
+    }
+  ) => string;
+  reset: (widgetId: string) => void;
+  remove: (widgetId: string) => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileClient;
+  }
+}
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? "";
 
 type DemoRequestFormLabels = {
   title: string;
@@ -24,9 +49,13 @@ type DemoRequestFormLabels = {
   success: string;
   error: string;
   whatsapp: string;
+  verificationRequired: string;
+  verificationFailed: string;
+  verificationUnavailable: string;
 };
 
 type DemoPayload = {
+  website: string;
   name: string;
   gym: string;
   email: string;
@@ -50,6 +79,7 @@ function buildPayload(form: HTMLFormElement, locale: string): DemoPayload {
   const formData = new FormData(form);
 
   return {
+    website: readField(formData, "website"),
     name: readField(formData, "name"),
     gym: readField(formData, "gym"),
     email: readField(formData, "email"),
@@ -101,11 +131,75 @@ export function DemoRequestForm({
   locale: string;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const sendingRef = useRef(false);
+  const turnstileElementRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetRef = useRef<string | null>(null);
+  const turnstileTokenRef = useRef("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [submissionState, setSubmissionState] =
     useState<SubmissionState>("idle");
 
+  const renderTurnstile = useCallback(() => {
+    if (!TURNSTILE_SITE_KEY || !window.turnstile ||
+        !turnstileElementRef.current || turnstileWidgetRef.current !== null) {
+      return;
+    }
+
+    turnstileWidgetRef.current = window.turnstile.render(
+      turnstileElementRef.current,
+      {
+        sitekey: TURNSTILE_SITE_KEY,
+        action: "demo_request",
+        language: locale === "en" ? "en" : "es",
+        callback: (token) => {
+          // A renewed token must never clear a server-side failure.
+          // The next explicit submit will clear it if the visitor retries.
+          turnstileTokenRef.current = token;
+        },
+        "expired-callback": () => {
+          turnstileTokenRef.current = "";
+          if (!sendingRef.current) {
+            setErrorMessage(labels.verificationRequired);
+            setSubmissionState("error");
+          }
+        },
+        "error-callback": () => {
+          turnstileTokenRef.current = "";
+          if (!sendingRef.current) {
+            setErrorMessage(labels.verificationFailed);
+            setSubmissionState("error");
+          }
+        }
+      }
+    );
+  }, [labels.verificationFailed, labels.verificationRequired, locale]);
+
+  useEffect(() => {
+    // Refresh the widget when navigation changes the demo locale.
+    // Also covers a loaded script when the component first mounts.
+    renderTurnstile();
+    return () => {
+      if (turnstileWidgetRef.current !== null) {
+        window.turnstile?.remove(turnstileWidgetRef.current);
+        turnstileWidgetRef.current = null;
+      }
+      turnstileTokenRef.current = "";
+    };
+  }, [renderTurnstile]);
+
+  function resetTurnstile() {
+    turnstileTokenRef.current = "";
+    if (turnstileWidgetRef.current !== null) {
+      window.turnstile?.reset(turnstileWidgetRef.current);
+    }
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (sendingRef.current) {
+      return;
+    }
 
     const form = formRef.current;
 
@@ -113,6 +207,21 @@ export function DemoRequestForm({
       return;
     }
 
+    if (!TURNSTILE_SITE_KEY) {
+      setErrorMessage(labels.verificationUnavailable);
+      setSubmissionState("error");
+      return;
+    }
+
+    const token = turnstileTokenRef.current;
+    if (!token) {
+      setErrorMessage(labels.verificationRequired);
+      setSubmissionState("error");
+      return;
+    }
+
+    sendingRef.current = true;
+    setErrorMessage("");
     setSubmissionState("sending");
 
     try {
@@ -121,10 +230,20 @@ export function DemoRequestForm({
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(buildPayload(form, locale))
+        body: JSON.stringify({...buildPayload(form, locale), turnstileToken: token})
       });
 
       if (!response.ok) {
+        const result: unknown = await response.json().catch(() => null);
+        const code = result && typeof result === "object" && "error" in result
+          ? (result as {error?: unknown}).error
+          : null;
+        setErrorMessage(
+          code === "turnstile_unavailable" ? labels.verificationUnavailable
+            : code === "turnstile_rejected" ? labels.verificationFailed
+              : code === "turnstile_token_required" ? labels.verificationRequired
+                : labels.error
+        );
         setSubmissionState("error");
         return;
       }
@@ -132,7 +251,11 @@ export function DemoRequestForm({
       setSubmissionState("success");
       form.reset();
     } catch {
+      setErrorMessage(labels.error);
       setSubmissionState("error");
+    } finally {
+      resetTurnstile();
+      sendingRef.current = false;
     }
   }
 
@@ -163,6 +286,15 @@ export function DemoRequestForm({
         <h2 id="demo-form-title">{labels.title}</h2>
         <p>{labels.body}</p>
       </div>
+
+      <input
+        type="text"
+        name="website"
+        autoComplete="off"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="sr-only"
+      />
 
       <div className="gm-demo-form__fields">
         <label>
@@ -238,6 +370,21 @@ export function DemoRequestForm({
         </label>
       </div>
 
+      <div className="gm-demo-form__turnstile">
+        {TURNSTILE_SITE_KEY ? (
+          <>
+            <Script
+              src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+              strategy="afterInteractive"
+              onReady={renderTurnstile}
+            />
+            <div ref={turnstileElementRef} />
+          </>
+        ) : (
+          <p role="status">{labels.verificationUnavailable}</p>
+        )}
+      </div>
+
       <div className="gm-demo-form__actions">
         <button
           className="gm-demo-form__submit"
@@ -278,7 +425,7 @@ export function DemoRequestForm({
           className="gm-demo-form__status gm-demo-form__status--error"
           role="alert"
         >
-          {labels.error}
+          {errorMessage || labels.error}
         </p>
       ) : null}
     </form>
