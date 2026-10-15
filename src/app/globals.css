@@ -17007,3 +17007,577 @@ body {
   height: 0;
   display: none;
 }
+
+/* ==========================================================================
+   GPR-009 — Mobile Typography Refinement (<= 640px)
+   Readable text on real mobile devices. Desktop and cinematic headline scale
+   remain unchanged. Intentionally excludes miniature illustrative dashboards.
+   Native pinch zoom and browser accessibility controls remain enabled.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Descriptive copy across the public cinematic narrative. */
+  .gm-page .gm-copy {
+    font-size: clamp(0.9375rem, 3.95vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .gm-page .gm-problem--cinematic .gm-problem__copy .gm-copy {
+    font-size: clamp(0.9375rem, 3.95vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .gm-hero__microcopy,
+  .gm-scene14__action > p {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .gm-scene14__body,
+  .gm-scene14__closing > p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  /* Demo page: labels, helpful copy and text entry without focus auto-zoom. */
+  .gm-demo__intro > p:last-child,
+  .gm-demo__context > p:not(.gm-kicker),
+  .gm-demo-form__heading > p:last-child {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .gm-demo__context li {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .gm-demo__back,
+  .gm-demo__company-link {
+    font-size: 0.875rem;
+  }
+
+  .gm-demo-form label > span {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+
+  .gm-demo-form input,
+  .gm-demo-form textarea {
+    font-size: 1rem;
+  }
+
+  .gm-demo-form__submit,
+  .gm-demo-form__whatsapp,
+  .gm-demo-form__status {
+    font-size: 0.875rem;
+  }
+
+  /* Chat: reading, suggestions, composer, CTA, context and microcopy. */
+  .gm-chat-message__bubble p,
+  .gm-chat-panel__bubble p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .gm-chat-suggestions button,
+  .gm-chat-panel__demo-action {
+    font-size: 0.8125rem;
+  }
+
+  .gm-chat-composer__input {
+    font-size: 1rem;
+    min-height: 36px;
+    line-height: 1.45;
+  }
+
+  .gm-chat-panel__preview-note {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .gm-chat-panel__identity p {
+    font-size: 0.6875rem;
+  }
+
+  .gm-chat-launcher__label {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ==========================================================================
+   GPR-009-R2 — Real-device mobile typography: cinematic UI + chat + demo
+   CSS-only refinements <= 640px; NO title/layout/animation/zoom changes.
+   Intentionally graduated typography in very compact visualization cards.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Narrative paragraphs: one comfortable mobile reading scale. */
+  .gm-page .gm-copy,
+  .gm-page .gm-problem--cinematic .gm-problem__copy .gm-copy {
+    font-size: 1rem;
+    line-height: 1.48;
+  }
+  .gm-page .gm-hero__content .gm-copy { font-size: 1.0625rem; }
+  .gm-hero__microcopy,
+  .gm-scene14__action > p { font-size: 0.875rem; }
+  .gm-scene14__body,
+  .gm-scene14__closing > p { font-size: 1rem; line-height: 1.48; }
+
+  /* Demo and chat: visitor-facing text. No title/font-weight changes. */
+  .gm-demo-form label > span { font-size: 0.875rem; }
+  .gm-demo-form__heading > p:last-child,
+  .gm-demo__intro > p:last-child,
+  .gm-demo__context > p:not(.gm-kicker) { font-size: 1rem; }
+  .gm-chat-message__bubble p,
+  .gm-chat-panel__bubble p { font-size: 1rem; line-height: 1.5; }
+  .gm-chat-suggestions button,
+  .gm-chat-panel__demo-action { font-size: 0.875rem; }
+  .gm-chat-panel__preview-note { font-size: 0.8125rem; }
+  .gm-chat-panel__identity p { font-size: 0.75rem; }
+
+  /* Scene 01-02: connective UI labels (not headline typography). */
+  .gm-system-card small,
+  .gm-fragment-map__center span,
+  .gm-chip__label { font-size: 0.6875rem; }
+  .gm-problem__signal p,
+  .gm-scene02__core-label { font-size: 0.75rem; }
+
+  /* Scene 03: overview dashboard. */
+  .gm-scene03__dashboard-brand small,
+  .gm-scene03__live,
+  .gm-scene03__metric-head span,
+  .gm-scene03__panel-title strong { font-size: 0.625rem; }
+  .gm-scene03__activity-row p { font-size: 0.6875rem; }
+  .gm-scene03__activity-row time,
+  .gm-scene03__panel-title span,
+  .gm-scene03__metric-head small { font-size: 0.5625rem; }
+
+  /* Scene 04: business metrics and reporting. */
+  .gm-scene04__topline strong,
+  .gm-scene04__flow-head > strong,
+  .gm-scene04__decision .gm-kicker { font-size: 0.6875rem; }
+  .gm-scene04__result-copy > p { font-size: 0.75rem; }
+  .gm-scene04__trend span,
+  .gm-scene04__source-head span { font-size: 0.5625rem; }
+
+  /* Scene 05: everyday operation. */
+  .gm-scene05__topline strong,
+  .gm-scene05__flow-head strong,
+  .gm-scene05__node-copy strong { font-size: 0.6875rem; }
+  .gm-scene05__node-copy p,
+  .gm-scene05__node-value,
+  .gm-scene05__sync p { font-size: 0.625rem; }
+  .gm-scene05__insight .gm-kicker,
+  .gm-scene05__live { font-size: 0.625rem; }
+
+  /* Scene 06: member access. Narrow journey columns require a smaller cap. */
+  .gm-scene06__topline strong,
+  .gm-scene06__ready,
+  .gm-scene06__access > strong { font-size: 0.6875rem; }
+  .gm-scene06__journey-step > strong { font-size: 0.5625rem; }
+  .gm-scene06__pass-copy p,
+  .gm-scene06__access > p,
+  .gm-scene06__pass-copy > span,
+  .gm-scene06__access > span { font-size: 0.625rem; }
+  .gm-scene06__system .gm-kicker,
+  .gm-scene06__welcome .gm-kicker { font-size: 0.625rem; }
+
+  /* Scene 07: progress and training. */
+  .gm-scene07__topline strong,
+  .gm-scene07__session-head strong,
+  .gm-scene07__progress-head strong,
+  .gm-scene07__exercise > div strong { font-size: 0.6875rem; }
+  .gm-scene07__session-head p,
+  .gm-scene07__progress-head p,
+  .gm-scene07__exercise > div small,
+  .gm-scene07__metrics article > span { font-size: 0.5625rem; }
+  .gm-scene07__exercise b,
+  .gm-scene07__focus .gm-kicker,
+  .gm-scene07__insight .gm-kicker { font-size: 0.625rem; }
+
+  /* Scene 08: relationship continuity. Three-column cards are very tight. */
+  .gm-scene08__topline strong,
+  .gm-scene08__timeline-step > strong { font-size: 0.625rem; }
+  .gm-scene08__touch > strong { font-size: 0.6875rem; }
+  .gm-scene08__touch > p,
+  .gm-scene08__touch > span,
+  .gm-scene08__member-card > p,
+  .gm-scene08__member-card > span { font-size: 0.5625rem; }
+  .gm-scene08__insight .gm-kicker,
+  .gm-scene08__insight > p { font-size: 0.625rem; line-height: 1.3; }
+
+  /* Scene 09: data and intelligence. */
+  .gm-scene09__topline strong,
+  .gm-scene09__source strong,
+  .gm-scene09__signal .gm-kicker,
+  .gm-scene09__signal-list article strong { font-size: 0.625rem; }
+  .gm-scene09__source > span,
+  .gm-scene09__signal-list article > span,
+  .gm-scene09__core-card > p,
+  .gm-scene09__core-card > span { font-size: 0.5625rem; }
+  .gm-scene09__signal > p:last-of-type,
+  .gm-scene09__insight > p { font-size: 0.625rem; line-height: 1.3; }
+
+  /* Scene 10: infrastructure architecture. */
+  .gm-scene10__topline strong,
+  .gm-scene10__foundation-copy .gm-kicker,
+  .gm-scene10__layer strong { font-size: 0.625rem; }
+  .gm-scene10__surface > div:last-child > p,
+  .gm-scene10__surface > div:last-child > span,
+  .gm-scene10__foundation-copy > span,
+  .gm-scene10__layer small { font-size: 0.5625rem; line-height: 1.3; }
+  .gm-scene10__insight > p { font-size: 0.625rem; line-height: 1.3; }
+
+  /* Scene 11: three people, one system. */
+  .gm-scene11__topline strong,
+  .gm-scene11__person-copy > strong,
+  .gm-scene11__shared-copy > strong { font-size: 0.6875rem; }
+  .gm-scene11__person-copy > p,
+  .gm-scene11__moment,
+  .gm-scene11__shared-copy .gm-kicker,
+  .gm-scene11__context > span { font-size: 0.5625rem; }
+  .gm-scene11__insight > p { font-size: 0.625rem; line-height: 1.3; }
+
+  /* Scene 12: gym as a connected system. */
+  .gm-scene12__topline strong,
+  .gm-scene12__connected,
+  .gm-scene12__domain strong,
+  .gm-scene12__principles article strong { font-size: 0.625rem; }
+  .gm-scene12__motion-panel > p:last-of-type,
+  .gm-scene12__insight > p { font-size: 0.625rem; line-height: 1.3; }
+  .gm-scene12__motion-panel .gm-kicker,
+  .gm-scene12__insight .gm-kicker,
+  .gm-scene12__core > p,
+  .gm-scene12__core > small { font-size: 0.5625rem; }
+
+  /* Scene 13: visual before-and-after comparison. */
+  .gm-scene13__topline strong,
+  .gm-scene13__state-head > strong,
+  .gm-scene13__bridge > strong { font-size: 0.6875rem; }
+  .gm-scene13__state-head > span,
+  .gm-scene13__state-head > p,
+  .gm-scene13__node > strong,
+  .gm-scene13__shifts article > span,
+  .gm-scene13__shifts article > strong { font-size: 0.5625rem; }
+  .gm-scene13__insight > p { font-size: 0.625rem; line-height: 1.3; }
+
+  /* Scene 14: final commercial action, without touching its title. */
+  .gm-scene14__cta > span { font-size: 0.875rem; }
+  .gm-scene14__closing .gm-kicker { font-size: 0.625rem; }
+  .gm-scene14__closing strong { font-size: 0.8125rem; }
+}
+
+/* ==========================================================================
+   GPR-009-R3 — Readable mobile cards, only within 5 cinematic scenes
+   Approved targeted wrapping + local space adjustments at <= 640px.
+   No global typography, desktop, React, animation timing, viewport or zoom.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* 06: five journey steps -> 3 above + 2 centered below. Whole words. */
+  .gm-scene06__journey {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2px 0;
+  }
+  .gm-scene06__journey-step {
+    grid-column: span 2;
+    min-height: 32px;
+    padding: 4px 3px;
+  }
+  .gm-scene06__journey-step:nth-child(4) { grid-column: 2 / span 2; }
+  .gm-scene06__journey-step:nth-child(5) { grid-column: 4 / span 2; }
+  .gm-scene06__journey-step > strong {
+    max-width: none;
+    font-size: 0.625rem;
+    line-height: 1.16;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  /* 08: readable timeline labels and touchpoint card copy. */
+  .gm-scene08__timeline-step {
+    grid-template-columns: auto minmax(0, 1fr);
+    min-height: 36px;
+    gap: 3px;
+    padding: 5px 4px;
+  }
+  .gm-scene08__timeline-step > i { display: none; }
+  .gm-scene08__timeline-step > strong {
+    font-size: 0.625rem;
+    line-height: 1.17;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .gm-scene08__touch { padding: 6px; }
+  .gm-scene08__touch > strong {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .gm-scene08__touch > span {
+    font-size: 0.625rem;
+    line-height: 1.3;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  /* 10: only layer card labels, allowing natural multi-line wrapping. */
+  .gm-scene10__layer {
+    min-height: 34px;
+    gap: 4px;
+    padding: 4px 5px;
+  }
+  .gm-scene10__layer strong {
+    font-size: 0.6875rem;
+    line-height: 1.16;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .gm-scene10__layer small {
+    line-height: 1.24;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  /* 12: orbit labels gain just enough room for whole words. Keep positions. */
+  .gm-scene12__domain {
+    min-width: 0;
+    max-width: min(50%, 112px);
+    padding: 5px 4px;
+    gap: 3px;
+  }
+  .gm-scene12__domain strong {
+    font-size: 0.625rem;
+    line-height: 1.16;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  /* 13: stack four miniature labels inside EACH comparison card on mobile.
+     This replaces only local node placement; the scene and its animations stay. */
+  .gm-scene13__canvas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    padding: 5px;
+  }
+  .gm-scene13__canvas .gm-scene13__node[data-index] {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    min-height: 23px;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 4px;
+    padding: 4px 5px;
+    rotate: none;
+  }
+  .gm-scene13__node > strong {
+    font-size: 0.625rem;
+    line-height: 1.12;
+    letter-spacing: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  .gm-scene13__state-head > strong { line-height: 1.18; }
+  .gm-scene13__state-head > p {
+    font-size: 0.5625rem;
+    line-height: 1.26;
+  }
+  .gm-scene13__shifts article > strong {
+    font-size: 0.625rem;
+    line-height: 1.16;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+/* ==========================================================================
+   GPR-009-R4 — Orbit and comparison labels on narrow mobile screens.
+   Small geometry refinements only for scenes 12 and 13 (<= 640px).
+   No desktop styles, JS, animation timing, text content, viewport or zoom.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Scene 12: 2 labels at the upper orbit, one below the core,
+     and 2 at the lower orbit. Keep the center clear and animations intact. */
+  .gm-scene12__domain[data-domain="people"] {
+    top: 18%;
+    bottom: auto;
+    left: 2%;
+    right: auto;
+    translate: 0 -50%;
+    max-width: 47%;
+  }
+  .gm-scene12__domain[data-domain="operation"] {
+    top: 18%;
+    bottom: auto;
+    left: auto;
+    right: 2%;
+    translate: 0 -50%;
+    max-width: 47%;
+  }
+  .gm-scene12__domain[data-domain="experience"] {
+    top: 73%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    translate: -50% -50%;
+    max-width: 62%;
+  }
+  .gm-scene12__domain[data-domain="infrastructure"] {
+    top: 89%;
+    bottom: auto;
+    left: 2%;
+    right: auto;
+    translate: 0 -50%;
+    max-width: 64%;
+  }
+  .gm-scene12__domain[data-domain="data"] {
+    top: 89%;
+    bottom: auto;
+    left: auto;
+    right: 2%;
+    translate: 0 -50%;
+    max-width: 32%;
+  }
+
+  /* Scene 13: keep 2 comparison cards per row, but use their width
+     for legible BEFORE -> AFTER text in two rows instead of three columns. */
+  .gm-scene13__shifts article {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 2px;
+    min-height: 42px;
+    padding: 5px 7px;
+  }
+  .gm-scene13__shifts article > span,
+  .gm-scene13__shifts article > strong {
+    display: block;
+    min-width: 0;
+    letter-spacing: 0;
+    line-height: 1.18;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  .gm-scene13__shifts article > span {
+    padding-right: 9px;
+    font-size: 0.625rem;
+  }
+  .gm-scene13__shifts article > strong {
+    font-size: 0.625rem;
+  }
+  .gm-scene13__shifts article > i {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    font-size: 0.5625rem;
+  }
+}
+
+/* ==========================================================================
+   GPR-009-R5 — Mobile Visual Polish (contrast + unobtrusive chat launcher)
+   Contrast on informational microcopy and placeholders at <= 640px only.
+   Compact floating Chat launcher; existing accessible aria-label preserved.
+   No desktop styles, React, content, animation timing, viewport or zoom.
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Preserve the same Chat control, but prevent its long pill from hiding
+     animated cards, form fields or narrative copy on narrow screens. */
+  .gm-chat-launcher {
+    width: 54px;
+    min-width: 54px;
+    height: 54px;
+    padding: 0;
+    flex: 0 0 auto;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.48),
+                0 0 0 1px rgba(94, 234, 212, 0.14) inset;
+  }
+  .gm-chat-launcher__label { display: none; }
+  .gm-chat-launcher__icon { width: 24px; height: 24px; }
+
+  /* Public copy in the Demo funnel: legible without changing type scale. */
+  .gm-demo__intro > p:last-child,
+  .gm-demo__context > p:not(.gm-kicker),
+  .gm-demo-form__heading > p:last-child {
+    color: rgba(229, 238, 250, 0.80);
+  }
+  .gm-demo-form label > span,
+  .gm-demo__context li { color: rgba(234, 243, 252, 0.84); }
+  .gm-demo-form input::placeholder,
+  .gm-demo-form textarea::placeholder {
+    color: rgba(192, 208, 226, 0.70);
+  }
+
+  /* Chat information and composer hint; do not brighten disabled actions. */
+  .gm-chat-panel__preview-note { color: rgba(200, 216, 231, 0.69); }
+  .gm-chat-panel__identity p { color: rgba(169, 251, 236, 0.79); }
+  .gm-chat-composer__input::placeholder {
+    color: rgba(209, 224, 237, 0.73);
+  }
+
+  /* Cinematic cards: background information only, keep branded accents. */
+  .gm-scene03__metric-head span,
+  .gm-scene03__metric-head small,
+  .gm-scene03__activity-row time,
+  .gm-scene03__panel-title span,
+  .gm-scene04__result-copy > p,
+  .gm-scene04__trend span,
+  .gm-scene04__source-head span,
+  .gm-scene05__node-copy p,
+  .gm-scene05__sync p,
+  .gm-scene06__pass-copy > span,
+  .gm-scene06__access > span,
+  .gm-scene07__exercise > div small,
+  .gm-scene07__metrics article > span,
+  .gm-scene08__touch > span,
+  .gm-scene09__source > span,
+  .gm-scene09__signal > p:last-of-type,
+  .gm-scene09__insight > p,
+  .gm-scene10__surface > div:last-child > span,
+  .gm-scene10__foundation-copy > span,
+  .gm-scene10__layer small,
+  .gm-scene10__insight > p,
+  .gm-scene11__person-copy > p,
+  .gm-scene11__context > span,
+  .gm-scene11__insight > p,
+  .gm-scene12__motion-panel > p:last-of-type,
+  .gm-scene12__insight > p,
+  .gm-scene13__state-head > p,
+  .gm-scene13__insight > p,
+  .gm-scene14__closing > p {
+    color: rgba(222, 233, 247, 0.70);
+  }
+
+  /* Labels and explanatory callouts that must remain readable in motion. */
+  .gm-scene06__journey-step > strong,
+  .gm-scene08__timeline-step > strong,
+  .gm-scene08__touch > p,
+  .gm-scene10__layer strong,
+  .gm-scene12__principles article strong,
+  .gm-scene13__node > strong {
+    color: rgba(242, 248, 255, 0.87);
+  }
+
+  /* Preserve the before/after meaning conveyed by rose and green. */
+  .gm-scene13__shifts article > span { color: rgba(253, 164, 175, 0.82); }
+  .gm-scene13__shifts article > strong { color: rgba(134, 239, 172, 0.88); }
+}
